@@ -1,0 +1,67 @@
+@use './colors';
+
+footer {
+  .footer-up {
+    background-color: fade-out($color: colors.$fourth-color, $amount: 0.7);
+    padding: 2.5rem 0;
+    text-align: center;
+
+    img {
+      height: 3.5rem;
+      margin-bottom: .5rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+      margin-bottom: 1.5rem;
+      color: colors.$third-color;
+    }
+
+    h4 {
+      color: colors.$primary-color;
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+        margin-bottom: .5rem;
+
+        a {
+          text-decoration: none;
+          color: colors.$third-color;
+          font-size: .75rem;
+          padding: 1.25em 0;
+
+          &:hover {
+            color: darken($color: colors.$third-color, $amount: 30%);
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    background-color: colors.$primary-color;
+    color: white;
+    height: 6rem;
+    padding: 1rem;
+
+    .content-foo-bottom {
+      padding: 0;
+
+      p {
+        margin-bottom: 0;
+        font-size: .75rem;
+        font-weight: bold;
+      }
+
+      .github {
+        margin-bottom: .5rem;
+      }
+    }
+  }
+}

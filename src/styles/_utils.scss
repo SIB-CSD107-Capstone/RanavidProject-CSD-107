@@ -1,0 +1,5 @@
+@use './colors';
+
+.bg-red {
+  background-color: colors.$secondary-color;
+}

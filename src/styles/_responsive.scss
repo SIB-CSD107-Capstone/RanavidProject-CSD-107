@@ -1,0 +1,654 @@
+@media (max-width: 768px) {
+  .search-bar {
+    header {
+      h2 {
+        font-size: 48px !important;
+      }
+    }
+  }
+
+  .favorite-hospital {
+
+    .search-favorite-hospital {
+      input {
+        width: 88%;
+
+      }
+
+      .search-icon {
+        // width: 1.6em;
+        font-size: 1em !important;
+        padding-right: 8px;
+        cursor: pointer;
+        min-width: 44px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+
+  /* search bar */
+  .search-bar {
+    height: 860px !important;
+
+    header {
+      h2 {
+        font-size: 30px !important;
+      }
+    }
+  }
+
+  .search-form {
+    .form-group {
+      margin-bottom: 40px;
+
+      label {
+        font-size: 16px !important;
+      }
+
+      select {
+        display: block;
+        height: 40px;
+      }
+    }
+
+    .form-check {
+      padding-left: 10px !important;
+      padding-right: 0 !important;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: 6px;
+      cursor: pointer;
+
+      input {
+        margin-right: 8px !important;
+      }
+
+      label {
+        margin: 0 !important;
+        font-size: 14px !important;
+        cursor: pointer;
+      }
+    }
+
+    .btn-search {
+      margin-top: 100px;
+      width: 410px;
+      font-size: 20px;
+      border-radius: 6px;
+    }
+  }
+
+  /* statistics section */
+  .statistics {
+    header {
+      h2 {
+        font-size: 30px !important;
+      }
+    }
+
+    h3 {
+      font-size: 20px !important;
+    }
+
+    .card {
+      .card-title {
+        font-size: 16px;
+      }
+
+      .card-text {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .modal-custom {
+    .mv-edukasi {
+      width: 24em !important;
+    }
+  }
+
+  .blog-detail {
+    img {
+      height: 19em !important;
+    }
+
+    .blog-text {
+      font-size: 1rem !important;
+    }
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .header {
+    box-shadow: none !important;
+
+    .custom-nav {
+      padding: 2em 0 0 0 !important;
+    }
+  }
+
+  .about-covid {
+    margin-top: 4em !important;
+
+    .text-about {
+      p:first-child {
+        font-size: 1rem !important;
+      }
+
+      .heading-1 {
+        font-size: 2.4rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      p:last-child {
+        font-size: 1rem !important;
+      }
+    }
+  }
+
+  .blog-post,
+  .video-post {
+    margin-top: 4em !important;
+
+    p:first-child {
+      font-size: 1rem !important;
+    }
+
+    .heading-2 {
+      font-size: 2rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+  }
+
+  .custom-blog-post {
+    .heading-3 {
+      font-size: 1.5rem !important;
+    }
+
+    p {
+      font-size: 1rem !important;
+    }
+  }
+
+  .custom-video-post {
+    .card-body {
+      .heading-3 {
+        font-size: 1.5rem !important;
+      }
+    }
+  }
+
+  .search-hospital {
+    margin-top: 4em !important;
+    padding: 2.5em 12em !important;
+
+    .heading-1 {
+      font-size: 2.5rem !important;
+    }
+  }
+
+  .modal-custom {
+    .mv-edukasi {
+      width: 29em !important;
+    }
+  }
+
+  .blog-detail {
+    margin-top: 4em !important;
+
+    .sub-detail {
+      font-size: 1rem !important;
+    }
+
+    .heading-1 {
+      font-size: 2rem !important;
+    }
+
+    .date-detail {
+      margin-bottom: 2rem !important;
+    }
+
+    img {
+      height: 20rem !important;
+    }
+
+    .blog-text {
+      font-size: 1.25rem !important;
+    }
+
+    .komentar {
+      margin-top: 4em !important;
+
+      .heading-2 {
+        font-size: 2rem !important;
+      }
+    }
+
+    .komentar-terbaru {
+      margin-top: 4em !important;
+
+      .heading-2 {
+        font-size: 2rem !important;
+      }
+    }
+  }
+
+  .about-web {
+    margin-top: 4em !important;
+
+    .text-about {
+      margin-top: 0 !important;
+
+      p:first-child {
+        font-size: 1rem !important;
+      }
+
+      .heading-1 {
+        font-size: 2.5rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      p:last-child {
+        font-size: 1rem !important;
+      }
+    }
+  }
+
+  .fitur-web {
+    margin-top: 4em !important;
+
+    p:first-child {
+      font-size: 1rem !important;
+    }
+
+    .heading-2 {
+      font-size: 2rem !important;
+    }
+
+    .fitur-card {
+      margin-bottom: 0 !important;
+      margin-top: 4em !important;
+
+      .logo-fitur {
+        width: 6.25rem !important;
+        height: 6.25rem !important;
+      }
+
+      .body-fitur {
+        .heading-3 {
+          font-size: 1.5rem !important;
+        }
+      }
+    }
+  }
+
+  .team-pengembang {
+    margin-top: 4em !important;
+
+    p:first-child {
+      font-size: 1rem !important;
+    }
+
+    .heading-2 {
+      font-size: 2rem !important;
+    }
+
+    .team-card {
+      .team-name {
+        font-size: 1.5rem !important;
+      }
+
+      .team-id {
+        font-size: 1rem !important;
+      }
+    }
+  }
+
+  .pencarian-rs {
+    margin-top: 4em !important;
+
+    .heading-1 {
+      font-size: 2.5rem !important;
+    }
+  }
+
+  .hasil-pencarian {
+    margin-top: 4em !important;
+
+    p:first-child {
+      font-size: 1rem !important;
+    }
+
+    .heading-2 {
+      font-size: 2rem !important;
+    }
+
+    .card-kamar {
+      .nama-rs {
+        font-size: 1.5rem !important;
+      }
+
+      .alamat-rs {
+        font-size: 1rem !important;
+      }
+
+      .update-rs {
+        font-size: .8rem !important;
+      }
+    }
+  }
+
+  .main-error {
+    margin-top: 2em !important;
+
+    .heading-1 {
+      font-size: 2.5rem !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .back-btn {
+      padding: 1em !important;
+    }
+  }
+
+  footer {
+    .footer-up {
+      padding: 2.5rem 2.5rem 3.5rem 2.5rem !important;
+      text-align: left !important;
+
+      p {
+        font-size: 1rem !important;
+        margin-bottom: 0 !important;
+      }
+
+      h4 {
+        font-size: 1.5rem !important;
+      }
+
+      ul {
+        li {
+          a {
+            font-size: 1rem !important;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      p {
+        font-size: 1rem !important;
+      }
+
+      .github {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #navbarNav {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          margin-right: 1em !important;
+        }
+      }
+    }
+  }
+
+  .wrap-about {
+    flex-direction: row !important;
+  }
+
+  .about-covid {
+    .text-about {
+      margin-top: 0 !important;
+
+      #heading-1 {
+        font-size: 1.5rem !important;
+      }
+    }
+  }
+
+  .blog-post,
+  .video-post {
+    .heading-2 {
+      font-size: 1.5rem !important;
+    }
+  }
+
+  .custom-blog-post {
+    .heading-3 {
+      font-size: 1.25rem !important;
+    }
+  }
+
+  .custom-video-post {
+    .card-body {
+      .heading-3 {
+        font-size: 1.25rem !important;
+      }
+    }
+  }
+
+  .search-hospital {
+    .heading-1 {
+      font-size: 2rem !important;
+    }
+  }
+
+  .blog-detail {
+    img {
+      margin-bottom: 2rem !important;
+      height: 25.625rem !important;
+    }
+
+    .komentar {
+      .heading-2 {
+        font-size: 1.5rem !important;
+      }
+    }
+  }
+
+  .komentar-terbaru {
+    .heading-2 {
+      font-size: 1.5rem !important;
+    }
+  }
+
+  .about-web {
+    .wrap-about {
+      flex-direction: row !important;
+    }
+
+    .text-about {
+      .heading-1 {
+        font-size: 1.5rem !important;
+      }
+    }
+  }
+
+  .fitur-web {
+    .heading-2 {
+      font-size: 1.5rem !important;
+    }
+
+    .fitur-card {
+      .body-fitur {
+        .heading-3 {
+          font-size: 1.25rem !important;
+        }
+      }
+    }
+  }
+
+  .team-pengembang {
+    .heading-2 {
+      font-size: 1.5rem !important;
+    }
+
+    .team-card {
+      .team-name {
+        font-size: 1.25rem !important;
+      }
+    }
+  }
+
+  .pencarian-rs {
+    .heading-1 {
+      font-size: 2rem !important;
+      padding: 0 5rem !important;
+    }
+  }
+
+  .hasil-pencarian {
+    .heading-2 {
+      font-size: 1.5rem !important;
+    }
+  }
+
+  .main-error {
+    .heading-1 {
+      font-size: 2rem !important;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .blog-detail {
+    .blog-text {
+      font-size: 1.1rem !important;
+    }
+  }
+
+  .team-pengembang {
+    img {
+      height: 15rem !important;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .about-covid {
+    margin-top: 4.5em !important;
+
+    .text-about {
+      .heading-1 {
+        font-size: 2.3rem !important;
+      }
+    }
+  }
+
+  .blog-post,
+  .video-post {
+    margin-top: 4.5em !important;
+
+    .heading-2 {
+      font-size: 2rem !important;
+    }
+  }
+
+  .blog-detail {
+    .heading-1 {
+      font-size: 2.5rem !important;
+    }
+  }
+
+  .search-hospital {
+    margin-top: 4.5em !important;
+
+    .heading-1 {
+      font-size: 2.5rem !important;
+    }
+  }
+
+  .blog-detail {
+    margin-top: 4.5em !important;
+
+    .komentar {
+      margin-top: 4.5em !important;
+
+      .heading-2 {
+        font-size: 2rem !important;
+      }
+    }
+
+    .komentar-terbaru {
+      margin-top: 4.5em !important;
+
+      .heading-2 {
+        font-size: 2rem !important;
+      }
+    }
+  }
+
+  .about-web {
+    margin-top: 4.5em !important;
+
+    .text-about {
+      .heading-1 {
+        font-size: 2.3rem !important;
+      }
+    }
+  }
+
+  .fitur-web {
+    margin-top: 4.5em !important;
+
+    .heading-2 {
+      font-size: 2.3rem !important;
+    }
+
+    .fitur-card {
+      margin-top: 4.5em !important;
+    }
+  }
+
+  .team-pengembang {
+    margin-top: 4.5em !important;
+
+    .heading-2 {
+      font-size: 2.3rem !important;
+    }
+  }
+
+  .pencarian-rs {
+    margin-top: 4.5em !important;
+
+    .heading-1 {
+      font-size: 2.5rem !important;
+    }
+  }
+
+  .hasil-pencarian {
+    margin-top: 4.5em !important;
+
+    .heading-2 {
+      font-size: 2.3rem !important;
+    }
+
+    .card-kamar {
+      .alamat-rs {
+        font-size: .8rem !important;
+      }
+
+      .update-rs {
+        font-size: .75rem !important;
+      }
+    }
+  }
+
+  .main-error {
+    margin-top: 2.5em !important;
+
+    .heading-1 {
+      font-size: 2.5rem !important;
+    }
+  }
+}

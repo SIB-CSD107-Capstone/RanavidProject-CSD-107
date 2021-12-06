@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam" />
+    <meta name="robots" content="index, follow">
+    <title>Ranavid Apps - Media Page</title>
+    <link rel="icon" href="img/favicon.png">
+  </head>
+
+  <body>
+    <a href="#main-content" class="skip-link">Menuju ke konten</a>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent custom-nav">
+          <a class="navbar-brand" href="#">
+            <img src="./img/ranavid-logo.png" alt="ranavid-logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Favorite</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary hotline-btn rounded-pill d-flex justify-content-center align-items-center"
+                  tabindex="0"><span class="iconify icon-phone" data-icon="fa-solid:phone-alt"></span> Hotline</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- main section  -->
+    <main id="main-content">
+      <section id="search-bar" class="search-bar">
+
+        <div class="container">
+          <header class="text-center px-2">
+            <h2 tabindex="0">CEK KETERSEDIAAN RAWAT INAP RUMAH SAKIT</h2>
+          </header>
+
+          <div class="row justify-content-center">
+            <div class="col col-xl-8">
+              <form action="#" class="search-form">
+                <div class="form-group">
+                  <label for="province">Pilih Provinsi</label>
+                  <select class="form-control" id="province">
+                    <option selected value>Pilih Provinsi ...</option>
+                    <option>Jawa Barat</option>
+                    <option>Jawa Timur</option>
+                    <option>Jawa Tengah</option>
+                    <option>Aceh</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="city">Pilih Kabupaten / Kota</label>
+                  <select class="form-control" id="city">
+                    <option selected value>Pilih Kab/Kota ...</option>
+                    <option>Jawa Barat</option>
+                    <option>Jawa Timur</option>
+                    <option>Jawa Tengah</option>
+                    <option>Aceh</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label tabindex="0">Jenis Rawat Inap</label>
+                  <div class="row">
+                    <div class="col col-lg-5 col-xl-4">
+                      <button class="form-check btn btn-danger" type="button">
+                        <input class="" type="radio" name="inpatient" id="covid" value="covid" checked>
+                        <label class="form-check-label" for="covid">
+                          Covid
+                        </label>
+                      </button>
+                    </div>
+                    <div class="col col-lg-5 col-xl-4">
+                      <button class="form-check btn btn-danger" type="button">
+                        <input class="" type="radio" name="inpatient" id="non-covid" value="non-covid">
+                        <label class="form-check-label" for="non-covid">
+                          Non - Covid
+                        </label>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col text-center">
+                    <button type="button" class="btn btn-search btn-danger" aria-label="cari rumah sakit"
+                      onclick="location.href='search_page.html';">Cari</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- statistic section  -->
+      <section id="statistics" class="statistics">
+        <header class="mt-5">
+          <h2 class="text-center" tabindex="0">
+            Statistik <br> Kasus Covid 19 di Indonesia
+          </h2>
+        </header>
+        <div class="container ">
+
+
+          <div class="row mb-3">
+            <div class="col">
+              <h3 tabindex="0">Total Kasus Covid 19 di Indonesia</h3>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 mb-4">
+              <div class="card p-md-4 border border-primary confirmed">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-5" tabindex="0">Kasus Terkonfirmasi</h4>
+                  <p class="card-text text-center h3" tabindex="0">95002</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 mb-4">
+              <div class="card p-md-4 border border-info treated h-100">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-5" tabindex="0">Sedang dirawat</h4>
+                  <p class="card-text text-center h3" tabindex="0">5000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 mb-4">
+              <div class="card p-md-4 border border-success healed">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-5" tabindex="0">Berhasil Sembuh</h4>
+                  <p class="card-text text-center h3" tabindex="0">95002</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 mb-4">
+              <div class="card p-md-4 border border-danger died h-100">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-5" tabindex="0">Meninggal</h4>
+                  <p class="card-text text-center h3" tabindex="0">5000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col text-center">
+              <p tabindex="0">Untuk Melihat Peta Sebaran Covid 19 di Indonesia Bisa Klik <a
+                  href="https://covid19.go.id/peta-sebaran" target="_blank" rel="noopener">disini</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="row my-5">
+            <div class="col bg-danger text-center p-5 rounded">
+              <p class="text-white" tabindex="0">Pada masa pandemi ini ayo kita selalu menerapkan pola hidup sehat
+                dengan menjalankan
+                5M (Memakai Masker, Mencuci Tangan, Menjaga Jarak, Menghindari Kerumunan, dan Mengurangi Mobilitas).</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-up">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-5 text-center text-md-left">
+              <img src="./img/ranavid-logo-trans.png" alt="ranavid-logo" class="w-4">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</p>
+            </div>
+            <div class="col-12 col-md-7 d-flex justify-content-between">
+              <div class="col-6 col-md-6">
+                <h4 tabindex="0">Resource</h4>
+                <ul>
+                  <li><a href="#">Indonesia Lokal API</a></li>
+                  <li><a href="#">API Covid Indonesia V2</a></li>
+                  <li><a href="#">RS Bed Covid Indo API</a></li>
+                  <li><a href="#">Github Project Repository</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-6">
+                <h4 tabindex="0">Referensi</h4>
+                <ul>
+                  <li><a href="#">Indonesia Lokal API</a></li>
+                  <li><a href="#">API Covid Indonesia V2</a></li>
+                  <li><a href="#">RS Bed Covid Indo API</a></li>
+                  <li><a href="#">Github Project Repository</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex justify-content-between">
+        <div
+          class="container d-flex justify-content-md-between flex-column-reverse flex-md-row align-items-center text-center content-foo-bottom">
+          <p>&copy;2021 Ranavid CSD-107. All rights reserved.</p>
+          <a href="#"><span class="iconify github" data-icon="fa-brands:github-square" style="color: white;"
+              data-width="27" data-height="31"></span></a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

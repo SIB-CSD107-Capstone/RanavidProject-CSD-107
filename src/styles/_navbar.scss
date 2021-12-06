@@ -1,0 +1,68 @@
+@use './colors';
+
+// Navigation | Navbar
+.custom-nav {
+  padding: 1em 0 1em 0;
+
+  .navbar-brand {
+    img {
+      width: 10.375rem;
+      height: 2.5em;
+    }
+  }
+
+  #navbarNav {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          font-weight: 400;
+          color: colors.$primary-color;
+          padding: 1em;
+          text-align: center;
+          transition: 0.2s ease;
+          -webkit-transition: 0.2s ease;
+          -moz-transition: 0.2s ease;
+          -ms-transition: 0.2s ease;
+          -o-transition: 0.2s ease;
+
+          &.active {
+            font-weight: 600;
+            color: colors.$secondary-color;
+          }
+
+          &:hover {
+            color: colors.$secondary-color;
+          }
+        }
+
+        .hotline-btn {
+          border: 2px solid colors.$secondary-color;
+          background-color: transparent;
+          height: 3em;
+          width: 8em;
+          margin: 0 auto;
+          color: colors.$secondary-color;
+          transition: 0.5s ease;
+          -webkit-transition: 0.5s ease;
+          -moz-transition: 0.5s ease;
+          -ms-transition: 0.5s ease;
+          -o-transition: 0.5s ease;
+
+          .icon-phone {
+            margin-right: 0.75em;
+          }
+
+          &:hover {
+            background-color: colors.$secondary-color;
+            color: white;
+          }
+        }
+      }
+
+    }
+  }
+
+  .navbar-toggler {
+    padding: .5rem;
+  }
+}
