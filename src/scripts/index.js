@@ -1,7 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import '../styles/_responsive.scss';
-import 'bootstrap';
+// import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@iconify/iconify';
 import $ from "jquery";
