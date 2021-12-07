@@ -18,24 +18,23 @@ const UrlParser = {
       id_or_sub: urlsSplits[2] || null,
       second_id: urlsSplits[3] || null,
       type: urlsSplits[4] || null,
-    }
+    };
   },
   _urlCombiner(splitedUrl) {
-    return (splitedUrl.resource ? `/${splitedUrl.resource}` : '/') +
-      (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl.id_or_sub)}` : '') +
-      (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap')? ':idhospital' : ':idcity'}` : '') +
-      (splitedUrl.type ? `/${splitedUrl.type}` : '');
+    return (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
+      + (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl.id_or_sub)}` : '')
+      + (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':idhospital' : ':idcity'}` : '')
+      + (splitedUrl.type ? `/${splitedUrl.type}` : '');
   },
 
   _checkDetailUrl(partUrl) {
     if (!partUrl) {
       return false;
-    } else if (partUrl === 'detail-rawat-inap') {
+    } if (partUrl === 'detail-rawat-inap') {
       return partUrl;
-    } else {
-      return ':idprov';
     }
-  }
-}
+    return ':idprov';
+  },
+};
 
 export default UrlParser;

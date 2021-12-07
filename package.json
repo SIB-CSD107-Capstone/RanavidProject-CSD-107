@@ -7,6 +7,7 @@
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint ./src",
+    "fix": "eslint ./src --fix",
     "test": "karma start"
   },
   "repository": {
@@ -60,6 +61,7 @@
     "html-webpack-plugin": "^4.3.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.5",
+    "sweetalert2": "^11.3.0"
   }
 }

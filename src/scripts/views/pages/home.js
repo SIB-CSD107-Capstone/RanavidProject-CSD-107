@@ -1,11 +1,10 @@
 /* eslint-disable no-undef */
 import {
   createSearchBar,
-  createStatisticsBar
+  createStatisticsBar,
 } from '../templates/template-creator';
 
 import SearchButtonInitiator from '../../utils/search-button-initiator';
-
 
 const Home = {
   async render() {
@@ -33,9 +32,9 @@ const Home = {
         if (event.target.classList.contains('form-check')) {
           event.target.firstElementChild.checked = true;
         }
-      })
+      });
     });
-  }
-}
+  },
+};
 
 export default Home;

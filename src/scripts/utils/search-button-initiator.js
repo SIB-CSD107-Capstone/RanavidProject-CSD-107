@@ -1,5 +1,6 @@
+import Swal from 'sweetalert2';
 import {
-  createSearchButton
+  createSearchButton,
 } from '../views/templates/template-creator';
 
 const SearchButtonInitiator = {
@@ -24,12 +25,15 @@ const SearchButtonInitiator = {
       if (selectProvinceElemVal && selectCityElemVal) {
         window.location.href = `/#/rumah-sakit/${selectProvinceElemVal}/${selectCityElemVal}/${typeInpatientVal}`;
       } else {
-        alert('inputan harus diisi!');
+        Swal.fire({
+          title: 'Warning!',
+          text: 'Oops Pilihan Provinsi dan Kota/Kab Harus diisi',
+          icon: 'warning',
+          confirmButtonText: 'Ok',
+        });
       }
-    })
-  }
-
-
-}
+    });
+  },
+};
 
 export default SearchButtonInitiator;

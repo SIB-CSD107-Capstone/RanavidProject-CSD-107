@@ -3,7 +3,7 @@ import routes from '../routes/routes';
 
 class App {
   constructor({
-    content
+    content,
   }) {
     this._content = content;
   }
@@ -14,7 +14,6 @@ class App {
     this._content.innerHTML = await page.render();
     await page.afterRender();
   }
-
 }
 
 export default App;

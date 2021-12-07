@@ -17,6 +17,8 @@
     "no-extra-semi": 0,
     "no-console": "off",
     "linebreak-style": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "no-param-reassign": "off",
+    "no-undef": "off"
   }
 }
