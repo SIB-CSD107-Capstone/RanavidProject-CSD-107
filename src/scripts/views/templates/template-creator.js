@@ -1,67 +1,71 @@
 const createSearchBar = () => `
 <div class="container">
-<header class="text-center px-2">
-  <h2 tabindex="0">CEK KETERSEDIAAN RAWAT INAP RUMAH SAKIT</h2>
-</header>
+      {<header class="text-center px-2">
+        <h2 tabindex="0">CEK KETERSEDIAAN RAWAT INAP RUMAH SAKIT</h2>
+      </header>
 
-<div class="row justify-content-center">
-  <div class="col col-xl-8">
-    <form action="#" class="search-form">
-      <div class="form-group">
-        <label for="province">Pilih Provinsi</label>
-        <select class="form-control" id="province">
-          <option selected value>Pilih Provinsi ...</option>
-          <option>Jawa Barat</option>
-          <option>Jawa Timur</option>
-          <option>Jawa Tengah</option>
-          <option>Aceh</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="city">Pilih Kabupaten / Kota</label>
-        <select class="form-control" id="city">
-          <option selected value>Pilih Kab/Kota ...</option>
-          <option>Jawa Barat</option>
-          <option>Jawa Timur</option>
-          <option>Jawa Tengah</option>
-          <option>Aceh</option>
-        </select>
-      </div>
+      <div class="row justify-content-center">
+        <div class="col col-xl-8">
+          <form action="#" class="search-form">
+            <div class="form-group">
+              <label for="province">Pilih Provinsi</label>
+              <select class="form-control" id="province">
+                <option selected value>Pilih Provinsi ...</option>
+                <option value="32prop">Jawa Barat</option>
+                <option value="33prop">Jawa Timur</option>
+                <option>Jawa Tengah</option>
+                <option>Aceh</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="city">Pilih Kabupaten / Kota</label>
+              <select class="form-control" id="city">
+                <option selected value>Pilih Kab/Kota ...</option>
+                <option value="3216">Bekasi</option>
+                <option value="3217">Karawang</option>
+                <option>Cikarang</option>
+                <option>Cikampek</option>
+              </select>
+            </div>
 
-      <div class="form-group">
-        <label tabindex="0">Jenis Rawat Inap</label>
-        <div class="row">
-          <div class="col col-lg-5 col-xl-4">
-            <button class="form-check btn btn-danger" type="button">
-              <input class="" type="radio" name="inpatient" id="covid" value="covid" checked>
-              <label class="form-check-label" for="covid">
-                Covid
-              </label>
-            </button>
-          </div>
-          <div class="col col-lg-5 col-xl-4">
-            <button class="form-check btn btn-danger" type="button">
-              <input class="" type="radio" name="inpatient" id="non-covid" value="non-covid">
-              <label class="form-check-label" for="non-covid">
-                Non - Covid
-              </label>
-            </button>
-          </div>
+            <div class="form-group">
+              <label tabindex="0">Jenis Rawat Inap</label>
+              <div class="row">
+                <div class="col col-lg-5 col-xl-4">
+                  <button class="form-check btn btn-danger" type="button">
+                    <input type="radio" name="inpatient" id="covid" value="1" checked>
+                    <label class="form-check-label" for="covid">
+                      Covid
+                    </label>
+                  </button>
+                </div>
+                <div class="col col-lg-5 col-xl-4">
+                  <button class="form-check btn btn-danger" type="button">
+                    <input type="radio" name="inpatient" id="non-covid" value="2">
+                    <label class="form-check-label" for="non-covid">
+                      Non - Covid
+                    </label>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col text-center" id="btn-search-container">
+                
+              </div>
+            </div>
+          </form>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col text-center">
-          <button type="button" class="btn btn-search btn-danger" aria-label="cari rumah sakit"
-            onclick="location.href='search_page.html';">Cari</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
+    </div>
 
-</div>
+`;
 
+const createSearchButton = () => `
+<button type="button" class="btn btn-search btn-danger" id="btn-cari-rs"
+                  aria-label="cari rumah sakit">Cari</button>
 `;
 
 const createStatisticsBar = () => `
@@ -138,4 +142,5 @@ const createStatisticsBar = () => `
 export {
   createSearchBar,
   createStatisticsBar,
+  createSearchButton,
 };

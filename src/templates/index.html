@@ -64,7 +64,7 @@
                   <label for="province">Pilih Provinsi</label>
                   <select class="form-control" id="province">
                     <option selected value>Pilih Provinsi ...</option>
-                    <option>Jawa Barat</option>
+                    <option value="32prop">Jawa Barat</option>
                     <option>Jawa Timur</option>
                     <option>Jawa Tengah</option>
                     <option>Aceh</option>
@@ -74,10 +74,10 @@
                   <label for="city">Pilih Kabupaten / Kota</label>
                   <select class="form-control" id="city">
                     <option selected value>Pilih Kab/Kota ...</option>
-                    <option>Jawa Barat</option>
-                    <option>Jawa Timur</option>
-                    <option>Jawa Tengah</option>
-                    <option>Aceh</option>
+                    <option value="3216">Bekasi</option>
+                    <option>Karawang</option>
+                    <option>Cikarang</option>
+                    <option>Cikampek</option>
                   </select>
                 </div>
 
@@ -86,7 +86,7 @@
                   <div class="row">
                     <div class="col col-lg-5 col-xl-4">
                       <button class="form-check btn btn-danger" type="button">
-                        <input class="" type="radio" name="inpatient" id="covid" value="covid" checked>
+                        <input class="" type="radio" name="inpatient" id="covid" value="1" checked>
                         <label class="form-check-label" for="covid">
                           Covid
                         </label>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="col col-lg-5 col-xl-4">
                       <button class="form-check btn btn-danger" type="button">
-                        <input class="" type="radio" name="inpatient" id="non-covid" value="non-covid">
+                        <input class="" type="radio" name="inpatient" id="non-covid" value="2">
                         <label class="form-check-label" for="non-covid">
                           Non - Covid
                         </label>
@@ -104,9 +104,9 @@
                 </div>
 
                 <div class="row">
-                  <div class="col text-center">
-                    <button type="button" class="btn btn-search btn-danger" aria-label="cari rumah sakit"
-                      onclick="location.href='search_page.html';">Cari</button>
+                  <div class="col text-center" id="btn-search-container">
+                    <button type="button" class="btn btn-search btn-danger" id="btn-cari-rs"
+                      aria-label="cari rumah sakit">Cari</button>
                   </div>
                 </div>
               </form>
