@@ -753,11 +753,16 @@ main {
   .title-wrapper {
     display: flex;
 
-    .like-icon {
-      // font-size: 2em;
-      margin-top: -1em;
-      margin-left: 10px;
-      cursor: pointer;
+    button {
+      margin-left: 6px;
+      margin-top: -.6em;
+      background-color: transparent;
+      border: 0;
+
+      .like-icon {
+        color: #eaeaea;
+        outline: 0;
+      }
     }
   }
 

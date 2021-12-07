@@ -29,7 +29,7 @@ const HospitalizationDetailButtonInitiator = {
       }
       // contoh 1 id hospital
       const idHospital = '3216399';
-      window.location.href = `/#/rumah-sakit/detail-rawat-inap/${idHospital}/1`;
+      window.location.href = `/#/rumah-sakit/detail-rawat-inap/${idHospital}/${partUrl.type}`;
     });
   },
 };
