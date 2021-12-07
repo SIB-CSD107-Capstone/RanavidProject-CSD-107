@@ -477,6 +477,109 @@ const createFavoriteHospitalTemplate = () => `
 </div>
 `;
 
+const createAboutWebTemplate = () => `
+<div class="row d-flex align-items-center wrap-about">
+    <div class="col-12 col-lg-6 gambar-about">
+      <img src="img/corona-1.png" alt="Orang memakai masker" tabindex="0">
+    </div>
+    <div class="col-12 col-lg-6 text-about">
+      <p tabindex="0">Tentang Aplikasi</p>
+      <h1 class="heading-1" tabindex="0">Mengenal Website Ranavid <span class="d-red">.</span></h1>
+      <p tabindex="0">Virus Corona atau severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) adalah virus yang menyerang
+        sistem pernapasan. Penyakit akibat infeksi virus ini disebut COVID-19. Virus Corona bisa menyebabkan
+        gangguan
+        ringan pada sistem pernapasan, infeksi paru-paru yang berat, hingga kematian.
+      </p>
+    </div>
+  </div>
+`;
+
+const createFiturWebTemplate = () => `
+<p tabindex="0">Mengenal Fitur</p>
+  <h2 class="heading-2" tabindex="0">Fitur yang Ada Dalam Website <span class="d-red">.</span></h2>
+  <div class="col-12 col-md-10 mx-auto d-flex flex-column flex-md-row fitur-card">
+    <div class="col-12 col-md-4 mb-4 container-fitur">
+      <div class="card h-100 border-0 text-center">
+        <div class="logo-fitur d-flex justify-content-center align-items-center mx-auto">
+          <span class="iconify" data-icon="fa-solid:chart-bar" style="color: white;" data-width="35"></span>
+        </div>
+        <div class="card-body body-fitur">
+          <h3 class="card-title heading-3" tabindex="0">Statistik Covid UpToDAte</h3>
+          <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 mb-4 container-fitur">
+      <div class="card h-100 border-0 text-center">
+        <div class="logo-fitur d-flex justify-content-center align-items-center mx-auto">
+          <span class="iconify" data-icon="fa-solid:search" style="color: white;" data-width="35"></span>
+        </div>
+        <div class="card-body body-fitur">
+          <h3 class="card-title heading-3" tabindex="0">Pencarian Rumah Sakit</h3>
+          <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 container-fitur">
+      <div class="card h-100 border-0 text-center">
+        <div class="logo-fitur d-flex justify-content-center align-items-center mx-auto">
+          <span class="iconify" data-icon="fa-solid:book-medical" style="color: white;" data-width="35"></span>
+        </div>
+        <div class="card-body body-fitur">
+          <h3 class="card-title heading-3" tabindex="0">Blog Edukasi Tentang Covid19</h3>
+          <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+
+const createTeamPengembangTemplate = () => `
+<p tabindex="0">Mari Berkenalan</p>
+  <h2 class="heading-2" tabindex="0">Team Pengembang Website <span class="d-red">.</span></h2>
+
+  <div class="col-12 col-md-10 mx-auto d-flex flex-column flex-md-row">
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card h-100 team-card">
+        <img
+          src="https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+          class="card-img-top" alt="Foto Ikram" tabindex="0">
+        <div class="card-body pb-3">
+          <h3 class="card-title team-name" tabindex="0">Ikram Maulana</h3>
+          <p class="card-text team-id" tabindex="0">F267R4264</p>
+        </div>
+        <div class="i-social mb-4">
+          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:instagram-square"
+              style="color: #121e2a;" data-width="24" data-height="24"></span></a>
+          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
+              data-width="24" data-height="24"></span></a>
+          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
+              data-width="24" data-height="24"></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card h-100 team-card">
+        <img
+          src="https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+          class="card-img-top" alt="Foto Febrianto" tabindex="0">
+        <div class="card-body pb-3">
+          <h3 class="card-title team-name" tabindex="0">Febrianto</h3>
+          <p class="card-text team-id" tabindex="0">F190R7147</p>
+        </div>
+        <div class="i-social mb-4">
+          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:instagram-square"
+              style="color: #121e2a;" data-width="24" data-height="24"></span></a>
+          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
+              data-width="24" data-height="24"></span></a>
+          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
+              data-width="24" data-height="24"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+
 export {
   createSearchBar,
   createStatisticsBar,
@@ -486,4 +589,7 @@ export {
   createInfoAvailableBedButtonTemplate,
   createHospitalizationDetailTemplate,
   createFavoriteHospitalTemplate,
+  createAboutWebTemplate,
+  createFiturWebTemplate,
+  createTeamPengembangTemplate,
 };
