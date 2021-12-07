@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -78,5 +79,40 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
+    new WebpackPwaManifest({
+      name: 'Ranavid App',
+      short_name: 'Ranavid Lite',
+      description: 'Aplikasi Web Pencarian Rumah Sakit Rawat Inap Covid19',
+      background_color: '#121E2A',
+      crossorigin: 'use-credentials', // can be null, use-credentials or anonymous
+      icons: [
+        {
+          src: path.resolve('src/public/img/favicon.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+        },
+        {
+          src: path.resolve('src/public/img/favicon.png'),
+          size: '1024x1024',
+          purpose: 'maskable',
+        },
+        {
+          src: path.resolve('src/public/img/favicon.png'),
+          sizes: [120, 152, 167, 180, 1024],
+          destination: path.join('icons', 'ios'),
+          ios: true,
+        },
+        {
+          src: path.resolve('src/public/img/favicon.png'),
+          size: 1024,
+          destination: path.join('icons', 'ios'),
+          ios: 'startup',
+        },
+        {
+          src: path.resolve('src/public/img/favicon.png'),
+          sizes: [36, 48, 72, 96, 144, 192, 512],
+          destination: path.join('icons', 'android'),
+        },
+      ],
+    }),
   ],
 };
