@@ -2,10 +2,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
+  devtool: 'eval-source-map',
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -85,8 +89,7 @@ module.exports = {
       description: 'Aplikasi Web Pencarian Rumah Sakit Rawat Inap Covid19',
       background_color: '#121E2A',
       crossorigin: 'use-credentials', // can be null, use-credentials or anonymous
-      icons: [
-        {
+      icons: [{
           src: path.resolve('src/public/img/favicon.png'),
           sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
         },
