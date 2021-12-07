@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 import {
   createSearchBar,
-  createStatisticsBar
+  createStatisticsBar,
 } from '../templates/template-creator';
 
 const Home = {
@@ -16,9 +17,8 @@ const Home = {
     const statisticsBar = document.querySelector('#statistics');
     searchBar.innerHTML = createSearchBar();
     statisticsBar.innerHTML = createStatisticsBar();
-  }
+  },
 
-
-}
+};
 
 export default Home;
