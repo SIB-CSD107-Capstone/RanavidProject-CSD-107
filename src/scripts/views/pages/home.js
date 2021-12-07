@@ -4,7 +4,7 @@ import {
   createStatisticsBar
 } from '../templates/template-creator';
 
-import SearchButtonInitiator from '../../../utils/search-button-initiator';
+import SearchButtonInitiator from '../../utils/search-button-initiator';
 
 
 const Home = {
@@ -28,7 +28,7 @@ const Home = {
 
     const ButtonsTypeOfHospitalization = document.querySelectorAll('button.form-check');
 
-    ButtonsTypeOfHospitalization.forEach((btnType, i) => {
+    ButtonsTypeOfHospitalization.forEach((btnType) => {
       btnType.addEventListener('click', (event) => {
         if (event.target.classList.contains('form-check')) {
           event.target.firstElementChild.checked = true;

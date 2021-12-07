@@ -1,6 +1,6 @@
 import {
   createSearchButton
-} from '../scripts/views/templates/template-creator';
+} from '../views/templates/template-creator';
 
 const SearchButtonInitiator = {
   init({
@@ -10,11 +10,6 @@ const SearchButtonInitiator = {
 
     this._renderButton();
   },
-
-  getInputFormValue() {
-
-  },
-
   _renderButton() {
     this._buttonContainer.innerHTML = createSearchButton();
 
