@@ -5,9 +5,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@iconify/iconify';
 import $ from "jquery";
-import {
-  UrlParser
-} from './routes/url-parser';
+import App from './views/app';
 
 const ButtonsTypeOfHospitalization = document.querySelectorAll('button.form-check');
 
@@ -28,6 +26,14 @@ $('.multi-collapse').on('hide.bs.collapse', function () {
   this.previousElementSibling.querySelector('.up-arrow-icon').style.transform = "rotate(180deg)";
 });
 
+const app = new App({
+  content: document.querySelector('#main-content'),
+})
+
+window.addEventListener('load', (event) => {
+  app.renderPage();
+})
+
 window.addEventListener('hashchange', (event) => {
-  console.log(UrlParser.parseActiveUrlWithCombiner());
+  app.renderPage();
 })
