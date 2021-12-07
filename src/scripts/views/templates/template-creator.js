@@ -204,9 +204,7 @@ const createSearchResultTemplate = () => `
                 <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS Umum Daerah Sekarwangi</h3>
                 <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
                 <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-                <div tabindex="0" class="btn btn-primary btn-rs-ready px-3 rounded-pill">
-                  Tersedia 6 Kamar
-                </div>
+
               </div>
             </div>
           </div>
@@ -262,6 +260,11 @@ const createSearchResultTemplate = () => `
       </div>
 `;
 
+const createInfoAvailableBedButtonTemplate = () => `
+<div tabindex="0" class="btn btn-primary btn-rs-ready px-3 rounded-pill">
+                  Tersedia 6 Kamar
+                </div>
+`;
 
 export {
   createSearchBar,
@@ -269,4 +272,5 @@ export {
   createSearchButton,
   createSearchHospitalBarTemplate,
   createSearchResultTemplate,
+  createInfoAvailableBedButtonTemplate,
 };

@@ -3,6 +3,8 @@ import {
   createSearchResultTemplate
 } from '../templates/template-creator';
 
+import HospitalizationDetailButtonInitiator from '../../utils/hospitalization-detail-button-initiator';
+
 const Search = {
   async render() {
     document.querySelector('#main-content').setAttribute('class', 'container');
@@ -18,6 +20,11 @@ const Search = {
 
     searchHospitalElem.innerHTML = createSearchHospitalBarTemplate();
     searchResultElem.innerHTML = createSearchResultTemplate();
+
+    HospitalizationDetailButtonInitiator.init({
+      // hanya satu card dulu (card paling atas)
+      buttonContainer: document.querySelector('.card-kamar').firstElementChild,
+    });
   },
 };
 
