@@ -1,9 +1,11 @@
+/* eslint-disable no-undef */
 import {
   createSearchBar,
   createStatisticsBar
 } from '../templates/template-creator';
 
 import SearchButtonInitiator from '../../../utils/search-button-initiator';
+
 
 const Home = {
   async render() {
@@ -34,8 +36,6 @@ const Home = {
       })
     });
   }
-
-
 }
 
 export default Home;

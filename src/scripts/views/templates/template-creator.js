@@ -1,5 +1,6 @@
 const createSearchBar = () => `
 <div class="container">
+<<<<<<< HEAD
       {<header class="text-center px-2">
         <h2 tabindex="0">CEK KETERSEDIAAN RAWAT INAP RUMAH SAKIT</h2>
       </header>
