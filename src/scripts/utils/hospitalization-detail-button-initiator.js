@@ -27,10 +27,10 @@ const HospitalizationDetailButtonInitiator = {
       } else {
         console.log('Oops your browser is not support session storage feature');
       }
-      // contoh 1 id hospital 
+      // contoh 1 id hospital
       const idHospital = '3216399';
       window.location.href = `/#/rumah-sakit/detail-rawat-inap/${idHospital}/1`;
-    })
+    });
   },
 };
 

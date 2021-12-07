@@ -1,6 +1,6 @@
 import {
   createSearchHospitalBarTemplate,
-  createSearchResultTemplate
+  createSearchResultTemplate,
 } from '../templates/template-creator';
 
 import HospitalizationDetailButtonInitiator from '../../utils/hospitalization-detail-button-initiator';

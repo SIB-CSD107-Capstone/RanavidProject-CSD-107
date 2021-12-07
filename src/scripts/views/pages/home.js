@@ -8,6 +8,10 @@ import SearchButtonInitiator from '../../utils/search-button-initiator';
 
 const Home = {
   async render() {
+    const mainContentElem = document.querySelector('#main-content');
+    if (mainContentElem.classList.contains('container')) {
+      mainContentElem.classList.remove('container');
+    }
     return `
     <section id="search-bar" class="search-bar"></section>
     <section id="statistics" class="statistics"></section>
