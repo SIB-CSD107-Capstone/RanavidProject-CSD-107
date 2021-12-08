@@ -1,4 +1,12 @@
-const createSearchBar = () => `
+const createSearchBar = (indoProvinces) => {
+  let optionProvinces = '<option selected value>Pilih Provinsi ...</option>';
+  indoProvinces.forEach((province) => {
+    optionProvinces += `
+    <option value="${province.id}">${province.name}</option>
+    `;
+  });
+
+  return `
 <div class="container">
       <header class="text-center px-2">
         <h2 tabindex="0">CEK KETERSEDIAAN RAWAT INAP RUMAH SAKIT</h2>
@@ -10,21 +18,13 @@ const createSearchBar = () => `
             <div class="form-group">
               <label for="province">Pilih Provinsi</label>
               <select class="form-control" id="province">
-                <option selected value>Pilih Provinsi ...</option>
-                <option value="32prop">Jawa Barat</option>
-                <option value="33prop">Jawa Timur</option>
-                <option>Jawa Tengah</option>
-                <option>Aceh</option>
+                ${optionProvinces}
               </select>
             </div>
             <div class="form-group">
               <label for="city">Pilih Kabupaten / Kota</label>
               <select class="form-control" id="city">
                 <option selected value>Pilih Kab/Kota ...</option>
-                <option value="3216">Bekasi</option>
-                <option value="3217">Karawang</option>
-                <option>Cikarang</option>
-                <option>Cikampek</option>
               </select>
             </div>
 
@@ -62,6 +62,7 @@ const createSearchBar = () => `
     </div>
 
 `;
+};
 
 const createSearchButton = () => `
 <button type="button" class="btn btn-search btn-danger" id="btn-cari-rs"

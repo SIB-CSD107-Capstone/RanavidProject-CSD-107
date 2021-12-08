@@ -1,4 +1,4 @@
-class RsBedIndoSource {
+class IndoHospitalBedSource {
   static async indoProvinces() {
     const response = await fetch('https://rs-bed-covid-api.vercel.app/api/get-provinces');
     const responseJson = await response.json();
@@ -30,4 +30,4 @@ class RsBedIndoSource {
   }
 };
 
-export default RsBedIndoSource;
+export default IndoHospitalBedSource;
