@@ -20,29 +20,8 @@ const Home = {
   async afterRender() {
     const searchBar = document.querySelector('#search-bar');
 
-    // const indoProvinces = await IndoHospitalBedSource.indoProvinces();
-
-    // searchBar.innerHTML = createSearchBar(indoProvinces.provinces);
-    searchBar.appendChild(createSearchBar());
-
-    // const selectCityElem = document.getElementById('city');
-    // const selectProvinceElem = document.getElementById('province');
-    // selectProvinceElem.addEventListener('change', async (event) => {
-    //   const indoCities = await IndoHospitalBedSource.indoCitiesDistricts(event.target.value);
-
-    //   let optionCities = '<option selected value>Pilih Kab/Kota ...</option>';
-    //   indoCities.cities.forEach((city) => {
-    //     optionCities += `
-    //     <option value="${city.id}">${city.name}</option>
-    //     `;
-    //   });
-
-    //   selectCityElem.innerHTML = optionCities;
-    // });
-
-    // SearchButtonInitiator.init({
-    //   buttonContainer: document.querySelector('#btn-search-container'),
-    // });
+    // searchBar.appendChild(createSearchBar());
+    searchBar.innerHTML = createSearchBar();
 
     const statisticsBar = document.querySelector('#statistics');
     const dataStatisticsCovidIndo = await CovidCasesIndoSource.totalCases();

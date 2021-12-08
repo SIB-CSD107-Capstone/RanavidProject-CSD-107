@@ -12,7 +12,7 @@ const SearchButtonInitiator = {
     this._renderButton();
   },
   _renderButton() {
-    this._buttonContainer.innerHTML = createSearchButton();
+    this._buttonContainer.innerHTML = createSearchButton('in-landing-page');
 
     const searchButton = document.querySelector('#btn-cari-rs');
     searchButton.addEventListener('click', (event) => {

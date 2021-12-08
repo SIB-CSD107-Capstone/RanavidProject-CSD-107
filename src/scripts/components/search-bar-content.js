@@ -1,9 +1,9 @@
 import OptionElementInitiator from '../utils/option-element-initiator';
 import SearchButtonInitiator from '../utils/search-button-initiator';
 
-class SearchBar extends HTMLElement {
+class SearchBarContent extends HTMLElement {
   connectedCallback() {
-    this.id = this.getAttribute('id') || null;
+    this['data-flag'] = this.getAttribute('data-flag') || null;
     this.render();
   }
 
@@ -75,4 +75,4 @@ class SearchBar extends HTMLElement {
   }
 }
 
-customElements.define('search-bar', SearchBar);
+customElements.define('search-bar-content', SearchBarContent);

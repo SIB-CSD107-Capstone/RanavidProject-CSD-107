@@ -12,29 +12,9 @@ const OptionElementInitiator = {
   },
 
   async _renderOptions() {
-    // const indoProvinces = await IndoHospitalBedSource.indoProvinces();
-
-    // let optionsProvinces = '<option selected value>Pilih Provinsi ...</option>';
-    // indoProvinces.provinces.forEach((province) => {
-    //   optionsProvinces += `
-    // <option value="${province.id}">${province.name}</option>
-    // `;
-    // });
-
-    // this._selectProvinceElem.innerHTML = optionsProvinces;
     await this._renderProvinceOptions();
 
     this._selectProvinceElem.addEventListener('change', async (event) => {
-      // const indoCities = await IndoHospitalBedSource.indoCitiesDistricts(event.target.value);
-
-      // let optionCities = '<option selected value>Pilih Kab/Kota ...</option>';
-      // indoCities.cities.forEach((city) => {
-      //   optionCities += `
-      //   <option value="${city.id}">${city.name}</option>
-      //   `;
-      // });
-
-      // this._selectCityElem.innerHTML = optionCities;
       await this._renderCityOptions(event.target.value);
     });
   },
