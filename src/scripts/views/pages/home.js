@@ -1,5 +1,5 @@
 import {
-  createSearchBar,
+  createSearchBarTemplate,
   createStatisticContentTemplate,
 } from '../templates/template-creator';
 
@@ -21,7 +21,7 @@ const Home = {
     const searchBar = document.querySelector('#search-bar');
 
     // searchBar.appendChild(createSearchBar());
-    searchBar.innerHTML = createSearchBar();
+    searchBar.innerHTML = createSearchBarTemplate('in-landing-page');
 
     const statisticsBar = document.querySelector('#statistics');
     const dataStatisticsCovidIndo = await CovidCasesIndoSource.totalCases();

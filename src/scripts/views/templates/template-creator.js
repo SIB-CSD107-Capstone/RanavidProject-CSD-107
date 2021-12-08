@@ -1,9 +1,9 @@
 import '../../components/search-bar-content';
 import '../../components/statistic-section-content';
 
-const createSearchBar = () => {
+const createSearchBarTemplate = (flag) => {
   // const searcBarContent = document.createElement('search-bar');
-  const searcBarContent = '<search-bar-content data-flag="in-landing-page"></search-bar-content>';
+  const searcBarContent = `<search-bar-content data-flag="${flag}"></search-bar-content>`;
   return searcBarContent;
 };
 
@@ -541,7 +541,7 @@ const createTeamPengembangTemplate = () => `
 `;
 
 export {
-  createSearchBar,
+  createSearchBarTemplate,
   // createStatisticsBar,
   createStatisticContentTemplate,
   createSearchButton,
