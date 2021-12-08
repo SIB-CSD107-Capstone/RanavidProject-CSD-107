@@ -5,6 +5,7 @@ import {
 
 import SearchButtonInitiator from '../../utils/search-button-initiator';
 import IndoHospitalBedSource from '../../data/indo-hospital-bed-source';
+import CovidCasesIndoSource from '../../data/covid-cases-indo-source';
 
 const Home = {
   async render() {
@@ -20,7 +21,6 @@ const Home = {
 
   async afterRender() {
     const searchBar = document.querySelector('#search-bar');
-    const statisticsBar = document.querySelector('#statistics');
 
     const indoProvinces = await IndoHospitalBedSource.indoProvinces();
 
@@ -29,9 +29,8 @@ const Home = {
     const selectCityElem = document.getElementById('city');
     const selectProvinceElem = document.getElementById('province');
     selectProvinceElem.addEventListener('change', async (event) => {
-      console.log(event.target.value);
       const indoCities = await IndoHospitalBedSource.indoCitiesDistricts(event.target.value);
-      console.log(indoCities);
+
       let optionCities = '<option selected value>Pilih Kab/Kota ...</option>';
       indoCities.cities.forEach((city) => {
         optionCities += `
@@ -42,14 +41,17 @@ const Home = {
       selectCityElem.innerHTML = optionCities;
     });
 
-    statisticsBar.innerHTML = createStatisticsBar();
+    const statisticsBar = document.querySelector('#statistics');
+    const dataStatisticsCovidIndo = await CovidCasesIndoSource.totalCases();
+    console.log(dataStatisticsCovidIndo);
+    statisticsBar.innerHTML = createStatisticsBar(dataStatisticsCovidIndo);
 
     SearchButtonInitiator.init({
       buttonContainer: document.querySelector('#btn-search-container'),
     });
 
     const ButtonsTypeOfHospitalization = document.querySelectorAll('button.form-check');
-
+    // for if btn element type of hospitalization on click, so tag input type radion is checked
     ButtonsTypeOfHospitalization.forEach((btnType) => {
       btnType.addEventListener('click', (event) => {
         if (event.target.classList.contains('form-check')) {
