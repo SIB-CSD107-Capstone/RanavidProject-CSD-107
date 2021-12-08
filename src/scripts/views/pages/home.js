@@ -41,14 +41,14 @@ const Home = {
       selectCityElem.innerHTML = optionCities;
     });
 
-    const statisticsBar = document.querySelector('#statistics');
-    const dataStatisticsCovidIndo = await CovidCasesIndoSource.totalCases();
-    console.log(dataStatisticsCovidIndo);
-    statisticsBar.innerHTML = createStatisticsBar(dataStatisticsCovidIndo);
-
     SearchButtonInitiator.init({
       buttonContainer: document.querySelector('#btn-search-container'),
     });
+
+    const statisticsBar = document.querySelector('#statistics');
+    const dataStatisticsCovidIndo = await CovidCasesIndoSource.totalCases();
+
+    statisticsBar.innerHTML = createStatisticsBar(dataStatisticsCovidIndo);
 
     const ButtonsTypeOfHospitalization = document.querySelectorAll('button.form-check');
     // for if btn element type of hospitalization on click, so tag input type radion is checked
