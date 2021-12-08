@@ -7,6 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import '@iconify/iconify';
 import $ from 'jquery';
 import App from './views/app';
+import RsBedIndoSource from './data/indo-hospital-bed-api';
 
 // rotate up-arrow-icon on event collapse accordion
 $('.multi-collapse').on('show.bs.collapse', () => {
@@ -28,3 +29,13 @@ window.addEventListener('load', () => {
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });
+
+const getApi = async () => {
+  await RsBedIndoSource.indoProvinces();
+  await RsBedIndoSource.indoCitiesDistricts('32prop');
+  await RsBedIndoSource.indoHospitalsByType('32prop', '3216', 1);
+  await RsBedIndoSource.indoHospitalBedByType('3216399', 1);
+  await RsBedIndoSource.indoHospitalMap('3216399');
+};
+
+getApi();
