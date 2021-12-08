@@ -8,6 +8,7 @@ import '@iconify/iconify';
 import $ from 'jquery';
 import App from './views/app';
 import RsBedIndoSource from './data/indo-hospital-bed-api';
+import DataCovidIndo from './data/data-covid-indo-api';
 
 // rotate up-arrow-icon on event collapse accordion
 $('.multi-collapse').on('show.bs.collapse', () => {
@@ -36,6 +37,7 @@ const getApi = async () => {
   await RsBedIndoSource.indoHospitalsByType('32prop', '3216', 1);
   await RsBedIndoSource.indoHospitalBedByType('3216399', 1);
   await RsBedIndoSource.indoHospitalMap('3216399');
+  await DataCovidIndo.totalCases();
 };
 
 getApi();
