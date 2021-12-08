@@ -5,10 +5,10 @@ import '../styles/_responsive.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import '@iconify/iconify';
+import './components/navbar-app';
+import './components/footer-app';
 import $ from 'jquery';
 import App from './views/app';
-import IndoHospitalBedSource from './data/indo-hospital-bed-source';
-import CovidCasesIndoSource from './data/covid-cases-indo-source';
 
 // rotate up-arrow-icon on event collapse accordion
 $('.multi-collapse').on('show.bs.collapse', () => {
@@ -30,14 +30,3 @@ window.addEventListener('load', () => {
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });
-
-const getApi = async () => {
-  await IndoHospitalBedSource.indoProvinces();
-  await IndoHospitalBedSource.indoCitiesDistricts('32prop');
-  await IndoHospitalBedSource.indoHospitalsByType('32prop', '3216', 1);
-  await IndoHospitalBedSource.indoHospitalBedByType('3216399', 1);
-  await IndoHospitalBedSource.indoHospitalMap('3216399');
-  await CovidCasesIndoSource.totalCases();
-};
-
-getApi();

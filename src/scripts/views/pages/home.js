@@ -3,8 +3,6 @@ import {
   createStatisticsBar,
 } from '../templates/template-creator';
 
-import SearchButtonInitiator from '../../utils/search-button-initiator';
-import IndoHospitalBedSource from '../../data/indo-hospital-bed-source';
 import CovidCasesIndoSource from '../../data/covid-cases-indo-source';
 
 const Home = {
@@ -22,28 +20,29 @@ const Home = {
   async afterRender() {
     const searchBar = document.querySelector('#search-bar');
 
-    const indoProvinces = await IndoHospitalBedSource.indoProvinces();
+    // const indoProvinces = await IndoHospitalBedSource.indoProvinces();
 
-    searchBar.innerHTML = createSearchBar(indoProvinces.provinces);
+    // searchBar.innerHTML = createSearchBar(indoProvinces.provinces);
+    searchBar.appendChild(createSearchBar());
 
-    const selectCityElem = document.getElementById('city');
-    const selectProvinceElem = document.getElementById('province');
-    selectProvinceElem.addEventListener('change', async (event) => {
-      const indoCities = await IndoHospitalBedSource.indoCitiesDistricts(event.target.value);
+    // const selectCityElem = document.getElementById('city');
+    // const selectProvinceElem = document.getElementById('province');
+    // selectProvinceElem.addEventListener('change', async (event) => {
+    //   const indoCities = await IndoHospitalBedSource.indoCitiesDistricts(event.target.value);
 
-      let optionCities = '<option selected value>Pilih Kab/Kota ...</option>';
-      indoCities.cities.forEach((city) => {
-        optionCities += `
-        <option value="${city.id}">${city.name}</option>
-        `;
-      });
+    //   let optionCities = '<option selected value>Pilih Kab/Kota ...</option>';
+    //   indoCities.cities.forEach((city) => {
+    //     optionCities += `
+    //     <option value="${city.id}">${city.name}</option>
+    //     `;
+    //   });
 
-      selectCityElem.innerHTML = optionCities;
-    });
+    //   selectCityElem.innerHTML = optionCities;
+    // });
 
-    SearchButtonInitiator.init({
-      buttonContainer: document.querySelector('#btn-search-container'),
-    });
+    // SearchButtonInitiator.init({
+    //   buttonContainer: document.querySelector('#btn-search-container'),
+    // });
 
     const statisticsBar = document.querySelector('#statistics');
     const dataStatisticsCovidIndo = await CovidCasesIndoSource.totalCases();
