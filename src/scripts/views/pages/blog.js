@@ -2,6 +2,7 @@ import {
   createAboutCovid,
   createBlogPost,
   createVlogPost,
+  createSearchSectionAds,
 } from '../templates/template-creator';
 import MediaDBSource from '../../data/mediadb-source';
 
@@ -27,6 +28,9 @@ const Blog = {
       <div class="row row-cols-1 row-cols-md-4 vlog-list">
       </div>
     </section>
+    <!-- Search Ads -->
+    <section class="search-hospital">
+    </section>
     `;
   },
 
@@ -43,6 +47,8 @@ const Blog = {
     vlogs.forEach((vlog) => {
       vlogList.innerHTML += createVlogPost(vlog);
     });
+    const searchAds = document.querySelector('.search-hospital');
+    searchAds.innerHTML = createSearchSectionAds();
   },
 };
 

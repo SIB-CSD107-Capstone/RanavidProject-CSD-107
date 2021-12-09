@@ -520,6 +520,14 @@ const createVlogPost = (vlog) => `
         </div>
 `;
 
+const createSearchSectionAds = () => `
+      <h1 class="heading-1" tabindex="0">Cari Rumah Sakit Rawat Inap Covid-19</h1>
+      <p tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua</p>
+      <div class="btn btn-danger to-search-btn" tabindex="0" onclick="location.href='/';">Cari Sekarang <span class="iconify ml-2"
+          data-icon="fa-solid:angle-right"></span></div>
+`;
+
 export {
   createSearchBarTemplate,
   // createStatisticsBar,
@@ -536,4 +544,5 @@ export {
   createAboutCovid,
   createBlogPost,
   createVlogPost,
+  createSearchSectionAds,
 };
