@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const UrlParser = {
   parseActiveUrlWithCombiner() {
     const url = window.location.hash.slice(1).toLowerCase();
@@ -30,7 +29,8 @@ const UrlParser = {
   _checkDetailUrl(partUrl) {
     if (!partUrl) {
       return false;
-    } if (partUrl === 'detail-rawat-inap') {
+    }
+    if (partUrl === 'detail-rawat-inap') {
       return partUrl;
     }
     return ':idprov';

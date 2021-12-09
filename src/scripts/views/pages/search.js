@@ -1,6 +1,5 @@
 import {
   createSearchBarTemplate,
-  // createSearchHospitalBarTemplate,
   createSearchResultTemplate,
 } from '../templates/template-creator';
 import UrlParser from '../../routes/url-parser';
@@ -22,8 +21,7 @@ const Search = {
               <input type="text" class="border-0 input-rs pl-2 overflow-hidden" aria-label="Cari Rumah Sakit"
                 placeholder="Cari Rumah Sakit ..." aria-describedby="Cari Rumah Sakit">
             </div>
-          </div>
-          
+          </div>   
     </section>
     `;
   },
@@ -32,7 +30,6 @@ const Search = {
     const searchHospitalBarContainer = document.querySelector('.pencarian-rs');
     const cardHasilElem = document.querySelector('.card-hasil');
 
-    // searchHospitalBarContainer.innerHTML = createSearchHospitalBarTemplate();
     searchHospitalBarContainer.innerHTML = createSearchBarTemplate('in-search-page');
 
     const url = UrlParser.parseActiveUrlWithoutCombiner();
