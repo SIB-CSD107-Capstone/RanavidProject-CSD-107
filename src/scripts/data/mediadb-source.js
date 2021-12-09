@@ -6,6 +6,12 @@ class MediaDBSource {
     const responseJson = await response.json();
     return responseJson.blogs;
   }
+
+  static async Vlog() {
+    const response = await fetch(API_ENDPOINT.VLOG);
+    const responseJson = await response.json();
+    return responseJson.vlogs;
+  }
 }
 
 export default MediaDBSource;

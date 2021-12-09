@@ -508,6 +508,18 @@ const createBlogPost = (blog) => `
         </div>
 `;
 
+const createVlogPost = (vlog) => `
+<div class="col mb-4">
+          <div class="card h-100 custom-video-post">
+            <img src="${vlog.images}" class="card-img-top" alt="${vlog.title}" tabindex="0">
+            <div class="card-body">
+              <h3 class="card-title heading-3"><a href="#" data-toggle="modal"
+                  data-target="#videoModals-${vlog.id}">${vlog.title}</a></h3>
+            </div>
+          </div>
+        </div>
+`;
+
 export {
   createSearchBarTemplate,
   // createStatisticsBar,
@@ -523,4 +535,5 @@ export {
   createTeamPengembangTemplate,
   createAboutCovid,
   createBlogPost,
+  createVlogPost,
 };
