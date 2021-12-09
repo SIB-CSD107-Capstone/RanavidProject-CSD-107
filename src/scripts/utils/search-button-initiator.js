@@ -1,7 +1,9 @@
 import Swal from 'sweetalert2';
 import {
   createSearchButton,
+  createSearchResultTemplate,
 } from '../views/templates/template-creator';
+import IndoHospitalBedSource from '../data/indo-hospital-bed-source';
 
 const SearchButtonInitiator = {
   init({
@@ -12,18 +14,33 @@ const SearchButtonInitiator = {
     this._renderButton();
   },
   _renderButton() {
-    this._buttonContainer.innerHTML = createSearchButton('in-landing-page');
+    // check if the buttonContainer is on the landing page
+    if (this._buttonContainer.classList.contains('btn-search-landing')) {
+      this._buttonContainer.innerHTML = createSearchButton('in-landing-page');
+    } else {
+      this._buttonContainer.innerHTML = createSearchButton('in-search-page');
+    }
 
     const searchButton = document.querySelector('#btn-cari-rs');
-    searchButton.addEventListener('click', (event) => {
+    searchButton.addEventListener('click', async (event) => {
       event.stopPropagation();
 
       const selectProvinceElemVal = document.querySelector('#province').value;
       const selectCityElemVal = document.querySelector('#city').value;
-      const typeInpatientVal = (document.querySelector('input[name=inpatient]').checked) ? 1 : 2;
+
+      // cek jika btn type covid di click maka nilai variabel = 1;
+      const typeInpatientVal = (document.querySelector('input#covid').checked) ? 1 : 2;
 
       if (selectProvinceElemVal && selectCityElemVal) {
-        window.location.href = `/#/rumah-sakit/${selectProvinceElemVal}/${selectCityElemVal}/${typeInpatientVal}`;
+        if (this._buttonContainer.classList.contains('btn-search-landing')) {
+          window.location.href = `/#/rumah-sakit/${selectProvinceElemVal}/${selectCityElemVal}/${typeInpatientVal}`;
+        } else {
+          const cardHasilElem = document.querySelector('.card-hasil');
+
+          const hospitalsList = await IndoHospitalBedSource.indoHospitalsByType(selectProvinceElemVal, selectCityElemVal, typeInpatientVal);
+          cardHasilElem.innerHTML = '';
+          cardHasilElem.appendChild(createSearchResultTemplate(hospitalsList.hospitals));
+        }
       } else {
         Swal.fire({
           title: 'Warning!',

@@ -70,7 +70,7 @@ class SearchBarContent extends HTMLElement {
           </div>
 
           <div class="row">
-            <div class="col text-center" id="btn-search-container">
+            <div class="col text-center btn-search-landing" id="btn-search-container">
               
             </div>
           </div>
@@ -91,14 +91,14 @@ class SearchBarContent extends HTMLElement {
       <div class="col-12 col-md-5 col-lg-3 p-0 mb-4 mb-lg-0">
         <div class="pilihan-covid d-flex justify-content-center justify-content-md-between">
           <div class="form-check mr-2 mr-lg-0 mr-xl-3">
-            <input class="form-check-input" type="radio" name="inpatient" id="isCovid1" value="Covid" checked>
-            <label class="form-check-label" for="isCovid1">
+            <input class="form-check-input" type="radio" name="inpatient" id="covid" value="Covid" checked>
+            <label class="form-check-label" for="covid">
               Covid
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="inpatient" id="isCovid2" value="option1" checked>
-            <label class="form-check-label" for="isCovid2">
+            <input class="form-check-input" type="radio" name="inpatient" id="non-covid" value="option1" checked>
+            <label class="form-check-label" for="non-covid">
               Non-Covid
             </label>
           </div>
@@ -115,8 +115,7 @@ class SearchBarContent extends HTMLElement {
         </div>
       </div>
       <div class="col-12 col-md-2 px-0" id="btn-search-container">
-        <button class="btn btn-danger btn-cari w-100" tabindex="0">Cari <span class="iconify ml-2" data-icon="fa-solid:arrow-right"
-            style="color: white;" data-width="15"></span></button>
+
       </div>
     </div>
     </div>    
