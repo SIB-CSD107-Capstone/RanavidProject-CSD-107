@@ -42,6 +42,7 @@ const Search = {
       type,
     } = url;
     const hospitalsList = await IndoHospitalBedSource.indoHospitalsByType(idProv, idCity, type);
+    cardHasilElem.innerHTML = '';
     cardHasilElem.appendChild(createSearchResultTemplate(hospitalsList.hospitals));
   },
 };

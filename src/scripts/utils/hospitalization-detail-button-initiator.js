@@ -12,7 +12,6 @@ const HospitalizationDetailButtonInitiator = {
     this._buttonContainer = buttonContainer;
     this._id = id;
     this._bedAvailability = bedAvailability;
-
     this._renderButton();
   },
 
