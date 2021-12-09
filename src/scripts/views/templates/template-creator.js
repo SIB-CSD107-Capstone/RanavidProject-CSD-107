@@ -546,6 +546,17 @@ const createModalList = (vlog) => `
     </div>
 `;
 
+const createDetailArticleContent = (blog) => `
+<p class="sub-detail" tabindex="0">Detail Artikel</p>
+<h1 class="heading-1" tabindex="0">${blog.title}</h1>
+<p class="date-detail" tabindex="0">Diposting pada tanggal ${blog.createdAt}</p>
+<img src="${blog.blogImages}" alt="${blog.title}" class="img-fluid" tabindex="0">
+<div class="blog-text">
+  <p tabindex="0">
+    ${blog.content}
+  </p>
+`;
+
 export {
   createSearchBarTemplate,
   // createStatisticsBar,
@@ -564,4 +575,5 @@ export {
   createVlogPost,
   createSearchSectionAds,
   createModalList,
+  createDetailArticleContent,
 };

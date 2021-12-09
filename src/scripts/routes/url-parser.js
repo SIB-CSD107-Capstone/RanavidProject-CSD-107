@@ -21,16 +21,18 @@ const UrlParser = {
     };
   },
   _urlCombiner(splitedUrl) {
-    return (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
-      + (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl.id_or_sub)}` : '')
-      + (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':idhospital' : ':idcity'}` : '')
-      + (splitedUrl.type ? `/${splitedUrl.type}` : '');
+    const result = (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
+    + (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl.id_or_sub)}` : '')
+    + (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':idhospital' : ':idcity'}` : '')
+    + (splitedUrl.type ? `/${splitedUrl.type}` : '');
+    console.log(result);
+    return result;
   },
 
   _checkDetailUrl(partUrl) {
     if (!partUrl) {
       return false;
-    } if (partUrl === 'detail-rawat-inap') {
+    } if (partUrl === 'detail-rawat-inap' || partUrl === ':blogId' || partUrl === ':idprov') {
       return partUrl;
     }
     return ':idprov';
