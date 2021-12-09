@@ -476,6 +476,24 @@ const createTeamPengembangTemplate = () => `
   </div>
 `;
 
+const createAboutCovid = () => `
+<div class="row d-flex align-items-center wrap-about">
+        <div class="col-12 col-lg-6 text-about">
+          <p tabindex="0">Pandemi COVID19</p>
+          <h1 class="heading-1" tabindex="0">Tentang Virus Corona <span class="d-red">.</span></h1>
+          <p tabindex="0">Virus Corona atau severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) adalah virus
+            yang menyerang
+            sistem pernapasan. Penyakit akibat infeksi virus ini disebut COVID-19. Virus Corona bisa menyebabkan
+            gangguan
+            ringan pada sistem pernapasan, infeksi paru-paru yang berat, hingga kematian.
+          </p>
+        </div>
+        <div class="col-12 col-lg-6 gambar-about">
+          <img src="img/corona-1.png" alt="Orang memakai masker" tabindex="0">
+        </div>
+      </div>
+`;
+
 export {
   createSearchBarTemplate,
   // createStatisticsBar,
@@ -489,4 +507,5 @@ export {
   createAboutWebTemplate,
   createFiturWebTemplate,
   createTeamPengembangTemplate,
+  createAboutCovid,
 };
