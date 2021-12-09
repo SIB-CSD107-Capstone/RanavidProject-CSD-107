@@ -7,6 +7,20 @@
     }
   }
 
+  .statistics {
+
+
+    .card {
+      .card-title {
+        font-size: 18px;
+      }
+
+      .card-text {
+        font-size: 20px;
+      }
+    }
+  }
+
   .favorite-hospital {
 
     .search-favorite-hospital {
@@ -24,6 +38,8 @@
       }
     }
   }
+
+
 }
 
 @media (max-width: 600px) {
@@ -129,6 +145,18 @@
 
     .custom-nav {
       padding: 2em 0 0 0 !important;
+    }
+  }
+
+  .statistics {
+    .card {
+      .card-title {
+        font-size: 20px;
+      }
+
+      .card-text {
+        font-size: 22px;
+      }
     }
   }
 

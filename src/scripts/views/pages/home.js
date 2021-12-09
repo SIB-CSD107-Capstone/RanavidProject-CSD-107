@@ -1,10 +1,9 @@
-/* eslint-disable no-undef */
 import {
-  createSearchBar,
-  createStatisticsBar,
+  createSearchBarTemplate,
+  createStatisticContentTemplate,
 } from '../templates/template-creator';
 
-import SearchButtonInitiator from '../../utils/search-button-initiator';
+import CovidCasesIndoSource from '../../data/covid-cases-indo-source';
 
 const Home = {
   async render() {
@@ -20,17 +19,17 @@ const Home = {
 
   async afterRender() {
     const searchBar = document.querySelector('#search-bar');
+
+    // searchBar.appendChild(createSearchBar());
+    searchBar.innerHTML = createSearchBarTemplate('in-landing-page');
+
     const statisticsBar = document.querySelector('#statistics');
+    const dataStatisticsCovidIndo = await CovidCasesIndoSource.totalCases();
 
-    searchBar.innerHTML = createSearchBar();
-    statisticsBar.innerHTML = createStatisticsBar();
-
-    SearchButtonInitiator.init({
-      buttonContainer: document.querySelector('#btn-search-container'),
-    });
+    statisticsBar.appendChild(createStatisticContentTemplate(dataStatisticsCovidIndo));
 
     const ButtonsTypeOfHospitalization = document.querySelectorAll('button.form-check');
-
+    // for if btn element type of hospitalization on click, so tag input type radion is checked
     ButtonsTypeOfHospitalization.forEach((btnType) => {
       btnType.addEventListener('click', (event) => {
         if (event.target.classList.contains('form-check')) {
