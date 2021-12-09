@@ -4,6 +4,10 @@ import { createDetailArticleContent } from '../templates/template-creator';
 
 const DetailBlog = {
   async render() {
+    const navJumbo = document.querySelector('nav');
+    if (navJumbo.classList.contains('withJumbo')) {
+      navJumbo.classList.remove('withJumbo');
+    }
     const mainContent = document.querySelector('#main-content');
     mainContent.setAttribute('class', 'container');
     return `

@@ -9,6 +9,10 @@ import MediaDBSource from '../../data/mediadb-source';
 
 const Blog = {
   async render() {
+    const navJumbo = document.querySelector('nav');
+    if (navJumbo.classList.contains('withJumbo')) {
+      navJumbo.classList.remove('withJumbo');
+    }
     const mainContent = document.querySelector('#main-content');
     mainContent.setAttribute('class', 'container');
     return `

@@ -4,6 +4,10 @@ import {
 
 const Favorite = {
   async render() {
+    const navJumbo = document.querySelector('nav');
+    if (navJumbo.classList.contains('withJumbo')) {
+      navJumbo.classList.remove('withJumbo');
+    }
     return `
     <section id="favorite-hospital" class="favorite-hospital"></section>
     `;

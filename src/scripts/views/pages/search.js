@@ -8,6 +8,10 @@ import IndoHospitalBedSource from '../../data/indo-hospital-bed-source';
 
 const Search = {
   async render() {
+    const navJumbo = document.querySelector('nav');
+    if (navJumbo.classList.contains('withJumbo')) {
+      navJumbo.classList.remove('withJumbo');
+    }
     document.querySelector('#main-content').setAttribute('class', 'container');
     return `
     <section class="pencarian-rs"></section>
