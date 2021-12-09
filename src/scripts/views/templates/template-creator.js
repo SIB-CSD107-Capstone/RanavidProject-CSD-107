@@ -11,7 +11,7 @@ const createSearchButton = (flag) => {
   let btnSearch = '';
   if (flag === 'in-landing-page') {
     btnSearch = `
-    <button type="button" class="btn btn-search btn-danger" id="btn-cari-rs"
+    <button type="button" class="btn btn-search btn-danger flag-1" id="btn-cari-rs"
                       aria-label="cari rumah sakit">Cari</button>
     `;
   } else {
@@ -99,50 +99,50 @@ const createStatisticContentTemplate = (data) => {
   return statisticContentElem;
 };
 
-const createSearchHospitalBarTemplate = () => `
-<div class="col-12 col-md-10 mx-auto">
-<h1 class="text-center heading-1" tabindex="0">Cek Ketersediaan Rawat Inap Rumah Sakit</h1>
-<div
-  class="container-search d-flex flex-column flex-lg-row justify-content-between align-items-center text-center">
-  <div class="col-12 col-md-5 col-lg-3 p-0 mb-4 mb-lg-0">
-    <div class="pilihan-covid d-flex justify-content-center justify-content-md-between">
-      <div class="form-check mr-2 mr-lg-0 mr-xl-3">
-        <input class="form-check-input" type="radio" name="inpatient" id="isCovid1" value="Covid" checked>
-        <label class="form-check-label" for="isCovid1">
-          Covid
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="inpatient" id="isCovid2" value="option1" checked>
-        <label class="form-check-label" for="isCovid2">
-          Non-Covid
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="col-12 col-md-6 p-0">
-    <div class="dropdown-covid d-flex flex-column flex-lg-row">
-      <select class="custom-select border-0 mr-2 mb-4 mb-lg-0" id="province">
-        <option selected>Pilih Provinsi ...</option>
-        <option value="1">Jawa Barat</option>
-        <option value="2">Jawa Tengah</option>
-        <option value="3">Jawa Timur</option>
-      </select>
-      <select class="custom-select border-0 mb-4 mb-lg-0" id="city">
-        <option selected>Pilih Kabupaten / Kota ...</option>
-        <option value="1">Sukabumi</option>
-        <option value="2">Depok</option>
-        <option value="3">Bandung</option>
-      </select>
-    </div>
-  </div>
-  <div class="col-12 col-md-2 px-0" id="btn-search-container">
-    <button class="btn btn-danger btn-cari w-100" tabindex="0">Cari <span class="iconify ml-2" data-icon="fa-solid:arrow-right"
-        style="color: white;" data-width="15"></span></button>
-  </div>
-</div>
-</div>
-`;
+// const createSearchHospitalBarTemplate = () => `
+// <div class="col-12 col-md-10 mx-auto">
+// <h1 class="text-center heading-1" tabindex="0">Cek Ketersediaan Rawat Inap Rumah Sakit</h1>
+// <div
+//   class="container-search d-flex flex-column flex-lg-row justify-content-between align-items-center text-center">
+//   <div class="col-12 col-md-5 col-lg-3 p-0 mb-4 mb-lg-0">
+//     <div class="pilihan-covid d-flex justify-content-center justify-content-md-between">
+//       <div class="form-check mr-2 mr-lg-0 mr-xl-3">
+//         <input class="form-check-input" type="radio" name="inpatient" id="isCovid1" value="Covid" checked>
+//         <label class="form-check-label" for="isCovid1">
+//           Covid
+//         </label>
+//       </div>
+//       <div class="form-check">
+//         <input class="form-check-input" type="radio" name="inpatient" id="isCovid2" value="option1" checked>
+//         <label class="form-check-label" for="isCovid2">
+//           Non-Covid
+//         </label>
+//       </div>
+//     </div>
+//   </div>
+//   <div class="col-12 col-md-6 p-0">
+//     <div class="dropdown-covid d-flex flex-column flex-lg-row">
+//       <select class="custom-select border-0 mr-2 mb-4 mb-lg-0" id="province">
+//         <option selected>Pilih Provinsi ...</option>
+//         <option value="1">Jawa Barat</option>
+//         <option value="2">Jawa Tengah</option>
+//         <option value="3">Jawa Timur</option>
+//       </select>
+//       <select class="custom-select border-0 mb-4 mb-lg-0" id="city">
+//         <option selected>Pilih Kabupaten / Kota ...</option>
+//         <option value="1">Sukabumi</option>
+//         <option value="2">Depok</option>
+//         <option value="3">Bandung</option>
+//       </select>
+//     </div>
+//   </div>
+//   <div class="col-12 col-md-2 px-0" id="btn-search-container">
+//     <button class="btn btn-danger btn-cari w-100" tabindex="0">Cari <span class="iconify ml-2" data-icon="fa-solid:arrow-right"
+//         style="color: white;" data-width="15"></span></button>
+//   </div>
+// </div>
+// </div>
+// `;
 
 const createSearchResultTemplate = () => `
 <p tabindex="0">Hasil Pencarian</p>
@@ -157,7 +157,7 @@ const createSearchResultTemplate = () => `
           </div>
         </div>
         <!-- Card -->
-        <div class="row row-cols-1 row-cols-md-2 mb-5">
+        <div class="row row-cols-1 row-cols-md-2 mb-5" id="hospital-list">
           <div class="col mb-4">
             <div class="card h-100 card-kamar">
               <div class="card-body p-4 p-md-5 text-center text-md-left">
@@ -220,10 +220,10 @@ const createSearchResultTemplate = () => `
       </div>
 `;
 
-const createInfoAvailableBedButtonTemplate = () => `
-<div tabindex="0" class="btn btn-primary btn-rs-ready px-3 rounded-pill">
-                  Tersedia 6 Kamar
-                </div>
+const createInfoAvailableBedButtonTemplate = (id, bedAvailability) => `
+<button tabindex="0" class="btn btn-primary ${(bedAvailability) ? 'btn-rs-ready' : 'btn-rs-not'} px-3 rounded-pill" data-id="${id}">
+                  Tersedia ${bedAvailability} Kamar
+                </button>
 `;
 
 const createHospitalizationDetailTemplate = () => `
@@ -545,7 +545,7 @@ export {
   // createStatisticsBar,
   createStatisticContentTemplate,
   createSearchButton,
-  createSearchHospitalBarTemplate,
+  // createSearchHospitalBarTemplate,
   createSearchResultTemplate,
   createInfoAvailableBedButtonTemplate,
   createHospitalizationDetailTemplate,

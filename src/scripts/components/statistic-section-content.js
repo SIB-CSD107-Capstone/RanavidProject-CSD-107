@@ -5,6 +5,7 @@ class StatisticSectionContent extends HTMLElement {
 
   set data(data) {
     this._data = data;
+    this.render();
   }
 
   render() {

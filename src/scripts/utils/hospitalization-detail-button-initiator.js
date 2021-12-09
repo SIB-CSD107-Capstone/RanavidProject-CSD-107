@@ -6,16 +6,20 @@ import {
 const HospitalizationDetailButtonInitiator = {
   init({
     buttonContainer,
+    id,
+    bedAvailability,
   }) {
     this._buttonContainer = buttonContainer;
+    this._id = id;
+    this._bedAvailability = bedAvailability;
 
     this._renderButton();
   },
 
   _renderButton() {
-    this._buttonContainer.innerHTML += createInfoAvailableBedButtonTemplate();
-
+    this._buttonContainer.innerHTML += createInfoAvailableBedButtonTemplate(this._id, this._bedAvailability);
     const btnDetailHospitalization = this._buttonContainer.lastElementChild;
+
     btnDetailHospitalization.addEventListener('click', (event) => {
       event.stopPropagation();
 

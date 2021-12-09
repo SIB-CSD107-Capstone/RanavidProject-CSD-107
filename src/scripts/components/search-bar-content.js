@@ -108,15 +108,9 @@ class SearchBarContent extends HTMLElement {
         <div class="dropdown-covid d-flex flex-column flex-lg-row">
           <select class="custom-select border-0 mr-2 mb-4 mb-lg-0" id="province">
             <option selected>Pilih Provinsi ...</option>
-            <option value="1">Jawa Barat</option>
-            <option value="2">Jawa Tengah</option>
-            <option value="3">Jawa Timur</option>
           </select>
           <select class="custom-select border-0 mb-4 mb-lg-0" id="city">
             <option selected>Pilih Kabupaten / Kota ...</option>
-            <option value="1">Sukabumi</option>
-            <option value="2">Depok</option>
-            <option value="3">Bandung</option>
           </select>
         </div>
       </div>
