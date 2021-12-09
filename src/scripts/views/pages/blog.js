@@ -3,6 +3,7 @@ import {
   createBlogPost,
   createVlogPost,
   createSearchSectionAds,
+  createModalList,
 } from '../templates/template-creator';
 import MediaDBSource from '../../data/mediadb-source';
 
@@ -31,6 +32,9 @@ const Blog = {
     <!-- Search Ads -->
     <section class="search-hospital">
     </section>
+    <!-- Modals -->
+    <div class="modal-list">
+    </div>
     `;
   },
 
@@ -44,8 +48,10 @@ const Blog = {
     });
     const vlogs = await MediaDBSource.Vlog();
     const vlogList = document.querySelector('.vlog-list');
+    const modalList = document.querySelector('.modal-list');
     vlogs.forEach((vlog) => {
       vlogList.innerHTML += createVlogPost(vlog);
+      modalList.innerHTML += createModalList(vlog);
     });
     const searchAds = document.querySelector('.search-hospital');
     searchAds.innerHTML = createSearchSectionAds();

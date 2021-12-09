@@ -528,6 +528,24 @@ const createSearchSectionAds = () => `
           data-icon="fa-solid:angle-right"></span></div>
 `;
 
+const createModalList = (vlog) => `
+<div class="modal fade" id="videoModals-${vlog.id}" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body modal-custom">
+          <iframe class="mv-edukasi" src="${vlog.content}"">
+          </iframe>
+        </div>
+      </div>
+    </div>
+    </div>
+`;
+
 export {
   createSearchBarTemplate,
   // createStatisticsBar,
@@ -545,4 +563,5 @@ export {
   createBlogPost,
   createVlogPost,
   createSearchSectionAds,
+  createModalList,
 };
