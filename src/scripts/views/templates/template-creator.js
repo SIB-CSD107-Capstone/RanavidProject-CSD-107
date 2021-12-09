@@ -494,6 +494,20 @@ const createAboutCovid = () => `
       </div>
 `;
 
+const createBlogPost = (blog) => `
+<div class="col mb-4">
+          <div class="card h-100 border-0 custom-blog-post">
+            <img src="${blog.blogImages}" class="card-img-top" alt="${blog.title}" tabindex="0">
+            <div class="card-body p-0">
+              <h3 class="card-title heading-3" tabindex="0">${blog.title}</h3>
+              <p class="card-text" tabindex="0">${blog.content}</p>
+              <div class="btn btn-danger read-btn" tabindex="0" onclick="location.href='#/blog/${blog.id}';">Baca Selengkapnya <span class="iconify ml-2"
+                  data-icon="fa-solid:angle-right"></span></div>
+            </div>
+          </div>
+        </div>
+`;
+
 export {
   createSearchBarTemplate,
   // createStatisticsBar,
@@ -508,4 +522,5 @@ export {
   createFiturWebTemplate,
   createTeamPengembangTemplate,
   createAboutCovid,
+  createBlogPost,
 };
