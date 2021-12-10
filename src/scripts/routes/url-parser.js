@@ -21,20 +21,24 @@ const UrlParser = {
   },
   _urlCombiner(splitedUrl) {
     const result = (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
-    + (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl.id_or_sub)}` : '')
-    + (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':idhospital' : ':idcity'}` : '')
+    + (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl)}` : '')
+    + (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':hospitalId' : ':cityId'}` : '')
     + (splitedUrl.type ? `/${splitedUrl.type}` : '');
     console.log(result);
     return result;
   },
 
-  _checkDetailUrl(partUrl) {
-    if (!partUrl) {
+  _checkDetailUrl(splitedUrl) {
+    if (!splitedUrl.id_or_sub) {
       return false;
-    } if (partUrl === 'detail-rawat-inap' || partUrl === ':blogId' || partUrl === ':idprov') {
-      return partUrl;
     }
-    return ':idprov';
+    if (splitedUrl.id_or_sub === 'detail-rawat-inap') {
+      return splitedUrl.id_or_sub;
+    }
+    if (splitedUrl.resource === 'blog') {
+      return ':blogId';
+    }
+    return ':provId';
   },
 };
 
