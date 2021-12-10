@@ -69,11 +69,13 @@ const createHospitalizationDetailTemplate = () => `
         </div>
 
         <p class="rs-address" tabindex="0">Jl. WR Supratman 14</p>
-        <a href="#" class="btn btn-outline-info btn-map pt-2 active-shadow">Lihat Peta <span class="iconify"
-            data-icon="simple-icons:googlemaps"></span></a>
-        <button class="btn btn-info btn-telp active-shadow"><span class="telp-icon  iconify"
-            data-icon="clarity:phone-handset-solid"></span>
-          <span class="no-telp">081293334442</span></button>
+        <div class="detail-util d-flex flex-column flex-md-row">
+        <a href="#" class="btn btn-outline-info btn-map pt-2 active-shadow mb-3 mb-md-0 mr-0 mr-md-3">Lihat Peta <span class="iconify"
+        data-icon="simple-icons:googlemaps"></span></a>
+    <button class="btn btn-info btn-telp active-shadow" onclick="location.href = 'tel:+085156590021'"><span class="telp-icon  iconify"
+        data-icon="clarity:phone-handset-solid"></span>
+      <span class="no-telp">081293334442</span></button>
+        </div>
       </header>
 
       <!-- detail layanan rawat inap  -->
@@ -355,6 +357,87 @@ const createTeamPengembangTemplate = () => `
   </div>
 `;
 
+const createAboutCovid = () => `
+<div class="row d-flex align-items-center wrap-about">
+        <div class="col-12 col-lg-6 text-about">
+          <p tabindex="0">Pandemi COVID19</p>
+          <h1 class="heading-1" tabindex="0">Tentang Virus Corona <span class="d-red">.</span></h1>
+          <p tabindex="0">Virus Corona atau severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) adalah virus
+            yang menyerang
+            sistem pernapasan. Penyakit akibat infeksi virus ini disebut COVID-19. Virus Corona bisa menyebabkan
+            gangguan
+            ringan pada sistem pernapasan, infeksi paru-paru yang berat, hingga kematian.
+          </p>
+        </div>
+        <div class="col-12 col-lg-6 gambar-about">
+          <img src="img/corona-1.png" alt="Orang memakai masker" tabindex="0">
+        </div>
+      </div>
+`;
+
+const createBlogPost = (blog) => `
+<div class="col mb-4">
+          <div class="card h-100 border-0 custom-blog-post">
+            <img src="${blog.blogImages}" class="card-img-top" alt="${blog.title}" tabindex="0">
+            <div class="card-body p-0">
+              <h3 class="card-title heading-3" tabindex="0">${blog.title}</h3>
+              <p class="card-text" tabindex="0">${blog.content}</p>
+              <div class="btn btn-danger read-btn" tabindex="0" onclick="location.href='#/blog/${blog.id}';">Baca Selengkapnya <span class="iconify ml-2"
+                  data-icon="fa-solid:angle-right"></span></div>
+            </div>
+          </div>
+        </div>
+`;
+
+const createVlogPost = (vlog) => `
+<div class="col mb-4">
+          <div class="card h-100 custom-video-post">
+            <img src="${vlog.images}" class="card-img-top" alt="${vlog.title}" tabindex="0">
+            <div class="card-body">
+              <h3 class="card-title heading-3"><a href="#" data-toggle="modal"
+                  data-target="#videoModals-${vlog.id}">${vlog.title}</a></h3>
+            </div>
+          </div>
+        </div>
+`;
+
+const createSearchSectionAds = () => `
+      <h1 class="heading-1" tabindex="0">Cari Rumah Sakit Rawat Inap Covid-19</h1>
+      <p tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua</p>
+      <div class="btn btn-danger to-search-btn" tabindex="0" onclick="location.href='/';">Cari Sekarang <span class="iconify ml-2"
+          data-icon="fa-solid:angle-right"></span></div>
+`;
+
+const createModalList = (vlog) => `
+<div class="modal fade" id="videoModals-${vlog.id}" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body modal-custom">
+          <iframe class="mv-edukasi" src="${vlog.content}"">
+          </iframe>
+        </div>
+      </div>
+    </div>
+    </div>
+`;
+
+const createDetailArticleContent = (blog) => `
+<p class="sub-detail" tabindex="0">Detail Artikel</p>
+<h1 class="heading-1" tabindex="0">${blog.title}</h1>
+<p class="date-detail" tabindex="0">Diposting pada tanggal ${blog.createdAt}</p>
+<img src="${blog.blogImages}" alt="${blog.title}" class="img-fluid" tabindex="0">
+<div class="blog-text">
+  <p tabindex="0">
+    ${blog.content}
+  </p>
+`;
+
 export {
   createSearchBarTemplate,
   createStatisticContentTemplate,
@@ -366,4 +449,10 @@ export {
   createAboutWebTemplate,
   createFiturWebTemplate,
   createTeamPengembangTemplate,
+  createAboutCovid,
+  createBlogPost,
+  createVlogPost,
+  createSearchSectionAds,
+  createModalList,
+  createDetailArticleContent,
 };

@@ -20,10 +20,12 @@ const UrlParser = {
     };
   },
   _urlCombiner(splitedUrl) {
-    return (splitedUrl.resource ? `/${splitedUrl.resource}` : '/') +
-      (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl)}` : '') +
-      (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':hospitalId' : ':cityId'}` : '') +
-      (splitedUrl.type ? `/${splitedUrl.type}` : '');
+    const result = (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
+      + (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl)}` : '')
+      + (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':hospitalId' : ':cityId'}` : '')
+      + (splitedUrl.type ? `/${splitedUrl.type}` : '');
+    console.log(result);
+    return result;
   },
 
   _checkDetailUrl(splitedUrl) {
@@ -33,7 +35,8 @@ const UrlParser = {
     if (splitedUrl.id_or_sub === 'detail-rawat-inap') {
       return splitedUrl.id_or_sub;
     }
-    if (splitedUrl.resource === 'blogs') {
+
+    if (splitedUrl.resource === 'blog') {
       return ':blogId';
     }
     return ':provId';

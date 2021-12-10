@@ -3,6 +3,8 @@ import Search from '../views/pages/search';
 import HospitalizationDetail from '../views/pages/hospitalization-detail';
 import Favorite from '../views/pages/favorite';
 import AboutUs from '../views/pages/about-us';
+import Blog from '../views/pages/blog';
+import DetailBlog from '../views/pages/detail-blog';
 
 const routes = {
   '/': Home,
@@ -13,6 +15,8 @@ const routes = {
   '/rumah-sakit/detail-rawat-inap/:hospitalId/2': HospitalizationDetail,
   '/favorite': Favorite,
   '/about-us': AboutUs,
+  '/blog': Blog,
+  '/blog/:blogId': DetailBlog,
 };
 
 export default routes;

@@ -7,6 +7,8 @@ import CovidCasesIndoSource from '../../data/covid-cases-indo-source';
 
 const Home = {
   async render() {
+    const navJumbo = document.querySelector('nav');
+    navJumbo.classList.add('withJumbo');
     const mainContentElem = document.querySelector('#main-content');
     if (mainContentElem.classList.contains('container')) {
       mainContentElem.classList.remove('container');
