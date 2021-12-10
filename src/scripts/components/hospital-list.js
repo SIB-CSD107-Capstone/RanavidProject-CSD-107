@@ -29,7 +29,14 @@ class HospitalList extends HTMLElement {
   }
 
   renderError(message) {
-    this.innerHTML = `<h4 class="text-secondary text-center">${message}</h4>`;
+    this.classList.remove('row-cols-md-2');
+    this.innerHTML = `
+    <div class="card bg-info">
+      <div class="card-body">
+      <h4 class="text-white text-center" tabindex="0">${message}</h4>
+      </div>
+    </div>
+    `;
   }
 }
 
