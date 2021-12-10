@@ -14,14 +14,8 @@ const Search = {
       <p tabindex="0">Hasil Pencarian</p>
         <h2 class="heading-2" tabindex="0">Daftar Rumah Sakit <span class="d-red">.</span></h2>
         <div class="card-hasil">
-          <!-- Search -->
-          <div class="col-12 col-md-4 p-0 mb-4">
-            <div class="search-card w-100 p-2 rounded border d-flex align-items-center pl-2">
-              <span class="iconify" data-icon="fa-solid:search" style="color: #c4c4c4;" data-width="24"></span>
-              <input type="text" class="border-0 input-rs pl-2 overflow-hidden" aria-label="Cari Rumah Sakit"
-                placeholder="Cari Rumah Sakit ..." aria-describedby="Cari Rumah Sakit">
-            </div>
-          </div>   
+          
+        </div>   
     </section>
     `;
   },

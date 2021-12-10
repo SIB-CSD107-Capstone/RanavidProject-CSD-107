@@ -7,10 +7,10 @@ import AboutUs from '../views/pages/about-us';
 const routes = {
   '/': Home,
   '/home': Home,
-  '/rumah-sakit/:idprov/:idcity/1': Search,
-  '/rumah-sakit/:idprov/:idcity/2': Search,
-  '/rumah-sakit/detail-rawat-inap/:idhospital/1': HospitalizationDetail,
-  '/rumah-sakit/detail-rawat-inap/:idhospital/2': HospitalizationDetail,
+  '/rumah-sakit/:provId/:cityId/1': Search,
+  '/rumah-sakit/:provId/:cityId/2': Search,
+  '/rumah-sakit/detail-rawat-inap/:hospitalId/1': HospitalizationDetail,
+  '/rumah-sakit/detail-rawat-inap/:hospitalId/2': HospitalizationDetail,
   '/favorite': Favorite,
   '/about-us': AboutUs,
 };

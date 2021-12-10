@@ -20,20 +20,23 @@ const UrlParser = {
     };
   },
   _urlCombiner(splitedUrl) {
-    return (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
-      + (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl.id_or_sub)}` : '')
-      + (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':idhospital' : ':idcity'}` : '')
-      + (splitedUrl.type ? `/${splitedUrl.type}` : '');
+    return (splitedUrl.resource ? `/${splitedUrl.resource}` : '/') +
+      (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl)}` : '') +
+      (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':hospitalId' : ':cityId'}` : '') +
+      (splitedUrl.type ? `/${splitedUrl.type}` : '');
   },
 
-  _checkDetailUrl(partUrl) {
-    if (!partUrl) {
+  _checkDetailUrl(splitedUrl) {
+    if (!splitedUrl.id_or_sub) {
       return false;
     }
-    if (partUrl === 'detail-rawat-inap') {
-      return partUrl;
+    if (splitedUrl.id_or_sub === 'detail-rawat-inap') {
+      return splitedUrl.id_or_sub;
     }
-    return ':idprov';
+    if (splitedUrl.resource === 'blogs') {
+      return ':blogId';
+    }
+    return ':provId';
   },
 };
 
