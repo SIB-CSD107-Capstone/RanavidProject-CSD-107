@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const UrlParser = {
   parseActiveUrlWithCombiner() {
     const url = window.location.hash.slice(1).toLowerCase();
