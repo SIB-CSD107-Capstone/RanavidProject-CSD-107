@@ -13,7 +13,7 @@ const HospitalizationDetail = {
       mainContentElem.classList.remove('container');
     }
     return `
-    <section id="detail-rawat-inap" class="detail-rawat-inap  py-5">
+    <section id="detail-rawat-inap" class="detail-rawat-inap py-5">
       <div class="container">
         <header class="text-center mb-5">
           <h2 class="font-weight-bold" tabindex="0" style="font-size: 3em;">
@@ -35,11 +35,13 @@ const HospitalizationDetail = {
               </div>
 
               <p class="rs-address" tabindex="0">Jl. WR Supratman 14</p>
-              <a href="#" class="btn btn-outline-info btn-map pt-2 active-shadow">Lihat Peta <span class="iconify"
-                  data-icon="simple-icons:googlemaps"></span></a>
-              <button class="btn btn-info btn-telp active-shadow"><span class="telp-icon  iconify"
-                  data-icon="clarity:phone-handset-solid"></span>
-                <span class="no-telp">081293334442</span></button>
+              <div class="detail-util d-flex flex-column flex-md-row">
+              <a href="#" class="btn btn-outline-info btn-map pt-2 active-shadow mb-3 mb-md-0 mr-0 mr-md-3">Lihat Peta <span class="iconify"
+              data-icon="simple-icons:googlemaps"></span></a>
+              <button class="btn btn-info btn-telp active-shadow" onclick="location.href = 'tel:+085156590021'"><span class="telp-icon  iconify"
+              data-icon="clarity:phone-handset-solid"></span>
+              <span class="no-telp">081293334442</span></button>
+              </div>
             </header>
 
           </div>

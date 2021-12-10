@@ -39,7 +39,7 @@ const SearchButtonInitiator = {
 
           const hospitalsList = await IndoHospitalBedSource.indoHospitalsByType(selectProvinceElemVal, selectCityElemVal, typeInpatientVal);
           cardHasilElem.innerHTML = '';
-          cardHasilElem.appendChild(createSearchResultTemplate(hospitalsList.hospitals));
+          cardHasilElem.appendChild(createSearchResultTemplate(hospitalsList.hospitals, typeInpatientVal));
         }
       } else {
         Swal.fire({

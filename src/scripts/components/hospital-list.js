@@ -10,6 +10,11 @@ class HospitalList extends HTMLElement {
     this.render();
   }
 
+  set inpatientType(inpatientType) {
+    this._inpatientType = inpatientType;
+    this.render();
+  }
+
   render() {
     this.setAttribute('class', 'row row-cols-1 row-cols-md-2 mb-5');
     this.setAttribute('id', 'hospital-list');
@@ -20,6 +25,7 @@ class HospitalList extends HTMLElement {
         this._hospitals.forEach((hospital) => {
           const hospitalItem = document.createElement('hospital-item');
           hospitalItem.hospital = hospital;
+          hospitalItem.type = this._inpatientType;
           this.appendChild(hospitalItem);
         });
       }

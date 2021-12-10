@@ -20,10 +20,10 @@ const UrlParser = {
     };
   },
   _urlCombiner(splitedUrl) {
-    const result = (splitedUrl.resource ? `/${splitedUrl.resource}` : '/') +
-      (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl)}` : '') +
-      (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':hospitalId' : ':cityId'}` : '') +
-      (splitedUrl.type ? `/${splitedUrl.type}` : '');
+    const result = (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
+      + (splitedUrl.id_or_sub ? `/${this._checkDetailUrl(splitedUrl)}` : '')
+      + (splitedUrl.second_id ? `/${(splitedUrl.id_or_sub === 'detail-rawat-inap') ? ':hospitalId' : ':cityId'}` : '')
+      + (splitedUrl.type ? `/${splitedUrl.type}` : '');
     return result;
   },
 
