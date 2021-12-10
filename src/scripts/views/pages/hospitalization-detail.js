@@ -4,6 +4,10 @@ import {
 
 const HospitalizationDetail = {
   async render() {
+    const navJumbo = document.querySelector('nav');
+    if (navJumbo.classList.contains('withJumbo')) {
+      navJumbo.classList.remove('withJumbo');
+    }
     const mainContentElem = document.querySelector('#main-content');
     if (mainContentElem.classList.contains('container')) {
       mainContentElem.classList.remove('container');

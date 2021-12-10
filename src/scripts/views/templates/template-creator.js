@@ -29,127 +29,6 @@ const createStatisticContentTemplate = (data) => {
   return statisticContentElem;
 };
 
-// const createSearchHospitalBarTemplate = () => `
-// <div class="col-12 col-md-10 mx-auto">
-// <h1 class="text-center heading-1" tabindex="0">Cek Ketersediaan Rawat Inap Rumah Sakit</h1>
-// <div
-//   class="container-search d-flex flex-column flex-lg-row justify-content-between align-items-center text-center">
-//   <div class="col-12 col-md-5 col-lg-3 p-0 mb-4 mb-lg-0">
-//     <div class="pilihan-covid d-flex justify-content-center justify-content-md-between">
-//       <div class="form-check mr-2 mr-lg-0 mr-xl-3">
-//         <input class="form-check-input" type="radio" name="inpatient" id="isCovid1" value="Covid" checked>
-//         <label class="form-check-label" for="isCovid1">
-//           Covid
-//         </label>
-//       </div>
-//       <div class="form-check">
-//         <input class="form-check-input" type="radio" name="inpatient" id="isCovid2" value="option1" checked>
-//         <label class="form-check-label" for="isCovid2">
-//           Non-Covid
-//         </label>
-//       </div>
-//     </div>
-//   </div>
-//   <div class="col-12 col-md-6 p-0">
-//     <div class="dropdown-covid d-flex flex-column flex-lg-row">
-//       <select class="custom-select border-0 mr-2 mb-4 mb-lg-0" id="province">
-//         <option selected>Pilih Provinsi ...</option>
-//         <option value="1">Jawa Barat</option>
-//         <option value="2">Jawa Tengah</option>
-//         <option value="3">Jawa Timur</option>
-//       </select>
-//       <select class="custom-select border-0 mb-4 mb-lg-0" id="city">
-//         <option selected>Pilih Kabupaten / Kota ...</option>
-//         <option value="1">Sukabumi</option>
-//         <option value="2">Depok</option>
-//         <option value="3">Bandung</option>
-//       </select>
-//     </div>
-//   </div>
-//   <div class="col-12 col-md-2 px-0" id="btn-search-container">
-//     <button class="btn btn-danger btn-cari w-100" tabindex="0">Cari <span class="iconify ml-2" data-icon="fa-solid:arrow-right"
-//         style="color: white;" data-width="15"></span></button>
-//   </div>
-// </div>
-// </div>
-// `;
-
-// const createSearchResultTemplate = () => `
-// <p tabindex="0">Hasil Pencarian</p>
-//       <h2 class="heading-2" tabindex="0">Daftar Rumah Sakit <span class="d-red">.</span></h2>
-//       <div class="card-hasil">
-//         <!-- Search -->
-//         <div class="col-12 col-md-4 p-0 mb-4">
-//           <div class="search-card w-100 p-2 rounded border d-flex align-items-center pl-2">
-//             <span class="iconify" data-icon="fa-solid:search" style="color: #c4c4c4;" data-width="24"></span>
-//             <input type="text" class="border-0 input-rs pl-2 overflow-hidden" aria-label="Cari Rumah Sakit"
-//               placeholder="Cari Rumah Sakit ..." aria-describedby="Cari Rumah Sakit">
-//           </div>
-//         </div>
-//         <!-- Card -->
-//         <div class="row row-cols-1 row-cols-md-2 mb-5" id="hospital-list">
-//           <div class="col mb-4">
-//             <div class="card h-100 card-kamar">
-//               <div class="card-body p-4 p-md-5 text-center text-md-left">
-//                 <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS Umum Daerah Sekarwangi</h3>
-//                 <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-//                 <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-
-//               </div>
-//             </div>
-//           </div>
-//           <div class="col mb-4">
-//             <div class="card h-100 card-kamar">
-//               <div class="card-body p-4 p-md-5 text-center text-md-left">
-//                 <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS Umum Daerah Sekarwangi</h3>
-//                 <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-//                 <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-//                 <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-not">
-//                   Tidak Tersedia
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//           <div class="col mb-4">
-//             <div class="card h-100 card-kamar">
-//               <div class="card-body p-4 p-md-5 text-center text-md-left">
-//                 <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS Umum Daerah Sekarwangi</h3>
-//                 <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-//                 <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-//                 <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-ready">
-//                   Tersedia 6 Kamar
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//           <div class="col mb-4">
-//             <div class="card h-100 card-kamar">
-//               <div class="card-body p-4 p-md-5 text-center text-md-left">
-//                 <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS Umum Daerah Sekarwangi</h3>
-//                 <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-//                 <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-//                 <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-not">
-//                   Tidak Tersedia
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//           <div class="col mb-4">
-//             <div class="card h-100 card-kamar">
-//               <div class="card-body p-4 p-md-5 text-center text-md-left">
-//                 <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS Umum Daerah Sekarwangi</h3>
-//                 <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-//                 <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-//                 <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-not">
-//                   Tidak Tersedia
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-// `;
-
 const createSearchResultTemplate = (hospitals) => {
   const hospitalListElem = document.createElement('hospital-list');
   hospitalListElem.hospitals = hospitals;
@@ -190,11 +69,13 @@ const createHospitalizationDetailTemplate = () => `
         </div>
 
         <p class="rs-address" tabindex="0">Jl. WR Supratman 14</p>
-        <a href="#" class="btn btn-outline-info btn-map pt-2 active-shadow">Lihat Peta <span class="iconify"
-            data-icon="simple-icons:googlemaps"></span></a>
-        <button class="btn btn-info btn-telp active-shadow"><span class="telp-icon  iconify"
-            data-icon="clarity:phone-handset-solid"></span>
-          <span class="no-telp">081293334442</span></button>
+        <div class="detail-util d-flex flex-column flex-md-row">
+        <a href="#" class="btn btn-outline-info btn-map pt-2 active-shadow mb-3 mb-md-0 mr-0 mr-md-3">Lihat Peta <span class="iconify"
+        data-icon="simple-icons:googlemaps"></span></a>
+    <button class="btn btn-info btn-telp active-shadow" onclick="location.href = 'tel:+085156590021'"><span class="telp-icon  iconify"
+        data-icon="clarity:phone-handset-solid"></span>
+      <span class="no-telp">081293334442</span></button>
+        </div>
       </header>
 
       <!-- detail layanan rawat inap  -->
@@ -476,12 +357,91 @@ const createTeamPengembangTemplate = () => `
   </div>
 `;
 
+const createAboutCovid = () => `
+<div class="row d-flex align-items-center wrap-about">
+        <div class="col-12 col-lg-6 text-about">
+          <p tabindex="0">Pandemi COVID19</p>
+          <h1 class="heading-1" tabindex="0">Tentang Virus Corona <span class="d-red">.</span></h1>
+          <p tabindex="0">Virus Corona atau severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) adalah virus
+            yang menyerang
+            sistem pernapasan. Penyakit akibat infeksi virus ini disebut COVID-19. Virus Corona bisa menyebabkan
+            gangguan
+            ringan pada sistem pernapasan, infeksi paru-paru yang berat, hingga kematian.
+          </p>
+        </div>
+        <div class="col-12 col-lg-6 gambar-about">
+          <img src="img/corona-1.png" alt="Orang memakai masker" tabindex="0">
+        </div>
+      </div>
+`;
+
+const createBlogPost = (blog) => `
+<div class="col mb-4">
+          <div class="card h-100 border-0 custom-blog-post">
+            <img src="${blog.blogImages}" class="card-img-top" alt="${blog.title}" tabindex="0">
+            <div class="card-body p-0">
+              <h3 class="card-title heading-3" tabindex="0">${blog.title}</h3>
+              <p class="card-text" tabindex="0">${blog.content}</p>
+              <div class="btn btn-danger read-btn" tabindex="0" onclick="location.href='#/blog/${blog.id}';">Baca Selengkapnya <span class="iconify ml-2"
+                  data-icon="fa-solid:angle-right"></span></div>
+            </div>
+          </div>
+        </div>
+`;
+
+const createVlogPost = (vlog) => `
+<div class="col mb-4">
+          <div class="card h-100 custom-video-post">
+            <img src="${vlog.images}" class="card-img-top" alt="${vlog.title}" tabindex="0">
+            <div class="card-body">
+              <h3 class="card-title heading-3"><a href="#" data-toggle="modal"
+                  data-target="#videoModals-${vlog.id}">${vlog.title}</a></h3>
+            </div>
+          </div>
+        </div>
+`;
+
+const createSearchSectionAds = () => `
+      <h1 class="heading-1" tabindex="0">Cari Rumah Sakit Rawat Inap Covid-19</h1>
+      <p tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua</p>
+      <div class="btn btn-danger to-search-btn" tabindex="0" onclick="location.href='/';">Cari Sekarang <span class="iconify ml-2"
+          data-icon="fa-solid:angle-right"></span></div>
+`;
+
+const createModalList = (vlog) => `
+<div class="modal fade" id="videoModals-${vlog.id}" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body modal-custom">
+          <iframe class="mv-edukasi" src="${vlog.content}"">
+          </iframe>
+        </div>
+      </div>
+    </div>
+    </div>
+`;
+
+const createDetailArticleContent = (blog) => `
+<p class="sub-detail" tabindex="0">Detail Artikel</p>
+<h1 class="heading-1" tabindex="0">${blog.title}</h1>
+<p class="date-detail" tabindex="0">Diposting pada tanggal ${blog.createdAt}</p>
+<img src="${blog.blogImages}" alt="${blog.title}" class="img-fluid" tabindex="0">
+<div class="blog-text">
+  <p tabindex="0">
+    ${blog.content}
+  </p>
+`;
+
 export {
   createSearchBarTemplate,
-  // createStatisticsBar,
   createStatisticContentTemplate,
   createSearchButton,
-  // createSearchHospitalBarTemplate,
   createSearchResultTemplate,
   createInfoAvailableBedButtonTemplate,
   createHospitalizationDetailTemplate,
@@ -489,4 +449,10 @@ export {
   createAboutWebTemplate,
   createFiturWebTemplate,
   createTeamPengembangTemplate,
+  createAboutCovid,
+  createBlogPost,
+  createVlogPost,
+  createSearchSectionAds,
+  createModalList,
+  createDetailArticleContent,
 };
