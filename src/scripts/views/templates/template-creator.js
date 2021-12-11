@@ -320,8 +320,8 @@ const createTeamPengembangTemplate = () => `
     <div class="col-12 col-md-6 mb-4">
       <div class="card h-100 team-card">
         <img
-          src="https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-          class="card-img-top" alt="Foto Ikram" tabindex="0">
+          src="https://res.cloudinary.com/ikram20/image/upload/v1639216877/ikram_dqlgii.png"
+          class="card-img-top" alt="Ikram Maulana" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" tabindex="0">
         <div class="card-body pb-3">
           <h3 class="card-title team-name" tabindex="0">Ikram Maulana</h3>
           <p class="card-text team-id" tabindex="0">F267R4264</p>
@@ -339,8 +339,8 @@ const createTeamPengembangTemplate = () => `
     <div class="col-12 col-md-6 mb-4">
       <div class="card h-100 team-card">
         <img
-          src="https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-          class="card-img-top" alt="Foto Febrianto" tabindex="0">
+          src="https://res.cloudinary.com/dnjfsndzc/image/upload/v1639196096/foto1_dvbsnw.jpg"
+          class="card-img-top" alt="Febrianto" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" tabindex="0">
         <div class="card-body pb-3">
           <h3 class="card-title team-name" tabindex="0">Febrianto</h3>
           <p class="card-text team-id" tabindex="0">F190R7147</p>
