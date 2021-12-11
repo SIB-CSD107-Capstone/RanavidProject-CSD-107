@@ -12,9 +12,19 @@ export default function swRegister() {
 
     wb.addEventListener('installed', (event) => {
       if (event.isUpdate) {
-        if (Swal.fire('New app update is available, click Ok to refresh')) {
-          window.location.reload();
-        }
+        Swal.fire({
+          title: 'New app update is available, click Ok to refresh',
+          showDenyButton: false,
+          showCancelButton: false,
+          confirmButtonText: 'Ok',
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            window.location.reload();
+          } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info');
+          }
+        });
       }
     });
 

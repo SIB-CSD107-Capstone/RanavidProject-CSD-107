@@ -41,6 +41,166 @@ registerRoute(
 );
 
 registerRoute(
+  ({ url }) => url.origin === 'https://apicovid19indonesia-v2.vercel.app'
+                  || url.pathname === '/api/indonesia',
+  new StaleWhileRevalidate({
+    cacheName: 'staticCovid-api-response',
+    plugin: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 3,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
+                  || url.pathname === '/api/get-provinces',
+  new StaleWhileRevalidate({
+    cacheName: 'RSBedProv-api-response',
+    plugin: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 3,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
+                  || url.pathname === `/api/get-cities?provinceid=${provId}`,
+  new StaleWhileRevalidate({
+    cacheName: 'RSBedCity-api-response',
+    plugin: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 3,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
+                  || url.pathname === `/api/get-hospitals?provinceid=${provId}&cityid=${cityId}&type=${type}`,
+  new StaleWhileRevalidate({
+    cacheName: 'RSIDHosp-api-response',
+    plugin: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 3,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
+                  || url.pathname === `/api/get-bed-detail?hospitalid=${hospitalId}&type=${type}`,
+  new StaleWhileRevalidate({
+    cacheName: 'RSBedType-api-response',
+    plugin: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 3,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
+                  || url.pathname === `/api/get-bed-detail?hospitalid=${hospitalId}&type=${type}`,
+  new StaleWhileRevalidate({
+    cacheName: 'RSBedType-api-response',
+    plugin: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 3,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
+                  || url.pathname === `/api/get-hospital-map?hospitalid=${hospitalId}`,
+  new StaleWhileRevalidate({
+    cacheName: 'RSBedMap-api-response',
+    plugin: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 3,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ url }) => url.origin === 'https://61b090523c954f001722a461.mockapi.io'
+                  || url.pathname === '/blogs',
+  new StaleWhileRevalidate({
+    cacheName: 'blogs-api-response',
+    plugin: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 3,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ url }) => url.origin === 'https://61b090523c954f001722a461.mockapi.io'
+                  || url.pathname === '/vlog',
+  new StaleWhileRevalidate({
+    cacheName: 'vlogs-api-response',
+    plugin: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 3,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ url }) => url.origin === 'https://61b090523c954f001722a461.mockapi.io'
+                  || url.pathname === `/blogs/${id}`,
+  new StaleWhileRevalidate({
+    cacheName: 'detailBlog-api-response',
+    plugin: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 3,
+      }),
+    ],
+  }),
+);
+
+registerRoute(
   ({ request }) => request.destination === 'image',
   new CacheFirst({
     cacheName: 'images',
