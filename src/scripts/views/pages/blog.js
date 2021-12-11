@@ -43,6 +43,7 @@ const Blog = {
   },
 
   async afterRender() {
+    document.title = 'blog';
     const aboutContainer = document.querySelector('.about-covid');
     aboutContainer.innerHTML = createAboutCovid();
     const blogs = await MediaDBSource.Blog();

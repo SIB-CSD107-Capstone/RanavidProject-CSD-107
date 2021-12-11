@@ -1,6 +1,10 @@
+import IndoHospitalBedSource from '../../data/indo-hospital-bed-source';
+import UrlParser from '../../routes/url-parser';
 import {
   createBreadcrumbItem,
   createHospitalizationDetailTemplate,
+  createInfoHospitalTemplate,
+  createListBedDetailHospitalTemplate,
 } from '../templates/template-creator';
 
 const HospitalizationDetail = {
@@ -27,24 +31,7 @@ const HospitalizationDetail = {
 
               </nav>
               <div class="info-hospital-wrapper">
-                <div class="title-wrapper d-flex">
-                  <h4 class="rs-name" tabindex="0">RS Umum Puri Raharja</h4>
-                  <button class="btn-favorite">
-                    <span class="iconify like-icon" data-icon="fa-solid:heart" tabindex="0"
-                      onclick="location.href='favorite_hospitals_page.html';" data-width="46" data-height="44"
-                      title="favorite rumah sakit"></span>
-                  </button>
-
-                </div>
-
-                <p class="rs-address" tabindex="0">Jl. WR Supratman 14</p>
-                <div class="detail-util d-flex flex-column flex-md-row">
-                  <a href="#" class="btn btn-outline-info btn-map pt-2 active-shadow mb-3 mb-md-0 mr-0 mr-md-3">Lihat Peta <span
-                      class="iconify" data-icon="simple-icons:googlemaps"></span></a>
-                  <button class="btn btn-info btn-telp active-shadow" onclick="location.href = 'tel:+085156590021'"><span
-                      class="telp-icon  iconify" data-icon="clarity:phone-handset-solid"></span>
-                    <span class="no-telp">081293334442</span></button>
-                </div>
+                
               </div>
 
               <div class="available-bed-details my-5">
@@ -60,16 +47,36 @@ const HospitalizationDetail = {
   async afterRender() {
     // const hospitalizationDetailElem = document.querySelector('#detail-rawat-inap');
     // hospitalizationDetailElem.innerHTML = createHospitalizationDetailTemplate();
-    const breadcrumbContainer = document.querySelector('nav[aria-label=breadcrumb]');
-    console.log(breadcrumbContainer);
 
     if (typeof (Storage) !== 'undefined') {
+      const breadcrumbContainer = document.querySelector('nav[aria-label=breadcrumb]');
       const partsPreviousUrl = JSON.parse(sessionStorage.getItem('previousUrl'));
       // console.log(JSON.parse(partsPreviousUrl));
       breadcrumbContainer.innerHTML = createBreadcrumbItem(partsPreviousUrl);
     } else {
       console.log('Oops your browser is not support session storage feature');
     }
+
+    /* set info hospital */
+    const partsUrl = UrlParser.parseActiveUrlWithoutCombiner();
+    const hospitalId = partsUrl.second_id;
+    const typeInpatient = partsUrl.type;
+    let response = await IndoHospitalBedSource.indoHospitalBedByType(hospitalId, typeInpatient);
+    const hospital = response.data;
+    response = await IndoHospitalBedSource.indoHospitalMap(hospitalId);
+    const hospitalGmaps = response.data.gmaps;
+    hospital.gmaps = hospitalGmaps;
+
+    const infoHospitalWrapperElem = document.querySelector('.info-hospital-wrapper');
+    infoHospitalWrapperElem.innerHTML = '';
+    infoHospitalWrapperElem.appendChild(createInfoHospitalTemplate(hospital));
+
+    /* set available bed details */
+    const availableBedDetailsElem = document.querySelector('.available-bed-details');
+    availableBedDetailsElem.innerHTML = '';
+    createListBedDetailHospitalTemplate(availableBedDetailsElem, hospital.bedDetail);
+    console.log(availableBedDetailsElem);
+    console.log(hospital);
   },
 };
 

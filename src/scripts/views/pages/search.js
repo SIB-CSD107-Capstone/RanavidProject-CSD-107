@@ -27,6 +27,7 @@ const Search = {
   },
 
   async afterRender() {
+    document.title = 'search hospital';
     const searchHospitalBarContainer = document.querySelector('.pencarian-rs');
     const cardHasilElem = document.querySelector('.card-hasil');
 

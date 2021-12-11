@@ -1,6 +1,8 @@
 import '../../components/search-bar-content';
 import '../../components/statistic-section-content';
 import '../../components/hospital-list';
+import '../../components/info-hospital';
+import '../../components/bed-detail-item';
 
 const createSearchBarTemplate = (flag) => {
   // const searcBarContent = document.createElement('search-bar');
@@ -154,6 +156,24 @@ const createBreadcrumbItem = (partsPreviousUrl) => {
     <li class="breadcrumb-item active" aria-current="page">Detail</li>
   </ol>
   `;
+};
+
+const createInfoHospitalTemplate = (hospital) => {
+  const infoHospitalElem = document.createElement('info-hospital');
+  infoHospitalElem.hospital = hospital;
+  return infoHospitalElem;
+};
+
+const createListBedDetailHospitalTemplate = (bedDetailContainer, bedsDetails) => {
+  if (bedsDetails.length < 1) {
+    bedDetailContainer.innerHTML = '<h4 class="text-center bg-info text-white">Data Rawat Inap Rumah Sakit Tidak Tersedia</h4>';
+  }
+  bedsDetails.forEach((bedDetail, index) => {
+    bedDetail.index = index;
+    const bedDetailElem = document.createElement('bed-detail-item');
+    bedDetailElem.detail = bedDetail;
+    bedDetailContainer.appendChild(bedDetailElem);
+  });
 };
 
 const createFavoriteHospitalTemplate = () => `
@@ -470,4 +490,6 @@ export {
   createModalList,
   createDetailArticleContent,
   createBreadcrumbItem,
+  createInfoHospitalTemplate,
+  createListBedDetailHospitalTemplate,
 };

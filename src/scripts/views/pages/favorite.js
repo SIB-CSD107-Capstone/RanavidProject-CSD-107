@@ -14,6 +14,7 @@ const Favorite = {
   },
 
   async afterRender() {
+    document.title = 'favorite hospital';
     const favoriteHospitalElem = document.querySelector('#favorite-hospital');
 
     favoriteHospitalElem.innerHTML = createFavoriteHospitalTemplate();

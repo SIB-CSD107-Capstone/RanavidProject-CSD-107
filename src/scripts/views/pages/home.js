@@ -20,6 +20,7 @@ const Home = {
   },
 
   async afterRender() {
+    document.title = 'Ranavid Apps';
     const searchBar = document.querySelector('#search-bar');
 
     // searchBar.appendChild(createSearchBar());
