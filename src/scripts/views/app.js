@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 
@@ -10,9 +11,21 @@ class App {
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
-    const page = routes[url];
-    this._content.innerHTML = await page.render();
-    await page.afterRender();
+    let page = routes[url];
+    try {
+      this._content.innerHTML = await page.render();
+      await page.afterRender();
+    } catch (error) {
+      page = routes['/home'];
+      this._content.innerHTML = await page.render();
+      await page.afterRender();
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Halaman tidak ditemukan!',
+        confirmButtonText: 'Kembali ke home',
+      });
+    }
   }
 }
 
