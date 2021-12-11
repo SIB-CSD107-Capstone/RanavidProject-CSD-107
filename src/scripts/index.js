@@ -14,6 +14,7 @@ import 'aos/dist/aos.css';
 import App from './views/app';
 
 AOS.init();
+const skipBtn = document.querySelector('skip-to-content');
 
 // Loading
 const loadingPage = () => {
@@ -56,13 +57,8 @@ window.addEventListener('hashchange', () => {
   loadingPageAfter();
 });
 
-const skipBtn = document.querySelector('skip-to-content');
-
-skipBtn.addEventListener('click', () => {
-  document.querySelector('#main-content').focus();
-  setTimeout(() => {
-    if (document.querySelector('#main-content')) {
-      document.querySelector('#main-content').focus();
-    }
-  }, 0);
+window.addEventListener('DOMContentLoaded', () => {
+  skipBtn.addEventListener('click', () => {
+    document.querySelector('#main-content').focus();
+  });
 });
