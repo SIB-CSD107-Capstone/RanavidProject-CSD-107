@@ -327,12 +327,12 @@ const createTeamPengembangTemplate = () => `
           <p class="card-text team-id" tabindex="0">F267R4264</p>
         </div>
         <div class="i-social mb-4">
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:instagram-square"
-              style="color: #121e2a;" data-width="24" data-height="24"></span></a>
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
-              data-width="24" data-height="24"></span></a>
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
-              data-width="24" data-height="24"></span></a>
+        <a href="https://instagram.com/Ikram_Maulana" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:instagram-square"
+        style="color: #121e2a;" data-width="24" data-height="24"></span></a>
+    <a href="https://github.com/Ikram-Maulana" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
+        data-width="24" data-height="24"></span></a>
+    <a href="https://www.linkedin.com/in/ikram-maulana-54a152217/" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
+        data-width="24" data-height="24"></span></a>
         </div>
       </div>
     </div>
@@ -346,11 +346,11 @@ const createTeamPengembangTemplate = () => `
           <p class="card-text team-id" tabindex="0">F190R7147</p>
         </div>
         <div class="i-social mb-4">
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:instagram-square"
+          <a href="https://www.instagram.com/febrianto.15/" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:instagram-square"
               style="color: #121e2a;" data-width="24" data-height="24"></span></a>
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
+          <a href="https://github.com/Febrianto752" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
               data-width="24" data-height="24"></span></a>
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
               data-width="24" data-height="24"></span></a>
         </div>
       </div>
