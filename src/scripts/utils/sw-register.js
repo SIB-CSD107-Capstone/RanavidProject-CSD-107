@@ -12,7 +12,9 @@ export default function swRegister() {
       }
 
       if (event.isUpdate) {
-        console.log('Service worker not supported in this browser');
+        if (confim('New app update is available, click Ok to refresh')) {
+          window.location.reload();
+        }
       }
     });
 
