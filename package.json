@@ -4,8 +4,8 @@
   "description": "Aplikasi Web Pencarian Rumah Sakit Rawat Inap Covid19",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "start-dev": "webpack-dev-server --config webpack.dev.js --mode=development",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js --mode=development",
     "lint": "eslint ./src",
     "fix": "eslint ./src --fix",
     "test": "karma start"
