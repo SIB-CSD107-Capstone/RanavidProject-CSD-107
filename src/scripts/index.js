@@ -12,6 +12,7 @@ import $ from 'jquery';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Swal from 'sweetalert2';
+import swRegister from './utils/sw-register';
 import App from './views/app';
 
 AOS.init();
@@ -49,6 +50,7 @@ const app = new App({
 window.addEventListener('load', () => {
   loadingPage();
   app.renderPage();
+  swRegister();
   loadingPageAfter();
 });
 
