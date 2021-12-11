@@ -4,11 +4,16 @@ import '../styles/_responsive.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import '@iconify/iconify';
+import './components/skip-to-content';
 import './components/navbar-app';
 import './components/footer-app';
 import './components/loading-animation';
 import $ from 'jquery';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import App from './views/app';
+
+AOS.init();
 
 // Loading
 const loadingPage = () => {
@@ -23,7 +28,7 @@ const loadingPageAfter = () => {
     document.querySelector('loading-animation').classList.add('loading');
     document.body.style.opacity = '1';
     clearTimeout(loadingTimeout);
-  }, 100);
+  }, 500);
 };
 
 // rotate up-arrow-icon on event collapse accordion
@@ -49,4 +54,15 @@ window.addEventListener('hashchange', () => {
   loadingPage();
   app.renderPage();
   loadingPageAfter();
+});
+
+const skipBtn = document.querySelector('skip-to-content');
+
+skipBtn.addEventListener('click', () => {
+  document.querySelector('#main-content').focus();
+  setTimeout(() => {
+    if (document.querySelector('#main-content')) {
+      document.querySelector('#main-content').focus();
+    }
+  }, 0);
 });

@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "@iconify/iconify": "^2.1.0",
+    "aos": "^2.3.4",
     "bootstrap": "^4.6.1",
     "copy-webpack-plugin": "^6.0.3",
     "html-webpack-plugin": "^4.3.0",
