@@ -22,7 +22,6 @@ const HospitalizationDetail = {
         </header>
         <div class="row justify-content-center">
           <div class="col col-lg-8" id="detail-container">  
-            <header>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent pl-0">
                   <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -42,7 +41,6 @@ const HospitalizationDetail = {
               data-icon="clarity:phone-handset-solid"></span>
               <span class="no-telp">081293334442</span></button>
               </div>
-            </header>
 
           </div>
         </div>
@@ -55,6 +53,14 @@ const HospitalizationDetail = {
     const hospitalizationDetailElem = document.querySelector('#detail-rawat-inap');
 
     hospitalizationDetailElem.innerHTML = createHospitalizationDetailTemplate();
+
+    if (typeof (Storage) !== 'undefined') {
+      // simpan partUrl search page di session storage
+      const partsPreviousUrl = sessionStorage.getItem('previousUrl');
+      console.log(JSON.parse(partsPreviousUrl));
+    } else {
+      console.log('Oops your browser is not support session storage feature');
+    }
   },
 };
 

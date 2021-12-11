@@ -51,17 +51,17 @@ const createHospitalizationDetailTemplate = () => `
   </header>
   <div class="row justify-content-center">
     <div class="col col-lg-8">
-      <header>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent pl-0">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pencarian</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Detail</li>
-          </ol>
-        </nav>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent pl-0">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Pencarian</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Detail</li>
+        </ol>
+      </nav>
+      <div class="info-hospital">
         <div class="title-wrapper d-flex">
           <h4 class="rs-name" tabindex="0">RS Umum Puri Raharja</h4>
-          <button>
+          <button class="btn-favorite">
             <span class="iconify like-icon" data-icon="fa-solid:heart" tabindex="0"
               onclick="location.href='favorite_hospitals_page.html';" data-width="46" data-height="44"
               title="favorite rumah sakit"></span>
@@ -77,14 +77,15 @@ const createHospitalizationDetailTemplate = () => `
         data-icon="clarity:phone-handset-solid"></span>
       <span class="no-telp">081293334442</span></button>
         </div>
-      </header>
+      </div>
+        
 
       <!-- detail layanan rawat inap  -->
-      <div class="service-detail my-5">
+      <div class="available-bed-details my-5">
         <div class="card mb-3">
           <button class="card-header btn btn-block bg-danger" data-toggle="collapse" data-target="#card-1"
             aria-expanded="false" aria-controls="multiCollapseExample2" tabindex="0">
-            <div class="service-info">
+            <div class="bed-info">
               <h5 class="text-left text-white">Isolasi Tanpa Tekanan Negatif</h5>
               <p class="text-left text-white p-0 m-0">data diperbarui 40 menit yang lalu</p>
             </div>
@@ -112,7 +113,7 @@ const createHospitalizationDetailTemplate = () => `
         <div class="card mb-3">
           <button class="card-header btn btn-block bg-danger" data-toggle="collapse" data-target="#card-2"
             aria-expanded="false" aria-controls="multiCollapseExample2" tabindex="0">
-            <div class="service-info">
+            <div class="bed-info">
               <h5 class="text-left text-white">Isolasi Tanpa Tekanan Negatif</h5>
               <p class="text-left text-white p-0 m-0">data diperbarui 40 menit yang lalu</p>
             </div>
@@ -142,6 +143,15 @@ const createHospitalizationDetailTemplate = () => `
   </div>
 </div>
 `;
+
+// const createDetailContainerContent
+const createBreadcrumbItem = (partsPreviousUrl) => `
+  <ol class="breadcrumb bg-transparent pl-0">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Pencarian</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Detail</li>
+  </ol>
+  `;
 
 const createFavoriteHospitalTemplate = () => `
 <div class="container">
