@@ -6,8 +6,25 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import '@iconify/iconify';
 import './components/navbar-app';
 import './components/footer-app';
+import './components/loading-animation';
 import $ from 'jquery';
 import App from './views/app';
+
+// Loading
+const loadingPage = () => {
+  document.querySelector('loading-animation').classList.remove('loading');
+  document.querySelector('loading-animation>div').classList.add('loadingio-spinner-rolling-aiak6voamqs');
+  document.body.style.opacity = '0.85';
+};
+
+const loadingPageAfter = () => {
+  const loadingTimeout = setInterval(() => {
+    document.querySelector('loading-animation>div').classList.remove('loadingio-spinner-rolling-aiak6voamqs');
+    document.querySelector('loading-animation').classList.add('loading');
+    document.body.style.opacity = '1';
+    clearTimeout(loadingTimeout);
+  }, 100);
+};
 
 // rotate up-arrow-icon on event collapse accordion
 $('.multi-collapse').on('show.bs.collapse', () => {
@@ -23,9 +40,13 @@ const app = new App({
 });
 
 window.addEventListener('load', () => {
+  loadingPage();
   app.renderPage();
+  loadingPageAfter();
 });
 
 window.addEventListener('hashchange', () => {
+  loadingPage();
   app.renderPage();
+  loadingPageAfter();
 });
