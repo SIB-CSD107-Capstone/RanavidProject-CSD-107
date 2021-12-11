@@ -11,6 +11,7 @@ import './components/loading-animation';
 import $ from 'jquery';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Swal from 'sweetalert2';
 import App from './views/app';
 
 AOS.init();
@@ -61,4 +62,12 @@ window.addEventListener('DOMContentLoaded', () => {
   skipBtn.addEventListener('click', () => {
     document.querySelector('#main-content').focus();
   });
+});
+
+window.addEventListener('offline', () => {
+  Swal.fire(
+    'The Internet?',
+    'Oops, internet disconnected. check your connection.',
+    'question',
+  );
 });
