@@ -378,7 +378,7 @@ const createAboutCovid = () => `
 
 const createBlogPost = (blog) => `
 <div class="col mb-4">
-          <div class="card h-100 border-0 custom-blog-post">
+          <div class="card h-100 border-0 custom-blog-post" data-aos="fade-up" data-aos-once="true">
             <img src="${blog.blogImages}" class="card-img-top" alt="${blog.title}" tabindex="0">
             <div class="card-body p-0">
               <h3 class="card-title heading-3" tabindex="0">${blog.title}</h3>
@@ -392,7 +392,7 @@ const createBlogPost = (blog) => `
 
 const createVlogPost = (vlog) => `
 <div class="col mb-4">
-          <div class="card h-100 custom-video-post">
+          <div class="card h-100 custom-video-post" data-aos="fade-up" data-aos-once="true">
             <img src="${vlog.images}" class="card-img-top" alt="${vlog.title}" tabindex="0">
             <div class="card-body">
               <h3 class="card-title heading-3"><a href="#" data-toggle="modal"

@@ -15,7 +15,9 @@ import Swal from 'sweetalert2';
 import swRegister from './utils/sw-register';
 import App from './views/app';
 
-AOS.init();
+AOS.init({
+  once: true,
+});
 const skipBtn = document.querySelector('skip-to-content');
 
 // Loading
