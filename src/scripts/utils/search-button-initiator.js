@@ -32,15 +32,7 @@ const SearchButtonInitiator = {
       const typeInpatientVal = (document.querySelector('input#covid').checked) ? 1 : 2;
 
       if (selectProvinceElemVal && selectCityElemVal) {
-        if (this._buttonContainer.classList.contains('btn-search-landing')) {
-          window.location.href = `/#/rumah-sakit/${selectProvinceElemVal}/${selectCityElemVal}/${typeInpatientVal}`;
-        } else {
-          const cardHasilElem = document.querySelector('.card-hasil');
-
-          const hospitalsList = await IndoHospitalBedSource.indoHospitalsByType(selectProvinceElemVal, selectCityElemVal, typeInpatientVal);
-          cardHasilElem.innerHTML = '';
-          cardHasilElem.appendChild(createSearchResultTemplate(hospitalsList.hospitals));
-        }
+        window.location.href = `/#/rumah-sakit/${selectProvinceElemVal}/${selectCityElemVal}/${typeInpatientVal}`;
       } else {
         Swal.fire({
           title: 'Warning!',

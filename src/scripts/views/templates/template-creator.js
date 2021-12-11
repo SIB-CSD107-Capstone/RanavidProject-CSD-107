@@ -29,14 +29,15 @@ const createStatisticContentTemplate = (data) => {
   return statisticContentElem;
 };
 
-const createSearchResultTemplate = (hospitals) => {
+const createSearchResultTemplate = (hospitals, inpatientType) => {
   const hospitalListElem = document.createElement('hospital-list');
   hospitalListElem.hospitals = hospitals;
+  hospitalListElem.inpatientType = inpatientType;
   return hospitalListElem;
 };
 
-const createInfoAvailableBedButtonTemplate = (id, bedAvailability) => `
-<button tabindex="0" class="btn btn-primary ${(bedAvailability) ? 'btn-rs-ready' : 'btn-rs-not'} px-3 rounded-pill" data-id="${id}">
+const createInfoAvailableBedButtonTemplate = (bedAvailability) => `
+<button tabindex="0" class="btn btn-primary ${(bedAvailability) ? 'btn-rs-ready' : 'btn-rs-not'} px-3 rounded-pill">
                   Tersedia ${bedAvailability} Kamar
                 </button>
 `;

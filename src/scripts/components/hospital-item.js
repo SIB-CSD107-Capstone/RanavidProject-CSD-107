@@ -10,6 +10,10 @@ class HospitalItem extends HTMLElement {
     this.render();
   }
 
+  set type(type) {
+    this._type = type;
+  }
+
   render() {
     this.setAttribute('class', 'col mb-4');
     if (this._hospital) {
@@ -28,6 +32,7 @@ class HospitalItem extends HTMLElement {
         buttonContainer: this.querySelector('#as-btn-detail-container'),
         id: this._hospital.id,
         bedAvailability: (this._hospital.bed_availability !== undefined) ? this._hospital.bed_availability : this._hospital.available_beds[0].available,
+        type: this._type,
       });
     }
   }

@@ -813,7 +813,10 @@ main {
   }
 }
 
-// Loading Animation
+.card-hasil {
+  min-height: 180px;
+}
+
 @keyframes ldio-xy82pdw42sf {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
