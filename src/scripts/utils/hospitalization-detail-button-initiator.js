@@ -21,21 +21,20 @@ const HospitalizationDetailButtonInitiator = {
   _renderButton() {
     this._buttonContainer.innerHTML += createInfoAvailableBedButtonTemplate(this._bedAvailability);
     const btnDetailHospitalization = this._buttonContainer.lastElementChild;
-
+    const hospitalId = this._id;
     btnDetailHospitalization.addEventListener('click', (event) => {
       event.stopPropagation();
 
-      const partUrl = UrlParser.parseActiveUrlWithoutCombiner();
+      const partsUrl = UrlParser.parseActiveUrlWithoutCombiner();
 
       if (typeof (Storage) !== 'undefined') {
         // simpan partUrl search page di session storage
-        sessionStorage.setItem('previousUrl', JSON.stringify(partUrl));
+        sessionStorage.setItem('previousUrl', JSON.stringify(partsUrl));
       } else {
         console.log('Oops your browser is not support session storage feature');
       }
-      // contoh 1 id hospital
-      const idHospital = this._id;
-      window.location.href = `/#/rumah-sakit/detail-rawat-inap/${idHospital}/${this._type}`;
+
+      window.location.href = `/#/rumah-sakit/detail-rawat-inap/${hospitalId}/${this._type}`;
     });
   },
 };

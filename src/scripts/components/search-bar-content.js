@@ -97,7 +97,7 @@ class SearchBarContent extends HTMLElement {
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="inpatient" id="non-covid" value="option1" checked>
+            <input class="form-check-input" type="radio" name="inpatient" id="non-covid" value="option1">
             <label class="form-check-label" for="non-covid">
               Non-Covid
             </label>
