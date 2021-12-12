@@ -104,6 +104,10 @@ module.exports = {
         to: path.resolve(__dirname, 'dist/'),
       }],
     }),
+    new InjectManifest({
+      swSrc: './src/scripts/src-sw.js',
+      swDest: 'sw.js',
+    }),
     new WebpackPwaManifest({
       name: 'Ranavid App',
       short_name: 'Ranavid Lite',
@@ -162,10 +166,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
-    new InjectManifest({
-      swSrc: './src/scripts/src-sw.js',
-      swDest: 'sw.js',
-    }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       openAnalyzer: false,
