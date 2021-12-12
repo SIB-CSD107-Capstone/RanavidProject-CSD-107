@@ -8,6 +8,7 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminPngquant = require('imagemin-pngquant');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const {
   CleanWebpackPlugin,
@@ -133,6 +134,10 @@ module.exports = {
     new InjectManifest({
       swSrc: './src/scripts/src-sw.js',
       swDest: 'sw.js',
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
     }),
   ],
 };
