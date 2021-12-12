@@ -20,6 +20,7 @@ const AboutUs = {
   },
 
   async afterRender() {
+    document.title = 'about us';
     const aboutWebElem = document.querySelector('.about-web');
     const fiturWeb = document.querySelector('.fitur-web');
     const teamPengembang = document.querySelector('.team-pengembang');

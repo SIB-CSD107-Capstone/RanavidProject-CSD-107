@@ -1,6 +1,8 @@
 import UrlParser from '../../routes/url-parser';
 import MediaDBSource from '../../data/mediadb-source';
-import { createDetailArticleContent } from '../templates/template-creator';
+import {
+  createDetailArticleContent,
+} from '../templates/template-creator';
 
 const DetailBlog = {
   async render() {
@@ -30,12 +32,15 @@ const DetailBlog = {
   },
 
   async afterRender() {
+    document.title = 'detail blog';
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const blogId = url.id_or_sub;
     const {
       type,
     } = url;
-    const { blog } = await MediaDBSource.detailBlog(blogId, type);
+    const {
+      blog,
+    } = await MediaDBSource.detailBlog(blogId, type);
     const articleContent = document.querySelector('.article-content');
     articleContent.innerHTML = createDetailArticleContent(blog);
   },
