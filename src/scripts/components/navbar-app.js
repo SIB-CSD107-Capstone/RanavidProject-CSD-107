@@ -5,7 +5,6 @@ class NavbarApp extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <a href="#main-content" class="skip-link">Menuju ke konten</a>
     <!-- Header -->
     <header class="header">
       <div class="container">

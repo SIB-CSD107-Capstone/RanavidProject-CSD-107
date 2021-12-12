@@ -18,7 +18,7 @@ class HospitalItem extends HTMLElement {
     this.setAttribute('class', 'col mb-4');
     if (this._hospital) {
       this.innerHTML = `
-      <div class="card h-100 card-kamar">
+      <div class="card h-100 card-kamar" data-aos="fade-up" data-aos-once="true">
       <div class="card-body p-4 p-md-5 text-center text-md-left" id="as-btn-detail-container">
         <h3 class="card-title nama-rs" tabindex="0">${this._hospital.name}</h3>
         <p class="card-text alamat-rs" tabindex="0">${this._hospital.address}</p>

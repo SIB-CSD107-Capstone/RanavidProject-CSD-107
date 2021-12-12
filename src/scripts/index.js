@@ -4,11 +4,21 @@ import '../styles/_responsive.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import '@iconify/iconify';
+import './components/skip-to-content';
 import './components/navbar-app';
 import './components/footer-app';
 import './components/loading-animation';
 import $ from 'jquery';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Swal from 'sweetalert2';
+import swRegister from './utils/sw-register';
 import App from './views/app';
+
+AOS.init({
+  once: true,
+});
+const skipBtn = document.querySelector('skip-to-content');
 
 // Loading
 const loadingPage = () => {
@@ -23,7 +33,7 @@ const loadingPageAfter = () => {
     document.querySelector('loading-animation').classList.add('loading');
     document.body.style.opacity = '1';
     clearTimeout(loadingTimeout);
-  }, 100);
+  }, 500);
 };
 
 // rotate up-arrow-icon on event collapse accordion
@@ -42,6 +52,7 @@ const app = new App({
 window.addEventListener('load', () => {
   loadingPage();
   app.renderPage();
+  swRegister();
   loadingPageAfter();
 });
 
@@ -49,4 +60,18 @@ window.addEventListener('hashchange', () => {
   loadingPage();
   app.renderPage();
   loadingPageAfter();
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  skipBtn.addEventListener('click', () => {
+    document.querySelector('#main-content').focus();
+  });
+});
+
+window.addEventListener('offline', () => {
+  Swal.fire(
+    'The Internet?',
+    'Oops, internet disconnected. check your connection.',
+    'question',
+  );
 });
