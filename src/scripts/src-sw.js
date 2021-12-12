@@ -74,7 +74,7 @@ registerRoute(
 
 registerRoute(
   ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
-                  || url.pathname === `/api/get-cities?provinceid=${provId}`,
+                  || url.pathname === '/api/get-cities?provinceid=',
   new StaleWhileRevalidate({
     cacheName: 'RSBedCity-api-response',
     plugin: [
@@ -90,7 +90,7 @@ registerRoute(
 
 registerRoute(
   ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
-                  || url.pathname === `/api/get-hospitals?provinceid=${provId}&cityid=${cityId}&type=${type}`,
+                  || url.pathname === '/api/get-hospitals?provinceid=&cityid=&type=',
   new StaleWhileRevalidate({
     cacheName: 'RSIDHosp-api-response',
     plugin: [
@@ -106,7 +106,7 @@ registerRoute(
 
 registerRoute(
   ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
-                  || url.pathname === `/api/get-bed-detail?hospitalid=${hospitalId}&type=${type}`,
+                  || url.pathname === '/api/get-bed-detail?hospitalid=&type=',
   new StaleWhileRevalidate({
     cacheName: 'RSBedType-api-response',
     plugin: [
@@ -122,7 +122,7 @@ registerRoute(
 
 registerRoute(
   ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
-                  || url.pathname === `/api/get-bed-detail?hospitalid=${hospitalId}&type=${type}`,
+                  || url.pathname === '/api/get-bed-detail?hospitalid=&type=',
   new StaleWhileRevalidate({
     cacheName: 'RSBedType-api-response',
     plugin: [
@@ -138,7 +138,7 @@ registerRoute(
 
 registerRoute(
   ({ url }) => url.origin === 'https://rs-bed-covid-api.vercel.app'
-                  || url.pathname === `/api/get-hospital-map?hospitalid=${hospitalId}`,
+                  || url.pathname === '/api/get-hospital-map?hospitalid=',
   new StaleWhileRevalidate({
     cacheName: 'RSBedMap-api-response',
     plugin: [
@@ -186,7 +186,7 @@ registerRoute(
 
 registerRoute(
   ({ url }) => url.origin === 'https://61b090523c954f001722a461.mockapi.io'
-                  || url.pathname === `/blogs/${id}`,
+                  || url.pathname === '/blogs/',
   new StaleWhileRevalidate({
     cacheName: 'detailBlog-api-response',
     plugin: [
