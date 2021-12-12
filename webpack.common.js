@@ -5,7 +5,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminPngquant = require('imagemin-pngquant');
 
 const {
   CleanWebpackPlugin,
@@ -66,11 +68,7 @@ module.exports = {
     },
     {
       test: /\.(jpe?g|png|gif|svg)$/i,
-      loader: 'file-loader',
-      options: {
-        type: 'asset',
-        name: '[path][name].[ext]',
-      },
+      use: ['file-loader', 'image-webpack-loader?bypassOnDebug'],
     },
     ],
   },
@@ -81,13 +79,10 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [{
-        // favicon: path.resolve(__dirname, './src/public/img/favicon.png'),
         from: path.resolve(__dirname, 'src/public/'),
         to: path.resolve(__dirname, 'dist/'),
       }],
     }),
-    new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin(),
     new WebpackPwaManifest({
       name: 'Ranavid App',
       short_name: 'Ranavid Lite',
@@ -122,17 +117,19 @@ module.exports = {
       },
       ],
     }),
-    new ImageMinimizerPlugin({
-      minimizerOptions: {
-        // Lossless optimization with custom option
-        // Feel free to experiment with options for better result for you
-        plugins: [
-          ['gifsicle', { interlaced: true }],
-          ['jpegtran', { progressive: true }],
-          ['optipng', { optimizationLevel: 5 }],
-        ],
-      },
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+        ImageminPngquant({
+          quality: [0.3, 0.5],
+        }),
+      ],
     }),
+    new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin(),
     new InjectManifest({
       swSrc: './src/scripts/src-sw.js',
       swDest: 'sw.js',
