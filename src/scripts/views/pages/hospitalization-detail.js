@@ -75,8 +75,6 @@ const HospitalizationDetail = {
     const availableBedDetailsElem = document.querySelector('.available-bed-details');
     availableBedDetailsElem.innerHTML = '';
     createListBedDetailHospitalTemplate(availableBedDetailsElem, hospital.bedDetail);
-    console.log(availableBedDetailsElem);
-    console.log(hospital);
   },
 };
 

@@ -1,3 +1,5 @@
+import DateTimeHelper from '../utils/datetime-helper';
+
 class BedDetailItem extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -10,13 +12,29 @@ class BedDetailItem extends HTMLElement {
 
   render() {
     if (this._detail) {
+      const updateBedInfo = new DateTimeHelper(this._detail.time);
+      const distanceUpdateBedInfo = updateBedInfo.distanceWithNow();
+
+      let timeUpdateData = '';
+      if (distanceUpdateBedInfo.days) {
+        timeUpdateData = `${distanceUpdateBedInfo.days} hari yang lalu`;
+      } else if (distanceUpdateBedInfo.hours) {
+        timeUpdateData = `${distanceUpdateBedInfo.hours} jam yang lalu`;
+      } else if (distanceUpdateBedInfo.minutes) {
+        timeUpdateData = `${distanceUpdateBedInfo.minutes} menit yang lalu`;
+      } else if (distanceUpdateBedInfo.seconds) {
+        timeUpdateData = `${distanceUpdateBedInfo.seconds} detik yang lalu`;
+      } else {
+        timeUpdateData = '';
+      }
+
       this.innerHTML = `
       <div class="card mb-3">
         <button class="card-header btn btn-block bg-danger" data-toggle="collapse" data-target="#card-${this._detail.index}"
           aria-expanded="false" aria-controls="multiCollapseExample2" tabindex="0">
           <div class="bed-info">
             <h5 class="text-left text-white">${this._detail.stats.title}</h5>
-            <p class="text-left text-white p-0 m-0">data diperbarui ${this._detail.time} menit yang lalu</p>
+            <p class="text-left text-white p-0 m-0">data diperbarui ${timeUpdateData}</p>
           </div>
 
           <span class="iconify up-arrow-icon" data-icon="fa-solid:angle-up"></span>
