@@ -11,10 +11,10 @@ class NavbarApp extends HTMLElement {
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent custom-nav">
           <a class="navbar-brand" href="#">
           <picture>
-      <source class="webp" media="(max-width: 425px)" data-srcset="./img/ranavid-logo.png">
-        <source media="(max-width: 425px)" data-srcset="./img/ranavid-logo-small.png">
-        <source media="(max-width: 1024px)" data-srcset="./img/ranavid-logo-medium.png">
-        <source class="webp" data-srcset="./img/ranavid-logo.png">
+      <source media="(max-width: 576px)" data-srcset="./img/ranavid-logo.webp">
+        <source media="(max-width: 576px)" data-srcset="./img/ranavid-logo-small.png">
+        <source media="(max-width: 992px)" data-srcset="./img/ranavid-logo-medium.png">
+        <source data-srcset="./img/ranavid-logo.webp">
         <source data-srcset="./img/ranavid-logo.png">
         <img class="lazyload" data-src="./img/ranavid-logo.png" alt="ranavid-logo">
       </picture>

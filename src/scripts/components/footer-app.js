@@ -11,10 +11,10 @@ class FooterApp extends HTMLElement {
         <div class="row">
           <div class="col-12 col-md-5 text-center text-md-left">
           <picture>
-      <source media="(max-width: 425px)" data-srcset="./img/ranavid-logo-trans.png">
-        <source class="webp" media="(max-width: 425px)" data-srcset="./img/ranavid-logo-small.png">
-        <source media="(max-width: 1024px)" data-srcset="./img/ranavid-logo-trans-medium.png">
-        <source class="webp" data-srcset="./img/ranavid-logo-trans.png">
+      <source media="(max-width: 576px)" data-srcset="./img/ranavid-logo-trans.webp">
+        <source media="(max-width: 576px)" data-srcset="./img/ranavid-logo-small.png">
+        <source media="(max-width: 992px)" data-srcset="./img/ranavid-logo-trans-medium.png">
+        <source data-srcset="./img/ranavid-logo-trans.webp">
         <source data-srcset="./img/ranavid-logo-trans.png">
         <img data-src="./img/ranavid-logo-trans.png" alt="ranavid-logo" class="w-4 lazyload">
       </picture>

@@ -188,10 +188,10 @@ const createAboutWebTemplate = () => `
 <div class="row d-flex align-items-center wrap-about">
     <div class="col-12 col-lg-6 gambar-about">
     <picture>
-      <source class="webp" media="(max-width: 425px)" data-srcset="./img/corona-2.jpg">
-        <source media="(max-width: 425px)" data-srcset="./img/corona-2-small.jpg">
-        <source media="(max-width: 1024px)" data-srcset="./img/corona-2-medium.jpg">
-        <source class="webp" data-srcset="./img/corona-2.jpg">
+      <source media="(max-width: 576px)" data-srcset="./img/corona-2.webp">
+        <source media="(max-width: 576px)" data-srcset="./img/corona-2-small.jpg">
+        <source media="(max-width: 992px)" data-srcset="./img/corona-2-medium.jpg">
+        <source data-srcset="./img/corona-2.webp">
         <source data-srcset="./img/corona-2.jpg">
         <img class="lazyload" data-src="./img/corona-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="Tentang Aplikasi" tabindex="0">
       </picture>
@@ -308,10 +308,10 @@ const createAboutCovid = () => `
         </div>
         <div class="col-12 col-lg-6 gambar-about">
         <picture>
-      <source class="webp" media="(max-width: 425px)" data-srcset="./img/corona-1.png">
-        <source media="(max-width: 425px)" data-srcset="./img/corona-1-small.png">
-        <source media="(max-width: 1024px)" data-srcset="./img/corona-1-medium.png">
-        <source class="webp" data-srcset="./img/corona-1.png">
+      <source media="(max-width: 576px)" data-srcset="./img/corona-1.webp">
+        <source media="(max-width: 576px)" data-srcset="./img/corona-1-small.png">
+        <source media="(max-width: 992px)" data-srcset="./img/corona-1-medium.png">
+        <source data-srcset="./img/corona-1.webp">
         <source data-srcset="./img/corona-1.png">
         <img class="lazyload" data-src="./img/corona-1.png" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="Orang memakai masker" tabindex="0">
       </picture>

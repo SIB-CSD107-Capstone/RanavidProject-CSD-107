@@ -11,6 +11,7 @@ const ImageminPngquant = require('imagemin-pngquant');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 
 const {
   CleanWebpackPlugin,
@@ -147,6 +148,17 @@ module.exports = {
           quality: [0.3, 0.5],
         }),
       ],
+    }),
+    new ImageminWebpWebpackPlugin({
+      config: [
+        {
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality: 50,
+          },
+        },
+      ],
+      overrideExtension: true,
     }),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
