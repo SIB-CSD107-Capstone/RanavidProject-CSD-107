@@ -1,5 +1,6 @@
 @media (max-width: 768px) {
   .search-bar {
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(243, 243, 243, 0.6)), url('../public/img/hero-medium.jpg') !important;
     header {
       h2 {
         font-size: 48px !important;
@@ -557,6 +558,10 @@
     .blog-text {
       font-size: 1.1rem !important;
     }
+  }
+
+  .search-bar {
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(243, 243, 243, 0.6)), url('../public/img/hero.jpg') !important;
   }
 
   .about-web {
