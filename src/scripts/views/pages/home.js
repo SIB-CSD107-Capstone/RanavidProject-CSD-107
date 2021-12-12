@@ -15,7 +15,7 @@ const Home = {
     }
 
     return `
-    <section id="search-bar" class="search-bar"></section>
+    <section id="search-bar" class="search-bar lazyload"></section>
     <section id="statistics" class="statistics"></section>
     `;
   },

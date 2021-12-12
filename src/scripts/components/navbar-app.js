@@ -10,7 +10,7 @@ class NavbarApp extends HTMLElement {
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent custom-nav">
           <a class="navbar-brand" href="#">
-            <img src="./img/ranavid-logo.png" alt="ranavid-logo">
+            <img class="lazyload" src="./img/ranavid-logo.png" alt="ranavid-logo">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

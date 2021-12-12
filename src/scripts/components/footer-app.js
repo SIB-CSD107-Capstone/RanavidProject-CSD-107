@@ -10,7 +10,7 @@ class FooterApp extends HTMLElement {
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-5 text-center text-md-left">
-            <img src="./img/ranavid-logo-trans.png" alt="ranavid-logo" class="w-4">
+            <img src="./img/ranavid-logo-trans.png" alt="ranavid-logo" class="w-4 lazyload">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</p>
           </div>
           <div class="col-12 col-md-7 d-flex justify-content-between">
