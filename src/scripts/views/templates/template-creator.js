@@ -1,9 +1,10 @@
 import '../../components/search-bar-content';
 import '../../components/statistic-section-content';
 import '../../components/hospital-list';
+import '../../components/info-hospital';
+import '../../components/bed-detail-item';
 
 const createSearchBarTemplate = (flag) => {
-  // const searcBarContent = document.createElement('search-bar');
   const searcBarContent = `<search-bar-content data-flag="${flag}"></search-bar-content>`;
   return searcBarContent;
 };
@@ -42,106 +43,34 @@ const createInfoAvailableBedButtonTemplate = (bedAvailability) => `
                 </button>
 `;
 
-const createHospitalizationDetailTemplate = () => `
-<div class="container">
-  <header class="text-center mb-5">
-    <h2 class="font-weight-bold" tabindex="0" style="font-size: 3em;">
-      Detail Rawat Inap
-    </h2>
-  </header>
-  <div class="row justify-content-center">
-    <div class="col col-lg-8">
-      <header>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent pl-0">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pencarian</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Detail</li>
-          </ol>
-        </nav>
-        <div class="title-wrapper d-flex">
-          <h4 class="rs-name" tabindex="0">RS Umum Puri Raharja</h4>
-          <button>
-            <span class="iconify like-icon" data-icon="fa-solid:heart" tabindex="0"
-              onclick="location.href='favorite_hospitals_page.html';" data-width="46" data-height="44"
-              title="favorite rumah sakit"></span>
-          </button>
+const createBreadcrumbItem = (partsPreviousUrl) => {
+  const combinePartsPreviousUrl = `/#/${partsPreviousUrl.resource}/${partsPreviousUrl.id_or_sub}/${partsPreviousUrl.second_id}/${partsPreviousUrl.type}`;
+  return `
+  <ol class="breadcrumb bg-transparent pl-0">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="${combinePartsPreviousUrl}">Pencarian</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Detail</li>
+  </ol>
+  `;
+};
 
-        </div>
+const createInfoHospitalTemplate = (hospital) => {
+  const infoHospitalElem = document.createElement('info-hospital');
+  infoHospitalElem.hospital = hospital;
+  return infoHospitalElem;
+};
 
-        <p class="rs-address" tabindex="0">Jl. WR Supratman 14</p>
-        <div class="detail-util d-flex flex-column flex-md-row">
-        <a href="#" class="btn btn-outline-info btn-map pt-2 active-shadow mb-3 mb-md-0 mr-0 mr-md-3">Lihat Peta <span class="iconify"
-        data-icon="simple-icons:googlemaps"></span></a>
-    <button class="btn btn-info btn-telp active-shadow" onclick="location.href = 'tel:+085156590021'"><span class="telp-icon  iconify"
-        data-icon="clarity:phone-handset-solid"></span>
-      <span class="no-telp">081293334442</span></button>
-        </div>
-      </header>
-
-      <!-- detail layanan rawat inap  -->
-      <div class="service-detail my-5">
-        <div class="card mb-3">
-          <button class="card-header btn btn-block bg-danger" data-toggle="collapse" data-target="#card-1"
-            aria-expanded="false" aria-controls="multiCollapseExample2" tabindex="0">
-            <div class="service-info">
-              <h5 class="text-left text-white">Isolasi Tanpa Tekanan Negatif</h5>
-              <p class="text-left text-white p-0 m-0">data diperbarui 40 menit yang lalu</p>
-            </div>
-
-            <span class="iconify up-arrow-icon" data-icon="fa-solid:angle-up"></span>
-          </button>
-          <div class="collapse multi-collapse" id="card-1">
-            <div class="card-body">
-              <div class="box bed bg-primary">
-                <p tabindex="0">Tempat Tidur</p>
-                <p tabindex="0">5</p>
-              </div>
-              <div class="box empty bg-success">
-                <p tabindex="0">Kosong</p>
-                <p tabindex="0">5</p>
-              </div>
-              <div class="box used bg-danger">
-                <p tabindex="0">Terpakai</p>
-                <p tabindex="0">5</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="card mb-3">
-          <button class="card-header btn btn-block bg-danger" data-toggle="collapse" data-target="#card-2"
-            aria-expanded="false" aria-controls="multiCollapseExample2" tabindex="0">
-            <div class="service-info">
-              <h5 class="text-left text-white">Isolasi Tanpa Tekanan Negatif</h5>
-              <p class="text-left text-white p-0 m-0">data diperbarui 40 menit yang lalu</p>
-            </div>
-
-            <span class="iconify up-arrow-icon" data-icon="fa-solid:angle-up"></span>
-          </button>
-          <div class="collapse multi-collapse" id="card-2">
-            <div class="card-body">
-              <div class="box bed bg-primary">
-                <p tabindex="0">Tempat Tidur</p>
-                <p tabindex="0">5</p>
-              </div>
-              <div class="box empty bg-success">
-                <p tabindex="0">Kosong</p>
-                <p tabindex="0">5</p>
-              </div>
-              <div class="box used bg-danger">
-                <p tabindex="0">Terpakai</p>
-                <p tabindex="0">5</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-`;
+const createListBedDetailHospitalTemplate = (bedDetailContainer, bedsDetails) => {
+  if (bedsDetails.length < 1) {
+    bedDetailContainer.innerHTML = '<h4 class="text-center bg-info text-white">Data Rawat Inap Rumah Sakit Tidak Tersedia</h4>';
+  }
+  bedsDetails.forEach((bedDetail, index) => {
+    bedDetail.index = index;
+    const bedDetailElem = document.createElement('bed-detail-item');
+    bedDetailElem.detail = bedDetail;
+    bedDetailContainer.appendChild(bedDetailElem);
+  });
+};
 
 const createFavoriteHospitalTemplate = () => `
 <div class="container">
@@ -445,7 +374,6 @@ export {
   createSearchButton,
   createSearchResultTemplate,
   createInfoAvailableBedButtonTemplate,
-  createHospitalizationDetailTemplate,
   createFavoriteHospitalTemplate,
   createAboutWebTemplate,
   createFiturWebTemplate,
@@ -456,4 +384,7 @@ export {
   createSearchSectionAds,
   createModalList,
   createDetailArticleContent,
+  createBreadcrumbItem,
+  createInfoHospitalTemplate,
+  createListBedDetailHospitalTemplate,
 };
