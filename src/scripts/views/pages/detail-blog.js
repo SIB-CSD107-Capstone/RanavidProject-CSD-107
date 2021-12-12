@@ -15,7 +15,7 @@ const DetailBlog = {
       <div class="row">
         <div class="col-12 col-md-8 mx-auto">
             <nav aria-label="breadcrumb">
-              <ol class="breadcrumb bg-transparent pl-0">
+              <ol class="breadcrumb bg-transparent pl-0 mb-0">
                 <li class="breadcrumb-item"><a href="#/blog">Blog</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Detail</li>
               </ol>

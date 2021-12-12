@@ -47,18 +47,44 @@ const Blog = {
     aboutContainer.innerHTML = createAboutCovid();
     const blogs = await MediaDBSource.Blog();
     const blogList = document.querySelector('.blog-list');
-    blogs.forEach((blog) => {
-      blogList.innerHTML += createBlogPost(blog);
-    });
+    if (blogs.length > 0) {
+      blogs.forEach((blog) => {
+        blogList.innerHTML += createBlogPost(blog);
+      });
+    } else {
+      this._renderBlogEmpty();
+    }
     const vlogs = await MediaDBSource.Vlog();
     const vlogList = document.querySelector('.vlog-list');
     const modalList = document.querySelector('.modal-list');
-    vlogs.forEach((vlog) => {
-      vlogList.innerHTML += createVlogPost(vlog);
-      modalList.innerHTML += createModalList(vlog);
-    });
+    if (vlogs.length > 0) {
+      vlogs.forEach((vlog) => {
+        vlogList.innerHTML += createVlogPost(vlog);
+        modalList.innerHTML += createModalList(vlog);
+      });
+    } else {
+      this._renderVlogEmpty();
+    }
     const searchAds = document.querySelector('.search-hospital');
     searchAds.innerHTML = createSearchSectionAds();
+  },
+
+  _renderBlogEmpty() {
+    const blogPost = document.querySelector('.blog-post');
+    blogPost.innerHTML += `
+    <div class="alert alert-danger" role="alert">
+  Data tidak ditemukan!
+</div>
+    `;
+  },
+
+  _renderVlogEmpty() {
+    const videoPost = document.querySelector('.video-post');
+    videoPost.innerHTML += `
+    <div class="alert alert-danger" role="alert">
+  Data tidak ditemukan!
+</div>
+    `;
   },
 };
 

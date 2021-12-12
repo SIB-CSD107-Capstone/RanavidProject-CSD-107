@@ -320,37 +320,37 @@ const createTeamPengembangTemplate = () => `
     <div class="col-12 col-md-6 mb-4">
       <div class="card h-100 team-card">
         <img
-          src="https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-          class="card-img-top" alt="Foto Ikram" tabindex="0">
+          src="https://res.cloudinary.com/ikram20/image/upload/v1639216877/ikram_dqlgii.png"
+          class="card-img-top" alt="Ikram Maulana" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" tabindex="0">
         <div class="card-body pb-3">
           <h3 class="card-title team-name" tabindex="0">Ikram Maulana</h3>
           <p class="card-text team-id" tabindex="0">F267R4264</p>
         </div>
         <div class="i-social mb-4">
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:instagram-square"
-              style="color: #121e2a;" data-width="24" data-height="24"></span></a>
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
-              data-width="24" data-height="24"></span></a>
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
-              data-width="24" data-height="24"></span></a>
+        <a href="https://instagram.com/Ikram_Maulana" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:instagram-square"
+        style="color: #121e2a;" data-width="24" data-height="24"></span></a>
+    <a href="https://github.com/Ikram-Maulana" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
+        data-width="24" data-height="24"></span></a>
+    <a href="https://www.linkedin.com/in/ikram-maulana-54a152217/" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
+        data-width="24" data-height="24"></span></a>
         </div>
       </div>
     </div>
     <div class="col-12 col-md-6 mb-4">
       <div class="card h-100 team-card">
         <img
-          src="https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-          class="card-img-top" alt="Foto Febrianto" tabindex="0">
+          src="https://res.cloudinary.com/dnjfsndzc/image/upload/v1639196096/foto1_dvbsnw.jpg"
+          class="card-img-top" alt="Febrianto" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" tabindex="0">
         <div class="card-body pb-3">
           <h3 class="card-title team-name" tabindex="0">Febrianto</h3>
           <p class="card-text team-id" tabindex="0">F190R7147</p>
         </div>
         <div class="i-social mb-4">
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:instagram-square"
+          <a href="https://www.instagram.com/febrianto.15/" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:instagram-square"
               style="color: #121e2a;" data-width="24" data-height="24"></span></a>
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
+          <a href="https://github.com/Febrianto752" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
               data-width="24" data-height="24"></span></a>
-          <a href="#" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
               data-width="24" data-height="24"></span></a>
         </div>
       </div>
@@ -378,7 +378,7 @@ const createAboutCovid = () => `
 
 const createBlogPost = (blog) => `
 <div class="col mb-4">
-          <div class="card h-100 border-0 custom-blog-post">
+          <div class="card h-100 border-0 custom-blog-post" data-aos="fade-up" data-aos-once="true">
             <img src="${blog.blogImages}" class="card-img-top" alt="${blog.title}" tabindex="0">
             <div class="card-body p-0">
               <h3 class="card-title heading-3" tabindex="0">${blog.title}</h3>
@@ -392,7 +392,7 @@ const createBlogPost = (blog) => `
 
 const createVlogPost = (vlog) => `
 <div class="col mb-4">
-          <div class="card h-100 custom-video-post">
+          <div class="card h-100 custom-video-post" data-aos="fade-up" data-aos-once="true">
             <img src="${vlog.images}" class="card-img-top" alt="${vlog.title}" tabindex="0">
             <div class="card-body">
               <h3 class="card-title heading-3"><a href="#" data-toggle="modal"
