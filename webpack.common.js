@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const {
   CleanWebpackPlugin,
@@ -67,6 +68,7 @@ module.exports = {
       test: /\.(jpe?g|png|gif|svg)$/i,
       loader: 'file-loader',
       options: {
+        type: 'asset',
         name: '[path][name].[ext]',
       },
     },
@@ -119,6 +121,17 @@ module.exports = {
         destination: path.join('icons', 'android'),
       },
       ],
+    }),
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        // Lossless optimization with custom option
+        // Feel free to experiment with options for better result for you
+        plugins: [
+          ['gifsicle', { interlaced: true }],
+          ['jpegtran', { progressive: true }],
+          ['optipng', { optimizationLevel: 5 }],
+        ],
+      },
     }),
     new InjectManifest({
       swSrc: './src/scripts/src-sw.js',
