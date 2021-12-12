@@ -9,6 +9,7 @@ const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminPngquant = require('imagemin-pngquant');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const {
   CleanWebpackPlugin,
@@ -44,6 +45,23 @@ module.exports = {
         },
       },
     },
+    minimizer: [new UglifyJsPlugin(
+      {
+        parallel: true,
+        exclude: [/\.min\.js$/gi], // skip pre-minified libs
+        uglifyOptions: {
+          warnings: false,
+          parse: {},
+          compress: {},
+          mangle: true, // Note `mangle.properties` is `false` by default.
+          output: null,
+          toplevel: false,
+          nameCache: null,
+          ie8: false,
+          keep_fnames: false,
+        },
+      },
+    )],
   },
   module: {
     rules: [{
@@ -137,7 +155,7 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
-      openAnalyzer: false,
+      
     }),
   ],
 };
