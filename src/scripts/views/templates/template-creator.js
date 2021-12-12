@@ -187,7 +187,7 @@ const createFavoriteHospitalTemplate = () => `
 const createAboutWebTemplate = () => `
 <div class="row d-flex align-items-center wrap-about">
     <div class="col-12 col-lg-6 gambar-about">
-      <img class="lazyload" src="img/corona-2.jpg" alt="Tentang Aplikasi" tabindex="0">
+      <img class="lazyload" src="img/corona-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="Tentang Aplikasi" tabindex="0">
     </div>
     <div class="col-12 col-lg-6 text-about">
       <p tabindex="0">Tentang Aplikasi</p>
@@ -300,7 +300,7 @@ const createAboutCovid = () => `
           </p>
         </div>
         <div class="col-12 col-lg-6 gambar-about">
-          <img class="lazyload" src="img/corona-1.png" alt="Orang memakai masker" tabindex="0">
+          <img class="lazyload" src="img/corona-1.png" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="Orang memakai masker" tabindex="0">
         </div>
       </div>
 `;
@@ -308,7 +308,7 @@ const createAboutCovid = () => `
 const createBlogPost = (blog) => `
 <div class="col mb-4">
           <div class="card h-100 border-0 custom-blog-post" data-aos="fade-up" data-aos-once="true">
-            <img src="${blog.blogImages}" class="card-img-top lazyload" alt="${blog.title}" tabindex="0">
+            <img src="${blog.blogImages}" class="card-img-top lazyload" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="${blog.title}" tabindex="0">
             <div class="card-body p-0">
               <h3 class="card-title heading-3" tabindex="0">${blog.title}</h3>
               <p class="card-text" tabindex="0">${blog.content}</p>
@@ -322,7 +322,7 @@ const createBlogPost = (blog) => `
 const createVlogPost = (vlog) => `
 <div class="col mb-4">
           <div class="card h-100 custom-video-post" data-aos="fade-up" data-aos-once="true">
-            <img src="${vlog.images}" class="card-img-top lazyload" alt="${vlog.title}" tabindex="0">
+            <img src="${vlog.images}" class="card-img-top lazyload" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="${vlog.title}" tabindex="0">
             <div class="card-body">
               <h3 class="card-title heading-3"><a href="#" data-toggle="modal"
                   data-target="#videoModals-${vlog.id}">${vlog.title}</a></h3>
@@ -361,7 +361,7 @@ const createDetailArticleContent = (blog) => `
 <p class="sub-detail" tabindex="0">Detail Artikel</p>
 <h1 class="heading-1" tabindex="0">${blog.title}</h1>
 <p class="date-detail" tabindex="0">Diposting pada tanggal ${blog.createdAt}</p>
-<img src="${blog.blogImages}" alt="${blog.title}" class="img-fluid lazyload" tabindex="0">
+<img src="${blog.blogImages}" alt="${blog.title}" class="img-fluid lazyload" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" tabindex="0">
 <div class="blog-text">
   <p tabindex="0">
     ${blog.content}
