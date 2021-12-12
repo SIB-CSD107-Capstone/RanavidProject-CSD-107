@@ -187,7 +187,7 @@ const createFavoriteHospitalTemplate = () => `
 const createAboutWebTemplate = () => `
 <div class="row d-flex align-items-center wrap-about">
     <div class="col-12 col-lg-6 gambar-about">
-      <img src="img/corona-1.png" alt="Orang memakai masker" tabindex="0">
+      <img src="img/corona-2.jpg" alt="Orang memakai masker" tabindex="0">
     </div>
     <div class="col-12 col-lg-6 text-about">
       <p tabindex="0">Tentang Aplikasi</p>
