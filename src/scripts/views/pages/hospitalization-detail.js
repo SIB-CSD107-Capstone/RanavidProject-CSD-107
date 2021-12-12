@@ -2,7 +2,6 @@ import IndoHospitalBedSource from '../../data/indo-hospital-bed-source';
 import UrlParser from '../../routes/url-parser';
 import {
   createBreadcrumbItem,
-  createHospitalizationDetailTemplate,
   createInfoHospitalTemplate,
   createListBedDetailHospitalTemplate,
 } from '../templates/template-creator';
@@ -45,13 +44,10 @@ const HospitalizationDetail = {
   },
 
   async afterRender() {
-    // const hospitalizationDetailElem = document.querySelector('#detail-rawat-inap');
-    // hospitalizationDetailElem.innerHTML = createHospitalizationDetailTemplate();
-
     if (typeof (Storage) !== 'undefined') {
       const breadcrumbContainer = document.querySelector('nav[aria-label=breadcrumb]');
       const partsPreviousUrl = JSON.parse(sessionStorage.getItem('previousUrl'));
-      // console.log(JSON.parse(partsPreviousUrl));
+
       breadcrumbContainer.innerHTML = createBreadcrumbItem(partsPreviousUrl);
     } else {
       console.log('Oops your browser is not support session storage feature');

@@ -13,6 +13,7 @@ const Home = {
     if (mainContentElem.classList.contains('container')) {
       mainContentElem.classList.remove('container');
     }
+
     return `
     <section id="search-bar" class="search-bar"></section>
     <section id="statistics" class="statistics"></section>
@@ -23,7 +24,6 @@ const Home = {
     document.title = 'Ranavid Apps';
     const searchBar = document.querySelector('#search-bar');
 
-    // searchBar.appendChild(createSearchBar());
     searchBar.innerHTML = createSearchBarTemplate('in-landing-page');
 
     const statisticsBar = document.querySelector('#statistics');
@@ -32,6 +32,7 @@ const Home = {
     statisticsBar.appendChild(createStatisticContentTemplate(dataStatisticsCovidIndo));
 
     const ButtonsTypeOfHospitalization = document.querySelectorAll('button.form-check');
+
     // for if btn element type of hospitalization on click, so tag input type radion is checked
     ButtonsTypeOfHospitalization.forEach((btnType) => {
       btnType.addEventListener('click', (event) => {
