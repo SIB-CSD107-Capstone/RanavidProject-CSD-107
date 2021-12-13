@@ -32,12 +32,18 @@ class InfoHospital extends HTMLElement {
           <span class="no-telp">${this._hospital.phone}</span></button>
       </div>
       `;
-    }
 
-    FavoriteButtonInitiator.init({
-      favoriteButton: this.querySelector('.btn-favorite'),
-      hospital: this._hospital,
-    });
+      const hospital = {
+        ...this._hospital,
+      };
+      delete hospital.gmaps;
+      delete hospital.bedDetail;
+
+      FavoriteButtonInitiator.init({
+        favoriteButton: this.querySelector('.btn-favorite'),
+        hospital,
+      });
+    }
   }
 }
 
