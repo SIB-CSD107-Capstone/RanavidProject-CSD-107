@@ -29,7 +29,10 @@ class BedDetailItem extends HTMLElement {
       }
 
       this.innerHTML = `
-      <div class="card mb-3">
+      <div class="card mb-3" data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+      data-aos-offset="0">
         <button class="card-header btn btn-block bg-danger" data-toggle="collapse" data-target="#card-${this._detail.index}"
           aria-expanded="false" aria-controls="multiCollapseExample2" tabindex="0">
           <div class="bed-info">
