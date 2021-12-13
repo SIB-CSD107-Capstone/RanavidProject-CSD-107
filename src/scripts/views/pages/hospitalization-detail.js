@@ -59,9 +59,11 @@ const HospitalizationDetail = {
     const typeInpatient = partsUrl.type;
     let response = await IndoHospitalBedSource.indoHospitalBedByType(hospitalId, typeInpatient);
     const hospital = response.data;
+    hospital.type = typeInpatient;
     response = await IndoHospitalBedSource.indoHospitalMap(hospitalId);
     const hospitalGmaps = response.data.gmaps;
     hospital.gmaps = hospitalGmaps;
+    console.log(hospital);
 
     const infoHospitalWrapperElem = document.querySelector('.info-hospital-wrapper');
     infoHospitalWrapperElem.innerHTML = '';

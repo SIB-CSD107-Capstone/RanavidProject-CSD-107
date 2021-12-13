@@ -33,9 +33,9 @@ const FavoriteHospitalIdb = {
     }
     return (await dbPromise).put(OBJECT_STORE_NAME, hospital);
   },
-  async deleteRestaurant(id) {
+  async deleteHospital(id) {
     if (!id) {
-      throw new Error('id is empty');
+      return false;
     }
     return (await dbPromise).delete(OBJECT_STORE_NAME, id);
   },
