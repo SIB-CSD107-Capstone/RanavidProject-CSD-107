@@ -4,6 +4,7 @@ import '../../components/hospital-list';
 import '../../components/info-hospital';
 import '../../components/bed-detail-item';
 import '../../components/favorite-search-bar';
+import '../../components/btn-group-hospitalization';
 
 const createSearchBarTemplate = (flag) => {
   const searcBarContent = `<search-bar-content data-flag="${flag}"></search-bar-content>`;
@@ -94,21 +95,22 @@ const createFavoriteHospitalTemplate = () => `
 
   <!-- button tipe rawat inap  -->
   <div class=" my-5 ">
-    <p>Kategori</p>
-    <button class="btn btn-danger accessibility-44 active-shadow" type="button">
-      <input class="cursor-pointer" type="radio" name="inpatient" id="covid" value="covid" checked>
-      <label class="form-check-label cursor-pointer" for="covid">
-        Covid
-      </label>
-    </button>
+    <div>
+      <p>Kategori</p>
+      <button class="btn btn-danger accessibility-44 active-shadow" type="button">
+        <input class="cursor-pointer" type="radio" name="inpatient" id="covid" value="covid" checked>
+        <label class="form-check-label cursor-pointer" for="covid">
+          Covid
+        </label>
+      </button>
 
-    <button class="active-shadow btn btn-danger ml-2 accessibility-44" type="button">
-      <input class="cursor-pointer" type="radio" name="inpatient" id="non-covid" value="non-covid">
-      <label class="form-check-label cursor-pointer" for="non-covid">
-        Non - Covid
-      </label>
-    </button>
-
+      <button class="active-shadow btn btn-danger ml-2 accessibility-44" type="button">
+        <input class="cursor-pointer" type="radio" name="inpatient" id="non-covid" value="non-covid">
+        <label class="form-check-label cursor-pointer" for="non-covid">
+          Non - Covid
+        </label>
+      </button>
+    </div>
   </div>
 
   <!-- list favorite hospital  -->
@@ -127,45 +129,7 @@ const createFavoriteHospitalTemplate = () => `
           </div>
         </div>
       </div>
-      <div class="col mb-4">
-        <div class="card h-100 card-kamar">
-          <div class="card-body p-4 p-md-5 text-center text-md-left">
-            <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS
-              Umum Daerah Sekarwangi</h3>
-            <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-            <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-            <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-not">
-              Tidak Tersedia
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 card-kamar">
-          <div class="card-body p-4 p-md-5 text-center text-md-left">
-            <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS
-              Umum Daerah Sekarwangi</h3>
-            <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-            <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-            <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-ready">
-              Tersedia 6 Kamar
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 card-kamar">
-          <div class="card-body p-4 p-md-5 text-center text-md-left">
-            <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS
-              Umum Daerah Sekarwangi</h3>
-            <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-            <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-            <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-not">
-              Tidak Tersedia
-            </div>
-          </div>
-        </div>
-      </div>
+      
       <div class="col mb-4">
         <div class="card h-100 card-kamar">
           <div class="card-body p-4 p-md-5 text-center text-md-left">
@@ -189,6 +153,11 @@ const createFavoriteHospitalTemplate = () => `
 const createFavoriteSearchBarTemplate = () => {
   const favoriteSearchBarElem = document.createElement('favorite-search-bar');
   return favoriteSearchBarElem;
+};
+
+const createBtnGroupHospitalizationTemplate = () => {
+  const btnGroupHospitalizationElem = document.createElement('btn-group-hospitalization');
+  return btnGroupHospitalizationElem;
 };
 
 const createAboutWebTemplate = () => `
@@ -409,4 +378,5 @@ export {
   createInfoHospitalTemplate,
   createListBedDetailHospitalTemplate,
   createFavoriteSearchBarTemplate,
+  createBtnGroupHospitalizationTemplate,
 };

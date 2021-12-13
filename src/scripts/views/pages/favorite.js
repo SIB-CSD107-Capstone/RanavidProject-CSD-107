@@ -1,4 +1,5 @@
 import {
+  createBtnGroupHospitalizationTemplate,
   createFavoriteHospitalTemplate,
   createFavoriteSearchBarTemplate,
 } from '../templates/template-creator';
@@ -11,17 +12,20 @@ const Favorite = {
     }
     return `
     <section id="favorite-hospital" class="favorite-hospital">
-      <header class="my-5">
-        <h2 class="text-center font-weight-bold" tabindex="0">Daftar Rumah Sakit Yang Kamu Sukai</h2>
-      </header>
+      <div class="container" id="favorite-container">
+        <header class="my-5">
+          <h2 class="text-center font-weight-bold" tabindex="0">Daftar Rumah Sakit Yang Kamu Sukai</h2>
+        </header>
 
-      <div class="row justify-content-center">
-        <div class="col-10 col-md-6" id="input-search-container"></div>
+        <div class="row justify-content-center">
+          <div class="col-10 col-md-6" id="input-search-container"></div>
+        </div>
+
+        <div class=" my-5" id="btn-category-container"></div>
+
+        <div class="card-hasil"></div>
       </div>
-
-      <div class=" my-5" id="btn-category-container"></div>
-
-      <div class="card-hasil"></div>
+      
 
     </section>
     `;
@@ -38,6 +42,7 @@ const Favorite = {
 
     /* set btn-group type inpatient */
     const btnCategoryContainerElem = document.getElementById('btn-category-container');
+    btnCategoryContainerElem.appendChild(createBtnGroupHospitalizationTemplate());
   },
 };
 
