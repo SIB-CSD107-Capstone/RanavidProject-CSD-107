@@ -1,9 +1,7 @@
 import Swal from 'sweetalert2';
 import {
   createSearchButton,
-  createSearchResultTemplate,
 } from '../views/templates/template-creator';
-import IndoHospitalBedSource from '../data/indo-hospital-bed-source';
 
 const SearchButtonInitiator = {
   init({

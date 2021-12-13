@@ -1,14 +1,12 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import '../styles/_responsive.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle';
+import 'bootstrap';
 import '@iconify/iconify';
 import './components/skip-to-content';
 import './components/navbar-app';
 import './components/footer-app';
 import './components/loading-animation';
-import $ from 'jquery';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Swal from 'sweetalert2';
@@ -37,15 +35,6 @@ const loadingPageAfter = () => {
     clearTimeout(loadingTimeout);
   }, 500);
 };
-
-// rotate up-arrow-icon on event collapse accordion
-$('.multi-collapse').on('show.bs.collapse', () => {
-  this.previousElementSibling.querySelector('.up-arrow-icon').style.transform = 'rotate(0deg)';
-});
-
-$('.multi-collapse').on('hide.bs.collapse', () => {
-  this.previousElementSibling.querySelector('.up-arrow-icon').style.transform = 'rotate(180deg)';
-});
 
 const app = new App({
   content: document.querySelector('#main-content'),
