@@ -5,6 +5,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminPngquant = require('imagemin-pngquant');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 
 const {
   CleanWebpackPlugin,
@@ -40,6 +47,23 @@ module.exports = {
         },
       },
     },
+    minimizer: [new UglifyJsPlugin(
+      {
+        parallel: true,
+        exclude: [/\.min\.js$/gi], // skip pre-minified libs
+        uglifyOptions: {
+          warnings: false,
+          parse: {},
+          compress: {},
+          mangle: true, // Note `mangle.properties` is `false` by default.
+          output: null,
+          toplevel: false,
+          nameCache: null,
+          ie8: false,
+          keep_fnames: false,
+        },
+      },
+    )],
   },
   module: {
     rules: [{
@@ -65,10 +89,7 @@ module.exports = {
     },
     {
       test: /\.(jpe?g|png|gif|svg)$/i,
-      loader: 'file-loader',
-      options: {
-        name: '[path][name].[ext]',
-      },
+      use: ['file-loader', 'image-webpack-loader?bypassOnDebug'],
     },
     ],
   },
@@ -79,13 +100,14 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [{
-        // favicon: path.resolve(__dirname, './src/public/img/favicon.png'),
         from: path.resolve(__dirname, 'src/public/'),
         to: path.resolve(__dirname, 'dist/'),
       }],
     }),
-    new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin(),
+    new InjectManifest({
+      swSrc: './src/scripts/src-sw.js',
+      swDest: 'sw.js',
+    }),
     new WebpackPwaManifest({
       name: 'Ranavid App',
       short_name: 'Ranavid Lite',
@@ -120,9 +142,39 @@ module.exports = {
       },
       ],
     }),
-    new InjectManifest({
-      swSrc: './src/scripts/src-sw.js',
-      swDest: 'sw.js',
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+        ImageminPngquant({
+          quality: [0.3, 0.5],
+        }),
+      ],
+    }),
+    new ImageminWebpWebpackPlugin({
+      config: [
+        {
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality: 50,
+          },
+        },
+      ],
+      overrideExtension: true,
+    }),
+    new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
+    new CompressionPlugin({
+      algorithm: 'gzip',
+      test: /\.js$|\.css$|\.scss$|\.html$/,
+      threshold: 10240,
+      minRatio: 0,
     }),
   ],
 };
