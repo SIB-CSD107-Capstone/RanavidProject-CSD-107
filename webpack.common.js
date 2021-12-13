@@ -4,11 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { InjectManifest } = require('workbox-webpack-plugin');
+const {
+  InjectManifest
+} = require('workbox-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminPngquant = require('imagemin-pngquant');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const {
+  BundleAnalyzerPlugin
+} = require('webpack-bundle-analyzer');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
@@ -47,50 +51,48 @@ module.exports = {
         },
       },
     },
-    minimizer: [new UglifyJsPlugin(
-      {
-        parallel: true,
-        exclude: [/\.min\.js$/gi], // skip pre-minified libs
-        uglifyOptions: {
-          warnings: false,
-          parse: {},
-          compress: {},
-          mangle: true, // Note `mangle.properties` is `false` by default.
-          output: null,
-          toplevel: false,
-          nameCache: null,
-          ie8: false,
-          keep_fnames: false,
-        },
+    minimizer: [new UglifyJsPlugin({
+      parallel: true,
+      exclude: [/\.min\.js$/gi], // skip pre-minified libs
+      uglifyOptions: {
+        warnings: false,
+        parse: {},
+        compress: {},
+        mangle: true, // Note `mangle.properties` is `false` by default.
+        output: null,
+        toplevel: false,
+        nameCache: null,
+        ie8: false,
+        keep_fnames: false,
       },
-    )],
+    }, )],
   },
   module: {
     rules: [{
-      test: '/\.html$/',
-      loader: 'prerender-loader?string',
-    },
-    {
-      test: /\.(scss|css)$/,
-      use: [{
-        loader: MiniCssExtractPlugin.loader,
+        test: '/\.html$/',
+        loader: 'prerender-loader?string',
       },
       {
-        loader: 'css-loader',
+        test: /\.(scss|css)$/,
+        use: [{
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
       },
       {
-        loader: 'sass-loader',
+        test: /\.(woff|woff2|ttf|eot)$/,
+        use: 'file-loader?name=fonts/[name].[ext]!static',
       },
-      ],
-    },
-    {
-      test: /\.(woff|woff2|ttf|eot)$/,
-      use: 'file-loader?name=fonts/[name].[ext]!static',
-    },
-    {
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      use: ['file-loader', 'image-webpack-loader?bypassOnDebug'],
-    },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: ['file-loader', 'image-webpack-loader?bypassOnDebug'],
+      },
     ],
   },
   plugins: [
@@ -115,66 +117,66 @@ module.exports = {
       background_color: '#121E2A',
       crossorigin: 'use-credentials', // can be null, use-credentials or anonymous
       icons: [{
-        src: path.resolve('src/public/img/favicon.png'),
-        sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-      },
-      {
-        src: path.resolve('src/public/img/favicon.png'),
-        size: '1024x1024',
-        purpose: 'maskable',
-      },
-      {
-        src: path.resolve('src/public/img/favicon.png'),
-        sizes: [120, 152, 167, 180, 1024],
-        destination: path.join('icons', 'ios'),
-        ios: true,
-      },
-      {
-        src: path.resolve('src/public/img/favicon.png'),
-        size: 1024,
-        destination: path.join('icons', 'ios'),
-        ios: 'startup',
-      },
-      {
-        src: path.resolve('src/public/img/favicon.png'),
-        sizes: [36, 48, 72, 96, 144, 192, 512],
-        destination: path.join('icons', 'android'),
-      },
-      ],
-    }),
-    new ImageminWebpackPlugin({
-      plugins: [
-        ImageminMozjpeg({
-          quality: 50,
-          progressive: true,
-        }),
-        ImageminPngquant({
-          quality: [0.3, 0.5],
-        }),
-      ],
-    }),
-    new ImageminWebpWebpackPlugin({
-      config: [
+          src: path.resolve('src/public/img/favicon.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+        },
         {
-          test: /\.(jpe?g|png)/,
-          options: {
-            quality: 50,
-          },
+          src: path.resolve('src/public/img/favicon.png'),
+          size: '1024x1024',
+          purpose: 'maskable',
+        },
+        {
+          src: path.resolve('src/public/img/favicon.png'),
+          sizes: [120, 152, 167, 180, 1024],
+          destination: path.join('icons', 'ios'),
+          ios: true,
+        },
+        {
+          src: path.resolve('src/public/img/favicon.png'),
+          size: 1024,
+          destination: path.join('icons', 'ios'),
+          ios: 'startup',
+        },
+        {
+          src: path.resolve('src/public/img/favicon.png'),
+          sizes: [36, 48, 72, 96, 144, 192, 512],
+          destination: path.join('icons', 'android'),
         },
       ],
-      overrideExtension: true,
     }),
+    // new ImageminWebpackPlugin({
+    //   plugins: [
+    //     ImageminMozjpeg({
+    //       quality: 50,
+    //       progressive: true,
+    //     }),
+    //     ImageminPngquant({
+    //       quality: [0.3, 0.5],
+    //     }),
+    //   ],
+    // }),
+    // new ImageminWebpWebpackPlugin({
+    //   config: [
+    //     {
+    //       test: /\.(jpe?g|png)/,
+    //       options: {
+    //         quality: 50,
+    //       },
+    //     },
+    //   ],
+    //   overrideExtension: true,
+    // }),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      openAnalyzer: false,
-    }),
-    new CompressionPlugin({
-      algorithm: 'gzip',
-      test: /\.js$|\.css$|\.scss$|\.html$/,
-      threshold: 10240,
-      minRatio: 0,
-    }),
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'static',
+    //   openAnalyzer: false,
+    // }),
+    // new CompressionPlugin({
+    //   algorithm: 'gzip',
+    //   test: /\.js$|\.css$|\.scss$|\.html$/,
+    //   threshold: 10240,
+    //   minRatio: 0,
+    // }),
   ],
 };

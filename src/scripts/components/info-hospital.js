@@ -31,6 +31,8 @@ class InfoHospital extends HTMLElement {
       </div>
       `;
     }
+
+    console.log('hello world');
   }
 }
 
