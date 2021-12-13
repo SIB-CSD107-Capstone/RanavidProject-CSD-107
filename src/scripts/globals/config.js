@@ -3,6 +3,8 @@ const CONFIG = {
   RSBED_URL: 'https://rs-bed-covid-api.vercel.app/',
   MEDIA_URL: 'https://61b090523c954f001722a461.mockapi.io/',
   IDB_NAME: 'bed-hospital-database',
+  IDB_VERSION: 1,
+  OBJECT_STORE_NAME: 'hospitals',
 };
 
 export default CONFIG;
