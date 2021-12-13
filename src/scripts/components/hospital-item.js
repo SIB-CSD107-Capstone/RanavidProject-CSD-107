@@ -7,6 +7,8 @@ class HospitalItem extends HTMLElement {
 
   set hospital(hospital) {
     this._hospital = hospital;
+    console.log(this._hospital);
+    console.log(this._hospital.info);
     this.render();
   }
 

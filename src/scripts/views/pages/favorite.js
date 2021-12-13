@@ -2,7 +2,9 @@ import {
   createBtnGroupHospitalizationTemplate,
   createFavoriteHospitalTemplate,
   createFavoriteSearchBarTemplate,
+  createSearchResultTemplate,
 } from '../templates/template-creator';
+import FavoriteHospitalIdb from '../../data/favorite-hospital-idb';
 
 const Favorite = {
   async render() {
@@ -43,6 +45,11 @@ const Favorite = {
     /* set btn-group type inpatient */
     const btnCategoryContainerElem = document.getElementById('btn-category-container');
     btnCategoryContainerElem.appendChild(createBtnGroupHospitalizationTemplate());
+
+    const cardHasilElem = document.querySelector('.card-hasil');
+    const hospitals = await FavoriteHospitalIdb.getAllHospitals();
+    console.log(hospitals);
+    cardHasilElem.appendChild(createSearchResultTemplate(hospitals, 1));
   },
 };
 
