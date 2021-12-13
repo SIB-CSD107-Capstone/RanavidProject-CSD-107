@@ -20,7 +20,7 @@ const dbPromise = openDB(IDB_NAME, IDB_VERSION, {
 const FavoriteHospitalIdb = {
   async getHospital(id) {
     if (!id) {
-      return;
+      return false;
     }
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },
@@ -29,7 +29,7 @@ const FavoriteHospitalIdb = {
   },
   async putHospital(hospital) {
     if (!hospital.hasOwnProperty('id')) {
-      return;
+      return false;
     }
     return (await dbPromise).put(OBJECT_STORE_NAME, hospital);
   },
