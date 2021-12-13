@@ -1,5 +1,6 @@
 import IndoHospitalBedSource from '../../data/indo-hospital-bed-source';
 import UrlParser from '../../routes/url-parser';
+import FindHelper from '../../utils/find-helper';
 import {
   createBreadcrumbItem,
   createInfoHospitalTemplate,
@@ -44,11 +45,15 @@ const HospitalizationDetail = {
   },
 
   async afterRender() {
+    let provId = null;
+    let cityId = null;
     if (typeof (Storage) !== 'undefined') {
       const breadcrumbContainer = document.querySelector('nav[aria-label=breadcrumb]');
       const partsPreviousUrl = JSON.parse(sessionStorage.getItem('previousUrl'));
 
       breadcrumbContainer.innerHTML = createBreadcrumbItem(partsPreviousUrl);
+      provId = partsPreviousUrl.id_or_sub;
+      cityId = partsPreviousUrl.second_id;
     } else {
       console.log('Oops your browser is not support session storage feature');
     }
@@ -58,12 +63,22 @@ const HospitalizationDetail = {
     const hospitalId = partsUrl.second_id;
     const typeInpatient = partsUrl.type;
     let response = await IndoHospitalBedSource.indoHospitalBedByType(hospitalId, typeInpatient);
-    const hospital = response.data;
-    hospital.type = typeInpatient;
+    let hospital = response.data;
+    hospital.type = typeInpatient; // add type property
+
     response = await IndoHospitalBedSource.indoHospitalMap(hospitalId);
     const hospitalGmaps = response.data.gmaps;
-    hospital.gmaps = hospitalGmaps;
-    console.log(hospital);
+    hospital.gmaps = hospitalGmaps; // add gmaps property
+
+    response = await IndoHospitalBedSource.indoHospitalsByType(provId, cityId, typeInpatient);
+    const hospitalsData = response.hospitals;
+
+    const complementHospital = FindHelper.findHospitalById(hospitalId, hospitalsData);
+
+    hospital = {
+      ...hospital,
+      ...complementHospital,
+    };
 
     const infoHospitalWrapperElem = document.querySelector('.info-hospital-wrapper');
     infoHospitalWrapperElem.innerHTML = '';

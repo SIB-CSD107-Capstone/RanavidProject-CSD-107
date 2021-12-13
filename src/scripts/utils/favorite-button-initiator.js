@@ -29,7 +29,7 @@ const FavoriteButtonInitiator = {
   },
 
   _renderFavorite() {
-    this._favoriteButton.style.color = 'gray';
+    this._favoriteButton.querySelector('.like-icon').style.color = 'gray';
     this._favoriteButton.addEventListener('click', async () => {
       await FavoriteHospitalIdb.putHospital(this._hospital);
       this._renderButton();
@@ -37,7 +37,7 @@ const FavoriteButtonInitiator = {
   },
 
   _renderFavorited(id) {
-    this._favoriteButton.style.color = 'red';
+    this._favoriteButton.querySelector('.like-icon').style.color = 'red';
     this._favoriteButton.addEventListener('click', async () => {
       await FavoriteHospitalIdb.deleteHospital(id);
       this._renderButton();
