@@ -20,11 +20,6 @@ registerRoute(
   ({ url }) => url.origin === 'https://fonts.googleapis.com',
   new StaleWhileRevalidate({
     cacheName: 'google-fonts-stylesheets',
-    plugins: [
-      new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
-      }),
-    ],
   }),
 );
 
@@ -55,7 +50,6 @@ registerRoute(
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 3,
       }),
     ],
@@ -72,7 +66,6 @@ registerRoute(
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 3,
       }),
     ],
@@ -89,7 +82,6 @@ registerRoute(
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 3,
       }),
     ],
@@ -106,7 +98,6 @@ registerRoute(
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 3,
       }),
     ],
@@ -123,7 +114,6 @@ registerRoute(
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 3,
       }),
     ],
@@ -140,7 +130,6 @@ registerRoute(
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 3,
       }),
     ],
@@ -157,7 +146,6 @@ registerRoute(
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 3,
       }),
     ],
@@ -174,7 +162,6 @@ registerRoute(
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 3,
       }),
     ],
@@ -191,7 +178,6 @@ registerRoute(
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 3,
       }),
     ],
@@ -208,7 +194,6 @@ registerRoute(
         statuses: [0, 200],
       }),
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 3,
       }),
     ],
@@ -225,7 +210,7 @@ registerRoute(
       }),
       new ExpirationPlugin({
         maxEntries: 60,
-        maxAgeSeconds: 60 * 60 * 24 * 365,
+        maxAgeSeconds: 365 * 24 * 60 * 60, // 30 Days
       }),
     ],
   }),
@@ -236,10 +221,5 @@ registerRoute(
                   || request.destination === 'style',
   new StaleWhileRevalidate({
     cacheName: 'static-resources',
-    plugins: [
-      new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
-      }),
-    ],
   }),
 );
