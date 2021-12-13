@@ -16,6 +16,12 @@ const {
   CleanWebpackPlugin,
 } = require('clean-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const glob = require('glob');
+
+const PATHS = {
+  src: path.join(__dirname, 'src'),
+};
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -67,6 +73,10 @@ module.exports = {
   module: {
     rules: [{
       test: '/\.html$/',
+      loader: 'prerender-loader?string',
+    },
+    {
+      test: '/\.js$/',
       loader: 'prerender-loader?string',
     },
     {
@@ -163,7 +173,13 @@ module.exports = {
       ],
       overrideExtension: true,
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+    }),
     new CleanWebpackPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',

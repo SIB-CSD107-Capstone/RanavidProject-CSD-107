@@ -5,6 +5,7 @@
 @use './typography'as typo;
 @use './utils';
 @use './mixins';
+@import "~bootstrap/scss/bootstrap";
 
 //! Styles
 html {
