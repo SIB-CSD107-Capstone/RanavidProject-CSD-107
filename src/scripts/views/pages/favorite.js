@@ -38,13 +38,13 @@ const Favorite = {
     // favoriteSearchContainerElem.appendChild(createFavoriteSearchBarTemplate());
 
     /* set btn-group type inpatient */
-    const btnCategoryContainerElem = document.getElementById('btn-category-container');
-    btnCategoryContainerElem.appendChild(createBtnGroupHospitalizationTemplate());
+    // const btnCategoryContainerElem = document.getElementById('btn-category-container');
+    // btnCategoryContainerElem.appendChild(createBtnGroupHospitalizationTemplate());
 
-    const cardHasilElem = document.querySelector('.card-hasil');
-    const hospitals = await FavoriteHospitalIdb.getAllHospitals();
-    console.log(hospitals);
-    cardHasilElem.appendChild(createSearchResultTemplate(hospitals, 1));
+    // const cardHasilElem = document.querySelector('.card-hasil');
+    // const hospitals = await FavoriteHospitalIdb.getAllHospitals();
+
+    // cardHasilElem.appendChild(createSearchResultTemplate(hospitals, 1));
   },
 };
 

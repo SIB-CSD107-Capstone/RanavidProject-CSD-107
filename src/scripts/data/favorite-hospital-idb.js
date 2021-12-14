@@ -39,5 +39,11 @@ const FavoriteHospitalIdb = {
     }
     return (await dbPromise).delete(OBJECT_STORE_NAME, id);
   },
+
+  async getHospitalsByType(type = '1') {
+    const allHospital = await this.getAllHospitals();
+    const hospitalsByType = allHospital.filter((hospital) => hospital.type === type);
+    return hospitalsByType;
+  },
 };
 export default FavoriteHospitalIdb;

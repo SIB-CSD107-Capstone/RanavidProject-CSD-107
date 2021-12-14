@@ -1,3 +1,5 @@
+import TypeInpatientButtonInitiator from '../utils/type-inpatient-button-initiator';
+
 class BtnGroupHospitalization extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -20,6 +22,11 @@ class BtnGroupHospitalization extends HTMLElement {
       </label>
     </button>
     `;
+
+    // TypeInpatientButtonInitiator.init({
+    //   buttonCovid: this.querySelector('#btn-covid'),
+    //   buttonNonCovid: this.querySelector('#btn-nonCovid'),
+    // });
   }
 }
 
