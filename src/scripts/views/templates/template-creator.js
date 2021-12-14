@@ -189,8 +189,8 @@ const createAboutWebTemplate = () => `
     <div class="col-12 col-lg-6 gambar-about">
     <picture>
       <source media="(max-width: 576px)" data-srcset="./img/corona-2.webp">
-        <source media="(max-width: 576px)" data-srcset="./img/corona-2-small.jpg">
-        <source media="(max-width: 992px)" data-srcset="./img/corona-2-medium.jpg">
+        <source media="(max-width: 576px)" data-srcset="./img/corona-2-small.png">
+        <source media="(max-width: 992px)" data-srcset="./img/corona-2-medium.png">
         <source data-srcset="./img/corona-2.webp">
         <source data-srcset="./img/corona-2.jpg">
         <img class="lazyload" data-src="./img/corona-2.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="Tentang Aplikasi" tabindex="0">
@@ -321,7 +321,7 @@ const createAboutCovid = () => `
 
 const createBlogPost = (blog) => `
 <div class="col mb-4">
-          <div class="card h-100 border-0 custom-blog-post" data-aos="fade-up" data-aos-once="true">
+          <div class="card h-100 border-0 custom-blog-post">
             <img data-src="${blog.blogImages}" class="card-img-top lazyload" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="${blog.title}" tabindex="0">
             <div class="card-body p-0">
               <h3 class="card-title heading-3" tabindex="0">${blog.title}</h3>
@@ -335,7 +335,7 @@ const createBlogPost = (blog) => `
 
 const createVlogPost = (vlog) => `
 <div class="col mb-4">
-          <div class="card h-100 custom-video-post" data-aos="fade-up" data-aos-once="true">
+          <div class="card h-100 custom-video-post">
             <img data-src="${vlog.images}" class="card-img-top lazyload" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="${vlog.title}" tabindex="0">
             <div class="card-body">
               <h3 class="card-title heading-3"><a href="#" data-toggle="modal"

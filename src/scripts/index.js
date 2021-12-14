@@ -7,17 +7,11 @@ import './components/skip-to-content';
 import './components/navbar-app';
 import './components/footer-app';
 import './components/loading-animation';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Swal from 'sweetalert2';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-import swRegister from './utils/sw-register';
 import App from './views/app';
 
-AOS.init({
-  once: true,
-});
 const skipBtn = document.querySelector('skip-to-content');
 
 // Loading
@@ -43,7 +37,13 @@ const app = new App({
 window.addEventListener('load', () => {
   loadingPage();
   app.renderPage();
-  swRegister();
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+      console.log('SW registered: ', registration);
+    }).catch((registrationError) => {
+      console.log('SW registration failed: ', registrationError);
+    });
+  }
   loadingPageAfter();
 });
 
