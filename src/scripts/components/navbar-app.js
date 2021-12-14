@@ -29,17 +29,13 @@ class NavbarApp extends HTMLElement {
                 <a class="nav-link" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#/favorite">Favorite</a>
+                <a class="nav-link" href="#/favorite/1">Favorite</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#/blog">Blog</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#/about-us">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn btn-primary hotline-btn rounded-pill d-flex justify-content-center align-items-center"
-                  tabindex="0"><span class="iconify icon-phone" data-icon="fa-solid:phone-alt"></span> Hotline</a>
               </li>
             </ul>
           </div>

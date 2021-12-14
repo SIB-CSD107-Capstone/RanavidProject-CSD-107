@@ -64,7 +64,7 @@ const HospitalizationDetail = {
     const typeInpatient = partsUrl.type;
     let response = await IndoHospitalBedSource.indoHospitalBedByType(hospitalId, typeInpatient);
     let hospital = response.data;
-    hospital.type = typeInpatient; // add type property
+    hospital.type = typeInpatient; // add type property, nilai type dipakai untuk membangun fungsi favorite hospital button
 
     response = await IndoHospitalBedSource.indoHospitalMap(hospitalId);
     const hospitalGmaps = response.data.gmaps;

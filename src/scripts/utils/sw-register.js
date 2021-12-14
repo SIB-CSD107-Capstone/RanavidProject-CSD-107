@@ -1,6 +1,7 @@
 import {
   Workbox,
 } from 'workbox-window';
+import Swal from 'sweetalert2';
 
 export default function swRegister() {
   if (process.env.NODE_ENV === 'production') {
