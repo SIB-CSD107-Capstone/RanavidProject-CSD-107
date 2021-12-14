@@ -35,25 +35,25 @@
           }
         }
 
-        .hotline-btn {
-          border: 2px solid colors.$secondary-color;
+        .github-btn {
+          border: 2px solid colors.$primary-color;
           background-color: transparent;
           height: 3em;
           width: 8em;
           margin: 0 auto;
-          color: colors.$secondary-color;
+          color: colors.$primary-color;
           transition: 0.5s ease;
           -webkit-transition: 0.5s ease;
           -moz-transition: 0.5s ease;
           -ms-transition: 0.5s ease;
           -o-transition: 0.5s ease;
 
-          .icon-phone {
+          .icon-github {
             margin-right: 0.75em;
           }
 
           &:hover {
-            background-color: colors.$secondary-color;
+            background-color: colors.$primary-color;
             color: white;
           }
         }
