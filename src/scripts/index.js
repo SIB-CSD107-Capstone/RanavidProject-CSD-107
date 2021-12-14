@@ -1,25 +1,17 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import '../styles/_responsive.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle';
+import 'bootstrap';
 import '@iconify/iconify';
 import './components/skip-to-content';
 import './components/navbar-app';
 import './components/footer-app';
 import './components/loading-animation';
-import $ from 'jquery';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Swal from 'sweetalert2';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-import swRegister from './utils/sw-register';
 import App from './views/app';
 
-AOS.init({
-  once: true,
-});
 const skipBtn = document.querySelector('skip-to-content');
 
 // Loading
@@ -38,15 +30,6 @@ const loadingPageAfter = () => {
   }, 500);
 };
 
-// rotate up-arrow-icon on event collapse accordion
-$('.multi-collapse').on('show.bs.collapse', () => {
-  this.previousElementSibling.querySelector('.up-arrow-icon').style.transform = 'rotate(0deg)';
-});
-
-$('.multi-collapse').on('hide.bs.collapse', () => {
-  this.previousElementSibling.querySelector('.up-arrow-icon').style.transform = 'rotate(180deg)';
-});
-
 const app = new App({
   content: document.querySelector('#main-content'),
 });
@@ -54,7 +37,13 @@ const app = new App({
 window.addEventListener('load', () => {
   loadingPage();
   app.renderPage();
-  swRegister();
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+      console.log('SW registered: ', registration);
+    }).catch((registrationError) => {
+      console.log('SW registration failed: ', registrationError);
+    });
+  }
   loadingPageAfter();
 });
 
@@ -67,17 +56,6 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('DOMContentLoaded', () => {
   skipBtn.addEventListener('click', () => {
     document.querySelector('#main-content').focus();
-  });
-
-  const ButtonsTypeOfHospitalization = document.querySelectorAll('button.form-check');
-
-  // for if btn element type of hospitalization on click, so tag input type radion is checked
-  ButtonsTypeOfHospitalization.forEach((btnType) => {
-    btnType.addEventListener('click', (event) => {
-      if (event.target.classList.contains('form-check')) {
-        event.target.firstElementChild.checked = true;
-      }
-    });
   });
 });
 

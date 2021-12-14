@@ -17,7 +17,8 @@ const Favorite = {
       <div class="container" id="favorite-container">
         <header class="my-5">
           <h2 class="text-center font-weight-bold" tabindex="0">Daftar Rumah Sakit Yang Kamu Sukai</h2>
-        </header>
+
+          </header>
 
         <div class=" my-5" id="btn-category-container"></div>
 
@@ -38,13 +39,13 @@ const Favorite = {
     // favoriteSearchContainerElem.appendChild(createFavoriteSearchBarTemplate());
 
     /* set btn-group type inpatient */
-    // const btnCategoryContainerElem = document.getElementById('btn-category-container');
-    // btnCategoryContainerElem.appendChild(createBtnGroupHospitalizationTemplate());
+    const btnCategoryContainerElem = document.getElementById('btn-category-container');
+    btnCategoryContainerElem.appendChild(createBtnGroupHospitalizationTemplate());
 
-    // const cardHasilElem = document.querySelector('.card-hasil');
-    // const hospitals = await FavoriteHospitalIdb.getAllHospitals();
+    const cardHasilElem = document.querySelector('.card-hasil');
+    const hospitals = await FavoriteHospitalIdb.getAllHospitals();
 
-    // cardHasilElem.appendChild(createSearchResultTemplate(hospitals, 1));
+    cardHasilElem.appendChild(createSearchResultTemplate(hospitals, 1));
   },
 };
 

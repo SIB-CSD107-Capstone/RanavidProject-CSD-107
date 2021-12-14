@@ -23,10 +23,10 @@ class BtnGroupHospitalization extends HTMLElement {
     </button>
     `;
 
-    // TypeInpatientButtonInitiator.init({
-    //   buttonCovid: this.querySelector('#btn-covid'),
-    //   buttonNonCovid: this.querySelector('#btn-nonCovid'),
-    // });
+    TypeInpatientButtonInitiator.init({
+      buttonCovid: this.querySelector('#btn-covid'),
+      buttonNonCovid: this.querySelector('#btn-nonCovid'),
+    });
   }
 }
 

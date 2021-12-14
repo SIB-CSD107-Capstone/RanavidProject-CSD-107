@@ -37,6 +37,11 @@ class NavbarApp extends HTMLElement {
               <li class="nav-item">
                 <a class="nav-link" href="#/about-us">About Us</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary github-btn rounded-pill d-flex justify-content-center align-items-center" href="https://github.com/SIB-CSD107-Capstone" target="_blank" rel="noreferrer"
+                  tabindex="0"><span class="iconify icon-github" data-icon="fa-brands:github"></span> Github</a>
+              </li>
+
             </ul>
           </div>
         </nav>

@@ -4,9 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const {
-  InjectManifest
-} = require('workbox-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminPngquant = require('imagemin-pngquant');
@@ -16,14 +13,16 @@ const {
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
-
-const {
-  CleanWebpackPlugin,
-} = require('clean-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const glob = require('glob');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
+const PATHS = {
+  src: path.join(__dirname, 'src'),
+};
 
 module.exports = {
-  devtool: 'eval-source-map',
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -51,21 +50,6 @@ module.exports = {
         },
       },
     },
-    minimizer: [new UglifyJsPlugin({
-      parallel: true,
-      exclude: [/\.min\.js$/gi], // skip pre-minified libs
-      uglifyOptions: {
-        warnings: false,
-        parse: {},
-        compress: {},
-        mangle: true, // Note `mangle.properties` is `false` by default.
-        output: null,
-        toplevel: false,
-        nameCache: null,
-        ie8: false,
-        keep_fnames: false,
-      },
-    }, )],
   },
   module: {
     rules: [{
@@ -100,15 +84,17 @@ module.exports = {
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
     }),
+    new WorkboxPlugin.GenerateSW({
+      // these options encourage the ServiceWorkers to get in there fast
+      // and not allow any straggling "old" SWs to hang around
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
     new CopyWebpackPlugin({
       patterns: [{
         from: path.resolve(__dirname, 'src/public/'),
         to: path.resolve(__dirname, 'dist/'),
       }],
-    }),
-    new InjectManifest({
-      swSrc: './src/scripts/src-sw.js',
-      swDest: 'sw.js',
     }),
     new WebpackPwaManifest({
       name: 'Ranavid App',
@@ -144,39 +130,59 @@ module.exports = {
         },
       ],
     }),
-    // new ImageminWebpackPlugin({
-    //   plugins: [
-    //     ImageminMozjpeg({
-    //       quality: 50,
-    //       progressive: true,
-    //     }),
-    //     ImageminPngquant({
-    //       quality: [0.3, 0.5],
-    //     }),
-    //   ],
-    // }),
-    // new ImageminWebpWebpackPlugin({
-    //   config: [
-    //     {
-    //       test: /\.(jpe?g|png)/,
-    //       options: {
-    //         quality: 50,
-    //       },
-    //     },
-    //   ],
-    //   overrideExtension: true,
-    // }),
-    new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin(),
-    // new BundleAnalyzerPlugin({
-    //   analyzerMode: 'static',
-    //   openAnalyzer: false,
-    // }),
-    // new CompressionPlugin({
-    //   algorithm: 'gzip',
-    //   test: /\.js$|\.css$|\.scss$|\.html$/,
-    //   threshold: 10240,
-    //   minRatio: 0,
-    // }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+        ImageminPngquant({
+          quality: [0.3, 0.5],
+        }),
+      ],
+    }),
+    new ImageminWebpWebpackPlugin({
+      config: [{
+        test: /\.(jpe?g|png)/,
+        options: {
+          quality: 50,
+        },
+      }, ],
+      overrideExtension: true,
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, {
+        nodir: true
+      }),
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
+    new UglifyJsPlugin({
+      parallel: true,
+      exclude: [/\.min\.js$/gi], // skip pre-minified libs
+      uglifyOptions: {
+        warnings: false,
+        parse: {},
+        compress: {},
+        mangle: true, // Note `mangle.properties` is `false` by default.
+        output: null,
+        toplevel: false,
+        nameCache: null,
+        ie8: false,
+        keep_fnames: false,
+      },
+    }),
+    new CompressionPlugin({
+      algorithm: 'gzip',
+      test: /\.js$|\.css$|\.scss$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
   ],
 };

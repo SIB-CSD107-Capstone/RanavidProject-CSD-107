@@ -45,10 +45,8 @@ class FooterApp extends HTMLElement {
     </div>
     <div class="footer-bottom d-flex justify-content-between">
       <div
-        class="container d-flex justify-content-md-between flex-column-reverse flex-md-row align-items-center text-center content-foo-bottom">
+        class="container d-flex justify-content-center align-items-center text-center content-foo-bottom">
         <p>&copy;2021 Ranavid CSD-107. All rights reserved.</p>
-        <a href="#"><span class="iconify github" data-icon="fa-brands:github-square" style="color: white;"
-            data-width="27" data-height="31"></span></a>
       </div>
     </div>
   </footer>    
