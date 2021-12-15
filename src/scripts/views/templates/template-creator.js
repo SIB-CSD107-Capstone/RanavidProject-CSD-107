@@ -46,13 +46,22 @@ const createInfoAvailableBedButtonTemplate = (bedAvailability) => `
 `;
 
 const createBreadcrumbItem = (partsPreviousUrl) => {
-  const combinePartsPreviousUrl = `/#/${partsPreviousUrl.resource}/${partsPreviousUrl.id_or_sub}/${partsPreviousUrl.second_id}/${partsPreviousUrl.type}`;
-  return `
+  if (partsPreviousUrl.resource === 'favorite') {
+    return `
   <ol class="breadcrumb bg-transparent pl-0">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item"><a href="${combinePartsPreviousUrl}">Pencarian</a></li>
+    <li class="breadcrumb-item"><a href="#/favorite">favorite</a></li>
     <li class="breadcrumb-item active" aria-current="page">Detail</li>
   </ol>
+  `;
+  }
+  const combinePartsPreviousUrl = `/#/${partsPreviousUrl.resource}/${partsPreviousUrl.id_or_sub}/${partsPreviousUrl.second_id}/${partsPreviousUrl.type}`;
+
+  return `
+      <ol class="breadcrumb bg-transparent pl-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="${combinePartsPreviousUrl}">Pencarian</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Detail</li>
+      </ol>
   `;
 };
 

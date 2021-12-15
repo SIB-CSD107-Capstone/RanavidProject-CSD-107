@@ -8,7 +8,7 @@ const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminPngquant = require('imagemin-pngquant');
 const {
-  BundleAnalyzerPlugin
+  BundleAnalyzerPlugin,
 } = require('webpack-bundle-analyzer');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -130,33 +130,33 @@ module.exports = {
         },
       ],
     }),
-    // new ImageminWebpackPlugin({
-    //   plugins: [
-    //     ImageminMozjpeg({
-    //       quality: 50,
-    //       progressive: true,
-    //     }),
-    //     ImageminPngquant({
-    //       quality: [0.3, 0.5],
-    //     }),
-    //   ],
-    // }),
-    // new ImageminWebpWebpackPlugin({
-    //   config: [{
-    //     test: /\.(jpe?g|png)/,
-    //     options: {
-    //       quality: 50,
-    //     },
-    //   }],
-    //   overrideExtension: true,
-    // }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+        ImageminPngquant({
+          quality: [0.3, 0.5],
+        }),
+      ],
+    }),
+    new ImageminWebpWebpackPlugin({
+      config: [{
+        test: /\.(jpe?g|png)/,
+        options: {
+          quality: 50,
+        },
+      }],
+      overrideExtension: true,
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
     new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`, {
-        nodir: true
+        nodir: true,
       }),
     }),
     new BundleAnalyzerPlugin({

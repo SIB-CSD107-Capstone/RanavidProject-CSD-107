@@ -22,6 +22,7 @@
     "no-undef": "off",
     "max-len": "off",
     "class-methods-use-this": "off",
-    "no-prototype-builtins": "off"
+    "no-prototype-builtins": "off",
+    "indent": "off"
   }
 }
