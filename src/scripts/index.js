@@ -10,7 +10,10 @@ import './components/loading-animation';
 import Swal from 'sweetalert2';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import AOS from 'aos';
 import App from './views/app';
+
+AOS.init();
 
 const skipBtn = document.querySelector('skip-to-content');
 
