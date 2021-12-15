@@ -11,21 +11,23 @@ class App {
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
-    let page = routes[url];
-    try {
-      this._content.innerHTML = await page.render();
-      await page.afterRender();
-    } catch (error) {
-      page = routes['/home'];
-      this._content.innerHTML = await page.render();
-      await page.afterRender();
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Halaman tidak ditemukan!',
-        confirmButtonText: 'Kembali ke home',
-      });
-    }
+    const page = routes[url];
+    this._content.innerHTML = await page.render();
+    await page.afterRender();
+    // try {
+    //   this._content.innerHTML = await page.render();
+    //   await page.afterRender();
+    // } catch (error) {
+    //   page = routes['/home'];
+    //   this._content.innerHTML = await page.render();
+    //   await page.afterRender();
+    //   Swal.fire({
+    //     icon: 'error',
+    //     title: 'Oops...',
+    //     text: 'Halaman tidak ditemukan!',
+    //     confirmButtonText: 'Kembali ke home',
+    //   });
+    // }
   }
 }
 

@@ -583,7 +583,7 @@ main {
   background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(243, 243, 243, 0.6)), url('/img/hero.webp') !important;
   background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(243, 243, 243, 0.6)), url('/img/hero-small.jpg');
   background-position: 0 0;
-  background-size: cover;
+  background-size: cover !important;
 
   header {
     margin-bottom: 60px;
@@ -631,7 +631,7 @@ main {
 
   .btn-search {
     margin-top: 90px;
-    width: 410px;
+    width: 100%;
     max-width: 90vw;
     font-size: 20px;
     font-weight: map-get($map: typo.$font-weights, $key: 'semi-bold');
@@ -787,6 +787,7 @@ main {
 
 /* Favorite Hospital Style */
 .favorite-hospital {
+  min-height: 480px;
 
   .search-favorite-hospital {
     box-shadow: 0 0 8px 0 rgba($color: #000000, $alpha: .6);
@@ -817,7 +818,7 @@ main {
 }
 
 .card-hasil {
-  min-height: 180px;
+  min-height: 200px;
 }
 
 @keyframes ldio-xy82pdw42sf {

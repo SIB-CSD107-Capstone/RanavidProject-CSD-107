@@ -30,7 +30,6 @@ const Home = {
     const dataStatisticsCovidIndo = await CovidCasesIndoSource.totalCases();
 
     statisticsBar.appendChild(createStatisticContentTemplate(dataStatisticsCovidIndo));
-
     const ButtonsTypeOfHospitalization = document.querySelectorAll('button.form-check');
 
     // for if btn element type of hospitalization on click, so tag input type radion is checked

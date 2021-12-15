@@ -3,6 +3,8 @@ import '../../components/statistic-section-content';
 import '../../components/hospital-list';
 import '../../components/info-hospital';
 import '../../components/bed-detail-item';
+import '../../components/favorite-search-bar';
+import '../../components/btn-group-hospitalization';
 
 const createSearchBarTemplate = (flag) => {
   const searcBarContent = `<search-bar-content data-flag="${flag}"></search-bar-content>`;
@@ -13,7 +15,7 @@ const createSearchButton = (flag) => {
   let btnSearch = '';
   if (flag === 'in-landing-page') {
     btnSearch = `
-    <button type="button" class="btn btn-search btn-danger" id="btn-cari-rs" aria-label="cari rumah sakit">Cari</button>
+    <button type="button" class="btn btn-search btn-danger p-2" id="btn-cari-rs" aria-label="cari rumah sakit">Cari</button>
     `;
   } else {
     btnSearch = `
@@ -44,13 +46,22 @@ const createInfoAvailableBedButtonTemplate = (bedAvailability) => `
 `;
 
 const createBreadcrumbItem = (partsPreviousUrl) => {
-  const combinePartsPreviousUrl = `/#/${partsPreviousUrl.resource}/${partsPreviousUrl.id_or_sub}/${partsPreviousUrl.second_id}/${partsPreviousUrl.type}`;
-  return `
+  if (partsPreviousUrl.resource === 'favorite') {
+    return `
   <ol class="breadcrumb bg-transparent pl-0">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item"><a href="${combinePartsPreviousUrl}">Pencarian</a></li>
+    <li class="breadcrumb-item"><a href="#/favorite">favorite</a></li>
     <li class="breadcrumb-item active" aria-current="page">Detail</li>
   </ol>
+  `;
+  }
+  const combinePartsPreviousUrl = `/#/${partsPreviousUrl.resource}/${partsPreviousUrl.id_or_sub}/${partsPreviousUrl.second_id}/${partsPreviousUrl.type}`;
+
+  return `
+      <ol class="breadcrumb bg-transparent pl-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="${combinePartsPreviousUrl}">Pencarian</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Detail</li>
+      </ol>
   `;
 };
 
@@ -81,10 +92,8 @@ const createFavoriteHospitalTemplate = () => `
   <div class="row justify-content-center">
     <div class="col-10 col-md-6">
       <div
-        class="search-favorite-hospital w-100 border border-danger rounded-pill overflow-hidden d-flex align-items-center"
-        style="min-height: 44px;">
-        <input type="text" class="p-2 pl-4 border-0" placeholder="Cari nama rumah sakit ..."
-          style="min-height: 44px;">
+        class="search-favorite-hospital w-100 border border-danger rounded-pill overflow-hidden d-flex align-items-center">
+        <input type="text" class="p-2 pl-4 border-0" placeholder="Cari nama rumah sakit ...">
         <button class="btn text-secondary btn-search">
           <span class="iconify " data-icon="fa-solid:search" data-height="30" data-width="30"></span>
         </button>
@@ -95,94 +104,70 @@ const createFavoriteHospitalTemplate = () => `
 
   <!-- button tipe rawat inap  -->
   <div class=" my-5 ">
-    <p>Kategori</p>
-    <button class="btn btn-danger accessibility-44 active-shadow" type="button">
-      <input class="cursor-pointer" type="radio" name="inpatient" id="covid" value="covid" checked>
-      <label class="form-check-label cursor-pointer" for="covid">
-        Covid
-      </label>
-    </button>
+    <div>
+      <p>Kategori</p>
+      <button class="btn btn-danger accessibility-44 active-shadow" type="button">
+        <input class="cursor-pointer" type="radio" name="inpatient" id="covid" value="covid" checked>
+        <label class="form-check-label cursor-pointer" for="covid">
+          Covid
+        </label>
+      </button>
 
-    <button class="active-shadow btn btn-danger ml-2 accessibility-44" type="button">
-      <input class="cursor-pointer" type="radio" name="inpatient" id="non-covid" value="non-covid">
-      <label class="form-check-label cursor-pointer" for="non-covid">
-        Non - Covid
-      </label>
-    </button>
-
+      <button class="active-shadow btn btn-danger ml-2 accessibility-44" type="button">
+        <input class="cursor-pointer" type="radio" name="inpatient" id="non-covid" value="non-covid">
+        <label class="form-check-label cursor-pointer" for="non-covid">
+          Non - Covid
+        </label>
+      </button>
+    </div>
   </div>
 
   <!-- list favorite hospital  -->
-  <div class="row row-cols-1 row-cols-md-2 mb-5" id="list-favorite-hospital">
-    <div class="col mb-4">
-      <div class="card h-100 card-kamar">
-        <div class="card-body p-4 p-md-5 text-center text-md-left">
-          <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS
-            Umum Daerah Sekarwangi</h3>
-          <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-          <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-          <div tabindex="0" class="btn btn-primary btn-rs-ready px-3 rounded-pill">
-            Tersedia 6 Kamar
+  <div class="card-hasil mt-4">
+    <div class="row row-cols-1 row-cols-md-2 mb-5" id="list-favorite-hospital">
+      <div class="col mb-4">
+        <div class="card h-100 card-kamar">
+          <div class="card-body p-4 p-md-5 text-center text-md-left">
+            <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS
+              Umum Daerah Sekarwangi</h3>
+            <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
+            <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
+            <div tabindex="0" class="btn btn-primary btn-rs-ready px-3 rounded-pill">
+              Tersedia 6 Kamar
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card h-100 card-kamar">
-        <div class="card-body p-4 p-md-5 text-center text-md-left">
-          <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS
-            Umum Daerah Sekarwangi</h3>
-          <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-          <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-          <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-not">
-            Tidak Tersedia
+      
+      <div class="col mb-4">
+        <div class="card h-100 card-kamar">
+          <div class="card-body p-4 p-md-5 text-center text-md-left">
+            <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS
+              Umum Daerah Sekarwangi</h3>
+            <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
+            <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
+            <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-not">
+              Tidak Tersedia
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card h-100 card-kamar">
-        <div class="card-body p-4 p-md-5 text-center text-md-left">
-          <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS
-            Umum Daerah Sekarwangi</h3>
-          <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-          <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-          <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-ready">
-            Tersedia 6 Kamar
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card h-100 card-kamar">
-        <div class="card-body p-4 p-md-5 text-center text-md-left">
-          <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS
-            Umum Daerah Sekarwangi</h3>
-          <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-          <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-          <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-not">
-            Tidak Tersedia
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col mb-4">
-      <div class="card h-100 card-kamar">
-        <div class="card-body p-4 p-md-5 text-center text-md-left">
-          <h3 class="card-title nama-rs" tabindex="0" onclick="location.href='detail_rawat_inap_page.html';">RS
-            Umum Daerah Sekarwangi</h3>
-          <p class="card-text alamat-rs" tabindex="0">Jl. Siliwangi No. 49 Cibadak Sukabumi</p>
-          <p class="update-rs" tabindex="0">Diupdate 30 menit yang lalu</p>
-          <div tabindex="0" class="btn btn-primary rounded-pill px-3 btn-rs-not">
-            Tidak Tersedia
-          </div>
-        </div>
-      </div>
-    </div>
+    </div> 
   </div>
+  
 
 </div>
 `;
+
+const createFavoriteSearchBarTemplate = () => {
+  const favoriteSearchBarElem = document.createElement('favorite-search-bar');
+  return favoriteSearchBarElem;
+};
+
+const createBtnGroupHospitalizationTemplate = () => {
+  const btnGroupHospitalizationElem = document.createElement('btn-group-hospitalization');
+  return btnGroupHospitalizationElem;
+};
 
 const createAboutWebTemplate = () => `
 <div class="row d-flex align-items-center wrap-about">
@@ -401,4 +386,6 @@ export {
   createBreadcrumbItem,
   createInfoHospitalTemplate,
   createListBedDetailHospitalTemplate,
+  createFavoriteSearchBarTemplate,
+  createBtnGroupHospitalizationTemplate,
 };
