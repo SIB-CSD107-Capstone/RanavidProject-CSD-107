@@ -1,3 +1,4 @@
+/* eslint-disable no-self-assign */
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import '../styles/_responsive.scss';
@@ -27,6 +28,19 @@ const addActiveNavLink = (currentLocation, navLinks) => {
 
 const app = new App({
   content: document.querySelector('#main-content'),
+});
+
+function stopVideo(modal) {
+  const currentIframe = modal.querySelector('.modal-body > iframe');
+  currentIframe.src = currentIframe.src;
+}
+
+window.addEventListener('click', (event) => {
+  const { target } = event;
+  if (target.classList.contains('modal')) {
+      target.style.display = 'none';
+      stopVideo(target);
+  }
 });
 
 window.addEventListener('load', () => {
