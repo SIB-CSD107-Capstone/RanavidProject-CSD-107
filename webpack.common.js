@@ -15,6 +15,8 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const glob = require('glob');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -48,6 +50,7 @@ module.exports = {
         },
       },
     },
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   module: {
     rules: [{
