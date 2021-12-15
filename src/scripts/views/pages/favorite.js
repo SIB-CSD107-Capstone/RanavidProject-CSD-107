@@ -46,6 +46,17 @@ const Favorite = {
     const hospitals = await FavoriteHospitalIdb.getAllHospitals();
 
     cardHasilElem.appendChild(createSearchResultTemplate(hospitals, 1));
+
+    const ButtonsTypeOfHospitalization = document.querySelectorAll('button.form-check');
+
+    // for if btn element type of hospitalization on click, so tag input type radion is checked
+    ButtonsTypeOfHospitalization.forEach((btnType) => {
+      btnType.addEventListener('click', (event) => {
+        if (event.target.classList.contains('form-check')) {
+          event.target.firstElementChild.checked = true;
+        }
+      });
+    });
   },
 };
 
