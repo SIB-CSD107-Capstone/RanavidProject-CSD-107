@@ -6,7 +6,7 @@ class LoadingAnimation extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <div class="loader">
+    <div class="loader loadingio-spinner-rolling-aiak6voamqs">
       <div class="ldio-xy82pdw42sf">
         <div>
         </div>
