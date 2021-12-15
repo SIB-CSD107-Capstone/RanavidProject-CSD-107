@@ -854,7 +854,7 @@ main {
   z-index: 9999;
   display: inline-block;
   overflow: hidden;
-  background: #ffffff;
+  background: rgba($color: #ffffff, $alpha: .9);
   position: fixed;
 }
 

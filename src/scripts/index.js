@@ -14,22 +14,6 @@ import App from './views/app';
 
 const skipBtn = document.querySelector('skip-to-content');
 
-// Loading
-const loadingPage = () => {
-  document.querySelector('loading-animation').classList.remove('loading');
-  document.querySelector('loading-animation>div').classList.add('loadingio-spinner-rolling-aiak6voamqs');
-  document.body.style.opacity = '0.85';
-};
-
-const loadingPageAfter = () => {
-  const loadingTimeout = setInterval(() => {
-    document.querySelector('loading-animation>div').classList.remove('loadingio-spinner-rolling-aiak6voamqs');
-    document.querySelector('loading-animation').classList.add('loading');
-    document.body.style.opacity = '1';
-    clearTimeout(loadingTimeout);
-  }, 500);
-};
-
 const addActiveNavLink = (currentLocation, navLinks) => {
   navLinks.forEach((navLink) => {
     if (navLink.href === currentLocation) {
@@ -45,7 +29,6 @@ const app = new App({
 });
 
 window.addEventListener('load', () => {
-  loadingPage();
   app.renderPage();
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js').then((registration) => {
@@ -54,7 +37,6 @@ window.addEventListener('load', () => {
       console.log('SW registration failed: ', registrationError);
     });
   }
-  loadingPageAfter();
 
   const currentLocation = window.location.href;
   const navLinks = document.querySelectorAll('.nav-link');
@@ -62,9 +44,7 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('hashchange', () => {
-  loadingPage();
   app.renderPage();
-  loadingPageAfter();
 
   const currentLocation = window.location.href;
   const navLinks = document.querySelectorAll('.nav-link');

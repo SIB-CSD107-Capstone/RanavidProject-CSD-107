@@ -73,7 +73,7 @@ const createInfoHospitalTemplate = (hospital) => {
 
 const createListBedDetailHospitalTemplate = (bedDetailContainer, bedsDetails) => {
   if (bedsDetails.length < 1) {
-    bedDetailContainer.innerHTML = '<h4 class="text-center bg-info text-white">Data Rawat Inap Rumah Sakit Tidak Tersedia</h4>';
+    bedDetailContainer.innerHTML = '<div class="text-center alert alert-danger">Data Rawat Inap Rumah Sakit Tidak Tersedia</div>';
   }
   bedsDetails.forEach((bedDetail, index) => {
     bedDetail.index = index;
