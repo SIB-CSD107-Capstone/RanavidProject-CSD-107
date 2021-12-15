@@ -10,6 +10,7 @@ import './components/loading-animation';
 import Swal from 'sweetalert2';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import swRegister from './utils/sw-register';
 import App from './views/app';
 
 const skipBtn = document.querySelector('skip-to-content');
@@ -30,14 +31,6 @@ const app = new App({
 
 window.addEventListener('load', () => {
   app.renderPage();
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js').then((registration) => {
-      console.log('SW registered: ', registration);
-    }).catch((registrationError) => {
-      console.log('SW registration failed: ', registrationError);
-    });
-  }
-
   const currentLocation = window.location.href;
   const navLinks = document.querySelectorAll('.nav-link');
   addActiveNavLink(currentLocation, navLinks);
@@ -45,7 +38,7 @@ window.addEventListener('load', () => {
 
 window.addEventListener('hashchange', () => {
   app.renderPage();
-
+  swRegister();
   const currentLocation = window.location.href;
   const navLinks = document.querySelectorAll('.nav-link');
   addActiveNavLink(currentLocation, navLinks);

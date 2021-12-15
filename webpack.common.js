@@ -16,9 +16,9 @@ const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const glob = require('glob');
-const WorkboxPlugin = require('workbox-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -87,11 +87,8 @@ module.exports = {
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
     }),
-    new WorkboxPlugin.GenerateSW({
-      // these options encourage the ServiceWorkers to get in there fast
-      // and not allow any straggling "old" SWs to hang around
-      clientsClaim: true,
-      skipWaiting: true,
+    new ServiceWorkerWebpackPlugin({
+      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
     }),
     new CopyWebpackPlugin({
       patterns: [{
