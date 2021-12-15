@@ -1,7 +1,5 @@
 import {
   createBtnGroupHospitalizationTemplate,
-  createFavoriteHospitalTemplate,
-  createFavoriteSearchBarTemplate,
   createSearchResultTemplate,
 } from '../templates/template-creator';
 import FavoriteHospitalIdb from '../../data/favorite-hospital-idb';
@@ -31,12 +29,6 @@ const Favorite = {
 
   async afterRender() {
     document.title = 'favorite hospital';
-    // const favoriteHospitalElem = document.querySelector('#favorite-hospital');
-    // favoriteHospitalElem.innerHTML = createFavoriteHospitalTemplate();
-
-    /* set favorite search bar */
-    // const favoriteSearchContainerElem = document.getElementById('input-search-container');
-    // favoriteSearchContainerElem.appendChild(createFavoriteSearchBarTemplate());
 
     /* set btn-group type inpatient */
     const btnCategoryContainerElem = document.getElementById('btn-category-container');

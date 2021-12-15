@@ -18,7 +18,7 @@ const TypeInpatientButtonInitiator = {
     const covidType = '1';
     const nonCovidType = '2';
     const cardHasilElem = document.getElementsByClassName('card-hasil')[0];
-    console.log(cardHasilElem);
+
     this._btnCovid.addEventListener('click', async () => {
       this._btnCovid.querySelector('#covid').checked = true;
       const hospitalsByType = await FavoriteHospitalIdb.getHospitalsByType(covidType);

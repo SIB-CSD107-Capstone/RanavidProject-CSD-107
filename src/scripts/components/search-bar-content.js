@@ -69,8 +69,8 @@ class SearchBarContent extends HTMLElement {
             </div>
           </div>
 
-          <div class="row">
-            <div class="col text-center btn-search-landing" id="btn-search-container">
+          <div class="row justify-content-center">
+            <div class="col-8 text-center btn-search-landing" id="btn-search-container">
               
             </div>
           </div>

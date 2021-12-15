@@ -15,7 +15,7 @@ const createSearchButton = (flag) => {
   let btnSearch = '';
   if (flag === 'in-landing-page') {
     btnSearch = `
-    <button type="button" class="btn btn-search btn-danger" id="btn-cari-rs" aria-label="cari rumah sakit">Cari</button>
+    <button type="button" class="btn btn-search btn-danger p-2" id="btn-cari-rs" aria-label="cari rumah sakit">Cari</button>
     `;
   } else {
     btnSearch = `
