@@ -1,3 +1,5 @@
+import FavoriteButtonInitiator from '../utils/favorite-button-initiator';
+
 class InfoHospital extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -15,7 +17,7 @@ class InfoHospital extends HTMLElement {
         <h4 class="rs-name" tabindex="0">${this._hospital.name}</h4>
         <button class="btn-favorite">
           <span class="iconify like-icon" data-icon="fa-solid:heart" tabindex="0"
-            onclick="location.href='favorite_hospitals_page.html';" data-width="46" data-height="44"
+             data-width="46" data-height="44"
             title="favorite rumah sakit"></span>
         </button>
 
@@ -30,6 +32,17 @@ class InfoHospital extends HTMLElement {
           <span class="no-telp">${this._hospital.phone}</span></button>
       </div>
       `;
+
+      const hospital = {
+        ...this._hospital,
+      };
+      delete hospital.gmaps;
+      delete hospital.bedDetail;
+
+      FavoriteButtonInitiator.init({
+        favoriteButton: this.querySelector('.btn-favorite'),
+        hospital,
+      });
     }
   }
 }
