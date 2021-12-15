@@ -51,6 +51,8 @@ window.addEventListener('hashchange', () => {
   loadingPage();
   app.renderPage();
   loadingPageAfter();
+  const activePage = window.location.pathname;
+  console.log(activePage);
 });
 
 window.addEventListener('DOMContentLoaded', () => {
