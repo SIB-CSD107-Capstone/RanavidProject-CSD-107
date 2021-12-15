@@ -32,7 +32,7 @@ const DetailBlog = {
   },
 
   async afterRender() {
-    document.title = 'detail blog';
+    document.title = 'Detail Article - Ranavid Apps';
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const blogId = url.id_or_sub;
     const {

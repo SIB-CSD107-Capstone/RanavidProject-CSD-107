@@ -5,7 +5,7 @@ import {
 import UrlParser from '../../routes/url-parser';
 import IndoHospitalBedSource from '../../data/indo-hospital-bed-source';
 import FindHelper from '../../utils/find-helper';
-import LoadingHelper from '../../utils/loading-helper';
+// import LoadingHelper from '../../utils/loading-helper';
 
 const Search = {
   async render() {
@@ -28,7 +28,7 @@ const Search = {
   },
 
   async afterRender() {
-    document.title = 'search hospital';
+    document.title = 'Search Hospital - Ranavid Apps';
 
     const searchHospitalBarContainer = document.querySelector('.pencarian-rs');
     const cardHasilElem = document.querySelector('.card-hasil');

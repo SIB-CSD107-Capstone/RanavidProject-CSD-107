@@ -18,7 +18,7 @@ class FooterApp extends HTMLElement {
         <source data-srcset="./img/ranavid-logo-trans.png">
         <img data-src="./img/ranavid-logo-trans.png" alt="ranavid-logo" class="w-4 lazyload">
       </picture>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</p>
+            <p>Ranavid merupakan aplikasi web untuk mencari layanan rawat inap covid-19.</p>
           </div>
           <div class="col-12 col-md-7 d-flex justify-content-between">
             <div class="col-6 col-md-6">

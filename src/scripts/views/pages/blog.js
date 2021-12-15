@@ -43,7 +43,7 @@ const Blog = {
   },
 
   async afterRender() {
-    document.title = 'blog';
+    document.title = 'Blog - Ranavid Apps';
     const aboutContainer = document.querySelector('.about-covid');
     aboutContainer.innerHTML = createAboutCovid();
     const blogs = await MediaDBSource.Blog();

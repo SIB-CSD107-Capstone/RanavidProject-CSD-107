@@ -184,10 +184,7 @@ const createAboutWebTemplate = () => `
     <div class="col-12 col-lg-6 text-about">
       <p tabindex="0">Tentang Aplikasi</p>
       <h1 class="heading-1" tabindex="0">Mengenal Website Ranavid <span class="d-red">.</span></h1>
-      <p tabindex="0">Virus Corona atau severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) adalah virus yang menyerang
-        sistem pernapasan. Penyakit akibat infeksi virus ini disebut COVID-19. Virus Corona bisa menyebabkan
-        gangguan
-        ringan pada sistem pernapasan, infeksi paru-paru yang berat, hingga kematian.
+      <p tabindex="0">Pada tahun 2021 ini sudah 2 tahun lamanya pandemi COVID 19 melanda negeri Indonesia kita tercinta, tidak sedikit orang yang terinfeksi virus ini yang membutuhkan perawatan khusus.  Pada saat ini sudah banyak rumah sakit yang membuat layanan kesehatan khusus pasien covid 19, tetapi apakah masyarakat dapat mengetahui dimana saja rumah sakit yang terdapat layanan khusus pasien covid 19?. Dari alasan tersebut maka kami membuat aplikasi pencarian rumah sakit penyedia layanan kuhusus covid-19.
       </p>
     </div>
   </div>
@@ -343,11 +340,8 @@ const createModalList = (vlog) => `
 <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
-        <div class="modal-body modal-custom">
+        <div class="modal-body modal-custom" id="ytModals">
           <iframe class="mv-edukasi" src="${vlog.content}"">
           </iframe>
         </div>
