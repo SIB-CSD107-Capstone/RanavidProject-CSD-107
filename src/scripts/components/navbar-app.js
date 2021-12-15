@@ -32,7 +32,7 @@ class NavbarApp extends HTMLElement {
                 <a class="nav-link" href="#/favorite">Favorite</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#/blog">Blog</a>
+                <a class="nav-link" href="#/blog">Blog</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#/about-us">About Us</a>
