@@ -30,6 +30,16 @@ const loadingPageAfter = () => {
   }, 500);
 };
 
+const addActiveNavLink = (currentLocation, navLinks) => {
+  navLinks.forEach((navLink) => {
+    if (navLink.href === currentLocation) {
+      navLink.classList.add('active');
+    } else {
+      navLink.classList.remove('active');
+    }
+  });
+};
+
 const app = new App({
   content: document.querySelector('#main-content'),
 });
@@ -45,12 +55,20 @@ window.addEventListener('load', () => {
     });
   }
   loadingPageAfter();
+
+  const currentLocation = window.location.href;
+  const navLinks = document.querySelectorAll('.nav-link');
+  addActiveNavLink(currentLocation, navLinks);
 });
 
 window.addEventListener('hashchange', () => {
   loadingPage();
   app.renderPage();
   loadingPageAfter();
+
+  const currentLocation = window.location.href;
+  const navLinks = document.querySelectorAll('.nav-link');
+  addActiveNavLink(currentLocation, navLinks);
 });
 
 window.addEventListener('DOMContentLoaded', () => {
