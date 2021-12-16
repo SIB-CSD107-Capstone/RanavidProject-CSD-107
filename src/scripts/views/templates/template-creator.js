@@ -268,7 +268,7 @@ const createTeamPengembangTemplate = () => `
               style="color: #121e2a;" data-width="24" data-height="24"></span></a>
           <a href="https://github.com/Febrianto752" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:github-square" style="color: #121e2a;"
               data-width="24" data-height="24"></span></a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
+          <a href="https://www.linkedin.com/in/febrianto752/" target="_blank" rel="noreferrer" class="icon-about"><span class="iconify" data-icon="fa-brands:linkedin" style="color: #121e2a;"
               data-width="24" data-height="24"></span></a>
         </div>
       </div>
