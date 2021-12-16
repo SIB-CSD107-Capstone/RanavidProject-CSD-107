@@ -21,8 +21,8 @@ const HospitalizationDetail = {
     <section id="detail-rawat-inap" class="detail-rawat-inap py-5">
       <div class="container">
         <header class="text-center mb-5">
-          <h2 class="font-weight-bold" tabindex="0" style="font-size: 3em;">
-            Detail Rawat Inap
+          <h2 class="font-weight-bold" tabindex="0" style="font-size: 2.6em;">
+            Detail Ketersediaan Tempat Tidur Pasien Rumah Sakit
           </h2>
         </header>
         <div class="row justify-content-center">
@@ -86,7 +86,7 @@ const HospitalizationDetail = {
 
     /* set available bed details */
     const availableBedDetailsElem = document.querySelector('.available-bed-details');
-    availableBedDetailsElem.innerHTML = '';
+    availableBedDetailsElem.innerHTML = '<h5 class="mb-3">Jenis Ruang Rawat : </h5>';
     createListBedDetailHospitalTemplate(availableBedDetailsElem, hospital.bedDetail);
   },
 };

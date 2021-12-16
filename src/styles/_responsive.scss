@@ -2,6 +2,7 @@
   .search-bar {
     background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(243, 243, 243, 0.6)), url('/img/hero-medium.jpg') !important;
     background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(243, 243, 243, 0.6)), url('/img/hero.webp') !important;
+
     header {
       h2 {
         font-size: 48px !important;
@@ -117,6 +118,14 @@
 
       .card-text {
         font-size: 18px;
+      }
+    }
+  }
+
+  .detail-rawat-inap {
+    header {
+      h2 {
+        font-size: 2em !important;
       }
     }
   }
