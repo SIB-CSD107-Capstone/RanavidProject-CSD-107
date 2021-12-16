@@ -20,7 +20,7 @@ const AboutUs = {
   },
 
   async afterRender() {
-    document.title = 'about us';
+    document.title = 'About Us - Ranavid Apps';
     const aboutWebElem = document.querySelector('.about-web');
     const fiturWeb = document.querySelector('.fitur-web');
     const teamPengembang = document.querySelector('.team-pengembang');

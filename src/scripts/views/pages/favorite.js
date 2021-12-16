@@ -28,7 +28,7 @@ const Favorite = {
   },
 
   async afterRender() {
-    document.title = 'favorite hospital';
+    document.title = 'Favorite Hospital - Ranavid Apps';
 
     /* set btn-group type inpatient */
     const btnCategoryContainerElem = document.getElementById('btn-category-container');
