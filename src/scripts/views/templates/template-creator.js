@@ -201,7 +201,7 @@ const createFiturWebTemplate = () => `
         </div>
         <div class="card-body body-fitur">
           <h3 class="card-title heading-3" tabindex="0">Statistik Covid UpToDAte</h3>
-          <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="card-text" tabindex="0">Data statistik kasus Covid-19 di Indonesia yang diambil dari API terupdate.</p>
         </div>
       </div>
     </div>
@@ -212,7 +212,7 @@ const createFiturWebTemplate = () => `
         </div>
         <div class="card-body body-fitur">
           <h3 class="card-title heading-3" tabindex="0">Pencarian Rumah Sakit</h3>
-          <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="card-text" tabindex="0">Mencari Rumah Sakit berdasarkan kota/kabupaten per provinsi beserta detail ketersediaan rawat inap.</p>
         </div>
       </div>
     </div>
@@ -223,7 +223,7 @@ const createFiturWebTemplate = () => `
         </div>
         <div class="card-body body-fitur">
           <h3 class="card-title heading-3" tabindex="0">Blog Edukasi Tentang Covid19</h3>
-          <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="card-text" tabindex="0">Berisi artikel-artikel dan video yang menginspirasi saat pandemi Covid-19 ini.</p>
         </div>
       </div>
     </div>

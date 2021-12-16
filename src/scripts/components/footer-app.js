@@ -18,7 +18,7 @@ class FooterApp extends HTMLElement {
         <source data-srcset="./img/ranavid-logo-trans.png">
         <img data-src="./img/ranavid-logo-trans.png" alt="ranavid-logo" class="w-4 lazyload">
       </picture>
-            <p>Ranavid merupakan aplikasi web untuk mengecek ketersediaan tempat tidur untuk pasien rawat inap di rumah sakit tertentu berdasarkan provinsi dan kota/kabupaten</p>
+            <p>Ranavid merupakan aplikasi web untuk mengecek ketersediaan tempat tidur untuk pasien rawat inap di rumah sakit tertentu berdasarkan kota/kabupaten per provinsi</p>
           </div>
           <div class="col-12 col-md-7 d-flex justify-content-between">
             <div class="col-6 col-md-6">
