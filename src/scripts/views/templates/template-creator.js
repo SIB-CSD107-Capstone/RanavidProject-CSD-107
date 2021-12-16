@@ -329,7 +329,7 @@ const createVlogPost = (vlog) => `
 
 const createSearchSectionAds = () => `
       <h1 class="heading-1" tabindex="0">Cari Rawat Inap Rumah Sakit</h1>
-      <p tabindex="0">Ranavid App membantu anda dalam mencari ketersediaan tempat tidur rawat inap rumah sakit</p>
+      <p tabindex="0">Ranavid App membantu anda dalam mengecek ketersediaan tempat tidur pasien rawat inap rumah sakit</p>
       <div class="btn btn-danger to-search-btn" tabindex="0" onclick="location.href='/';">Cari Sekarang <span class="iconify ml-2"
           data-icon="fa-solid:angle-right"></span></div>
 `;
