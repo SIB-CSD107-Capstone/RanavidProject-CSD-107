@@ -8,14 +8,14 @@ class BtnGroupHospitalization extends HTMLElement {
   render() {
     this.innerHTML = `
     <p>Kategori</p>
-    <button class="btn btn-danger accessibility-44 active-shadow" type="button" id="btn-covid">
+    <button class="btn accessibility-44 active-shadow" type="button" id="btn-covid" style="background-color: #FE0B0B; color: white;">
       <input class="cursor-pointer" type="radio" name="inpatient" id="covid" value="covid" checked>
       <label class="form-check-label cursor-pointer" for="covid">
         Covid
       </label>
     </button>
 
-    <button class="active-shadow btn btn-danger ml-2 accessibility-44" type="button" id="btn-nonCovid">
+    <button class="active-shadow btn ml-2 accessibility-44" type="button" id="btn-nonCovid" style="background-color: #FE0B0B; color: white;">
       <input class="cursor-pointer" type="radio" name="inpatient" id="non-covid" value="non-covid">
       <label class="form-check-label cursor-pointer" for="non-covid">
         Non - Covid

@@ -13,6 +13,7 @@ class InfoHospital extends HTMLElement {
 
   render() {
     if (this._hospital) {
+      this._hospital.bedDetail = null;
       this.innerHTML = `
       <div class="title-wrapper d-flex">
         <h4 class="rs-name" tabindex="0">${this._hospital.name}</h4>
@@ -26,11 +27,9 @@ class InfoHospital extends HTMLElement {
       
       <p class="rs-address" tabindex="0">${this._hospital.address}</p>
       <div class="detail-util d-flex flex-column flex-md-row">
-        <a href="${this._hospital.gmaps}" target="_blank" rel="noopener" class="btn btn-outline-info btn-map pt-2 active-shadow mb-3 mb-md-0 mr-0 mr-md-3">Lihat Peta <span
+        <a href="${this._hospital.gmaps}" target="_blank" rel="noopener" class="btn btn-outline-info btn-map pt-2 active-shadow mb-3 mb-md-0 mr-0 mr-md-3" style="border-color: #007D51 !important;color: #007D51;">Lihat Peta <span
             class="iconify" data-icon="simple-icons:googlemaps"></span></a>
-        <button class="btn btn-info btn-telp active-shadow"><span
-            class="telp-icon  iconify" data-icon="clarity:phone-handset-solid"></span>
-          <span class="no-telp">${(this._hospital.phone) ? this._hospital.phone : 'hotline tidak tersedia'}</span>
+        <button class="btn btn-info btn-telp active-shadow">
         </button>
       </div>
       `;

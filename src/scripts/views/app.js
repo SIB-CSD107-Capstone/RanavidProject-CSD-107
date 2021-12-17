@@ -16,19 +16,21 @@ class App {
     LoadingHelper.setLoading(loadingContainer);
 
     const url = UrlParser.parseActiveUrlWithCombiner();
-    let page = routes[url];
+    const page = routes[url];
     try {
       this._content.innerHTML = await page.render();
       await page.afterRender();
     } catch (error) {
-      page = routes['/home'];
-      this._content.innerHTML = await page.render();
-      await page.afterRender();
+      // page = routes['/home'];
+      // this._content.innerHTML = await page.render();
+      // await page.afterRender();
+      document.querySelector('main').innerHTML = '';
+
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'Halaman tidak ditemukan!',
-        confirmButtonText: 'Kembali ke home',
+        confirmButtonText: '<a href="/" class="text-white">Kembali ke home</a>',
       });
     }
     /* clear loading animation */
