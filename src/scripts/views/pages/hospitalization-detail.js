@@ -61,6 +61,12 @@ const HospitalizationDetail = {
     /* set info hospital */
     const partsUrl = UrlParser.parseActiveUrlWithoutCombiner();
     const hospitalId = partsUrl.second_id;
+
+    // cek apakah redirect url dari halaman favorite, karena data 'id' di favorite hospital di tambahkan akhiran covid jika type = 1
+    if (hospitalId.substr(hospitalId.length - 5) === 'covid') {
+      console.log(hospitalId.substr(0, hospitalId.length - 5));
+    }
+
     const typeInpatient = partsUrl.type;
     let response = await IndoHospitalBedSource.indoHospitalBedByType(hospitalId, typeInpatient);
     let hospital = response.data;
@@ -80,6 +86,7 @@ const HospitalizationDetail = {
       ...hospital,
       ...complementHospital,
     };
+    console.log(hospital);
 
     // if user access custom type url in hospitalization detail page
     if (hospital.bed_availability === undefined && hospital.available_beds === undefined) {
