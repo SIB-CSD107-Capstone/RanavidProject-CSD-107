@@ -12,20 +12,28 @@ const FavoriteButtonInitiator = {
   },
 
   async _renderButton() {
+    if (this._hospital.type === '1') {
+      if (!(this._hospital.id.substr(this._hospital.id.length - 5) === 'covid')) {
+        this._hospital.id += 'covid';
+      }
+    }
+
     const {
       id,
+      type,
     } = this._hospital;
 
-    if (await this._isHospitalExist(id)) {
+    if (await this._isHospitalExist(id, type)) {
       this._renderFavorited(id);
     } else {
       this._renderFavorite();
     }
   },
 
-  async _isHospitalExist(id) {
+  async _isHospitalExist(id, type) {
     const hospital = await FavoriteHospitalIdb.getHospital(id);
-    return !!hospital;
+    // const sameType = (hospital.type) ? hospital.type === type : false;
+    return (hospital) ? hospital.type === type : false;
   },
 
   _renderFavorite() {

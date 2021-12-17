@@ -39,11 +39,16 @@ const createSearchResultTemplate = (hospitals, inpatientType) => {
   return hospitalListElem;
 };
 
-const createInfoAvailableBedButtonTemplate = (bedAvailability) => `
-<button tabindex="0" class="btn btn-primary ${(bedAvailability) ? 'btn-rs-ready' : 'btn-rs-not'} px-3 rounded-pill">
-                  Tersedia ${bedAvailability} Kamar
-                </button>
-`;
+const createInfoAvailableBedButtonTemplate = (bedAvailability = 0) => {
+  if (bedAvailability === undefined) {
+    bedAvailability = 0;
+  };
+  return `
+  <button tabindex="0" class="btn btn-primary ${(bedAvailability) ? 'btn-rs-ready' : 'btn-rs-not'} px-3 rounded-pill">
+                    Tersedia ${bedAvailability} Kamar
+                  </button>
+  `;
+};
 
 const createBreadcrumbItem = (partsPreviousUrl) => {
   if (partsPreviousUrl.resource === 'favorite') {

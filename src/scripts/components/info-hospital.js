@@ -13,7 +13,6 @@ class InfoHospital extends HTMLElement {
 
   render() {
     if (this._hospital) {
-      this._hospital.bedDetail = null;
       this.innerHTML = `
       <div class="title-wrapper d-flex">
         <h4 class="rs-name" tabindex="0">${this._hospital.name}</h4>
@@ -49,8 +48,6 @@ class InfoHospital extends HTMLElement {
         btnTelp: this.querySelector('.btn-telp'),
         hospitalPhone: this._hospital.phone,
       });
-
-      console.log('hai hai');
     }
   }
 }

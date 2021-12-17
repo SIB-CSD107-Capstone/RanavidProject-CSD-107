@@ -1,0 +1,284 @@
+{
+  "status": 200,
+  "hospitals": [{
+    "id": "3216416",
+    "name": "RS Umum Permata Keluarga Lippo Cikarang",
+    "address": "JL. M.H Thamrin Kav 129 Lippo Cikarang, Bekasi 17599",
+    "phone": "081295391912",
+    "queue": 0,
+    "bed_availability": 1,
+    "info": "Diupdate 2 jam yang lalu"
+  }, {
+    "id": "3216415",
+    "name": "RS Umum Ridhoka Salma",
+    "address": "Jl. Raya Imam Bonjol No 7 Cikarang Barat",
+    "phone": "02189116527",
+    "queue": 0,
+    "bed_availability": 1,
+    "info": "Diupdate 5 jam yang lalu"
+  }, {
+    "id": "3216449",
+    "name": "RS Ananda Babelan",
+    "address": "Jl. Raya Babelan KM. 9.6 RT/RW 002/001 Kelurahan Kebalen Kecamatan Babelan",
+    "phone": "082114950240",
+    "queue": 0,
+    "bed_availability": 1,
+    "info": "Diupdate 8 jam yang lalu"
+  }, {
+    "id": "3216417",
+    "name": "RS Umum Tiara",
+    "address": "Jl. Raya Babelan No. 73 Desa Kebalen Kec. Babelan Kab. Bekasi",
+    "phone": "081388871708",
+    "queue": 0,
+    "bed_availability": 2,
+    "info": "Diupdate 8 jam yang lalu"
+  }, {
+    "id": "3216374",
+    "name": "RS Umum Multazam Medika",
+    "address": "JL. Raya Perum Jatimulya No. 1 Tambun Selatan",
+    "phone": "0218215101",
+    "queue": 0,
+    "bed_availability": 6,
+    "info": "Diupdate 8 jam yang lalu"
+  }, {
+    "id": "3216152",
+    "name": "Siloam Hospitals Lippo Cikarang",
+    "address": "Jl. MH Thamrin Kav.105 Bekasi",
+    "phone": "02129636911",
+    "queue": 0,
+    "bed_availability": 4,
+    "info": "Diupdate 8 jam yang lalu"
+  }, {
+    "id": "3216386",
+    "name": "RS Amanda Cikarang Selatan",
+    "address": "Jl. Raya Serang No. 83 Desa Sukadami Cikarang Selatan Kab. Bekasi",
+    "phone": "0218971643",
+    "queue": 0,
+    "bed_availability": 2,
+    "info": "Diupdate 9 jam yang lalu"
+  }, {
+    "id": "3216434",
+    "name": "RS Umum Budi Asih",
+    "address": "Jl. Raya Serang-Cibarusah 001/001 Ds. Serang  Kec. CIkarang Kab. Bekasi",
+    "phone": null,
+    "queue": 0,
+    "bed_availability": 3,
+    "info": "Diupdate 9 jam yang lalu"
+  }, {
+    "id": "3216450",
+    "name": "RS Eka Bekasi",
+    "address": "Kota Harapan Indah Blok i2-9 No. 9",
+    "phone": "02150935577",
+    "queue": 0,
+    "bed_availability": 1,
+    "info": "Diupdate 9 jam yang lalu"
+  }, {
+    "id": "3216362",
+    "name": "RS Umum Karya Medika II",
+    "address": "Jl. Sultan Hasanuddin No.63 Kec. Tambun Selatan",
+    "phone": "08111990020",
+    "queue": 0,
+    "bed_availability": 2,
+    "info": "Diupdate 10 jam yang lalu"
+  }, {
+    "id": "3216420",
+    "name": "RS Umum Medirossa 2",
+    "address": "Jl. Raya Cibarusah, Ds Sindang Mulya No. 5 Cibarusah",
+    "phone": "081398667062",
+    "queue": 0,
+    "bed_availability": 5,
+    "info": "Diupdate 10 jam yang lalu"
+  }, {
+    "id": "3216440",
+    "name": "RS Umum Daerah Cabangbungin",
+    "address": "Desa Jayalaksana Kecamatan Cabang Bungin Kabupaten Bekasi",
+    "phone": "083877260653",
+    "queue": 0,
+    "bed_availability": 4,
+    "info": "Diupdate 10 jam yang lalu"
+  }, {
+    "id": "3216126",
+    "name": "RS Umum Annisa",
+    "address": "Jl. Cikarang Baru No.31 Cikarang Utara Bekasi",
+    "phone": "081219792097",
+    "queue": 0,
+    "bed_availability": 4,
+    "info": "Diupdate 10 jam yang lalu"
+  }, {
+    "id": "3216252",
+    "name": "RS Umum Daerah Kab.Bekasi",
+    "address": "Jl. Teuku Umar Cibitung,Bekasi",
+    "phone": "02188374444",
+    "queue": 0,
+    "bed_availability": 2,
+    "info": "Diupdate 10 jam yang lalu"
+  }, {
+    "id": "3216414",
+    "name": "RS Umum Amanda",
+    "address": "Jl. Raya Industri No. 36 Cikarang Utara",
+    "phone": "02189103333",
+    "queue": 0,
+    "bed_availability": 1,
+    "info": "Diupdate 10 jam yang lalu"
+  }, {
+    "id": "3216441",
+    "name": "RS Umum Permata Keluarga Jababeka",
+    "address": "Jl. DR. Cipto Mangunkusumo Blok A Nomor  1 A Medical City Kota Jababeka",
+    "phone": "082112722965",
+    "queue": 0,
+    "bed_availability": 4,
+    "info": "Diupdate 10 jam yang lalu"
+  }, {
+    "id": "3216388",
+    "name": "RS Umum Cibitung Medika",
+    "address": "Jl. H. Bosih No.117 Cibitung Kabupaten Bekasi",
+    "phone": "02188323444",
+    "queue": 0,
+    "bed_availability": 5,
+    "info": "Diupdate 10 jam yang lalu"
+  }, {
+    "id": "3216444",
+    "name": "RS Cenka",
+    "address": "Jl.Pilar-Sukatani Desa Sukaraya Warung Pojok RT. 05 RW. 06 Kec.Karangbahagia",
+    "phone": "08111255663",
+    "queue": 0,
+    "bed_availability": 1,
+    "info": "Diupdate 11 jam yang lalu"
+  }, {
+    "id": "3216425",
+    "name": "RS Umum Bunda Mulia",
+    "address": "Jl. Imam Bonjol No. 80",
+    "phone": "081232618989",
+    "queue": 0,
+    "bed_availability": 2,
+    "info": "Diupdate 11 jam yang lalu"
+  }, {
+    "id": "3216163",
+    "name": "RS Umum Sentra Medika",
+    "address": "Jl. Raya Industri Pasirgombong Cikarang",
+    "phone": "085886663754",
+    "queue": 0,
+    "bed_availability": 5,
+    "info": "Diupdate 11 jam yang lalu"
+  }, {
+    "id": "3216351",
+    "name": "RS Umum Kartika Husada",
+    "address": "Jl. Raya Mangunjaya No.07 Kp.Rukem,Tambun - Bekasi",
+    "phone": "081318273414",
+    "queue": 0,
+    "bed_availability": 2,
+    "info": "Diupdate 11 jam yang lalu"
+  }, {
+    "id": "3216443",
+    "name": "RS Grha MM2100",
+    "address": "Jl. Kalimantan Blok CB No.1 Kawasan Industri MM2100, Gandasari, Cikarang Barat",
+    "phone": "02150570999",
+    "queue": 0,
+    "bed_availability": 7,
+    "info": "Diupdate 11 jam yang lalu"
+  }, {
+    "id": "3216104",
+    "name": "RS Umum Karya Medika",
+    "address": "Jl. Imam Bonjol No. 9B",
+    "phone": "0218900190",
+    "queue": 0,
+    "bed_availability": 2,
+    "info": "Diupdate 11 jam yang lalu"
+  }, {
+    "id": "3216393",
+    "name": "RS Umum Mitra Keluarga Cikarang",
+    "address": "Jl. Induistri Raya 100, Lemah Abang",
+    "phone": "02189840500",
+    "queue": 0,
+    "bed_availability": 7,
+    "info": "Diupdate 12 jam yang lalu"
+  }, {
+    "id": "3216399",
+    "name": "RS Mitra Medika Narom",
+    "address": "Jl. Desa Jatiwangi Cikedokan Kp. Kamurang",
+    "phone": "02189983741",
+    "queue": 0,
+    "bed_availability": 2,
+    "info": "Diupdate 12 jam yang lalu"
+  }, {
+    "id": "3216451",
+    "name": "RS Hermina Metland Cibitung",
+    "address": "Perumahan Metland Cibitung",
+    "phone": null,
+    "queue": 0,
+    "bed_availability": 4,
+    "info": "Diupdate 12 jam yang lalu"
+  }, {
+    "id": "3216385",
+    "name": "RS Umum Harapan Keluarga Jababeka",
+    "address": "Jl. Kasuari Raya Kav. IA & 1B Cikarang Baru",
+    "phone": "087784755791",
+    "queue": 0,
+    "bed_availability": 3,
+    "info": "Diupdate 12 jam yang lalu"
+  }, {
+    "id": "3216397",
+    "name": "RS Umum Asri Medika",
+    "address": "Jl. Citanduy Raya Blok 11 No 1 Cikarang Utara",
+    "phone": "0218914296869",
+    "queue": 0,
+    "bed_availability": 2,
+    "info": "Diupdate 14 jam yang lalu"
+  }, {
+    "id": "3216406",
+    "name": "RS Umum Metro Hospitals",
+    "address": "Jl.Anggrek I B2/2 RT 01/11 Kec Mekar Mukti",
+    "phone": "02189835223",
+    "queue": 0,
+    "bed_availability": 1,
+    "info": "Diupdate 15 jam yang lalu"
+  }, {
+    "id": "3216426",
+    "name": "RS Umum Kasih Insani Sukatani",
+    "address": "Jl. Raya Sukatani No. 9 Desa Karang Sentosa Kec. Karang Bahagia",
+    "phone": "02189161099",
+    "queue": 0,
+    "bed_availability": 0,
+    "info": "Diupdate 8 jam yang lalu"
+  }, {
+    "id": "3216438",
+    "name": "RS Umum Pinna",
+    "address": "Jl. Karang Satria No. 4-5 Bekasi",
+    "phone": "0218827554",
+    "queue": 0,
+    "bed_availability": 0,
+    "info": "Diupdate 10 jam yang lalu"
+  }, {
+    "id": "3216435",
+    "name": "RS Umum Tarumajaya",
+    "address": "Jalan Raya Tarumajaya No. 1B, Pantai Makmur Tarumajaya, Bekasi",
+    "phone": "02188992337",
+    "queue": 0,
+    "bed_availability": 0,
+    "info": "Diupdate 10 jam yang lalu"
+  }, {
+    "id": "3216436",
+    "name": "RS Umum Omni Cikarang",
+    "address": "Komplek Oasis Kav. 1, Jl. Raya Cikarang Cibarusah, Kelurahan Sukaresmi, Kecamatan Cikarang Selatan.",
+    "phone": "02129779999",
+    "queue": 0,
+    "bed_availability": 0,
+    "info": "Diupdate 31 jam yang lalu"
+  }, {
+    "id": "3216409",
+    "name": "RS Umum Cikarang Medika",
+    "address": "Jl. KH. Fudholi No. 78 Cikarang Utara",
+    "phone": "02129568832",
+    "queue": 0,
+    "bed_availability": 0,
+    "info": "Diupdate 34 jam yang lalu"
+  }, {
+    "id": "3216424",
+    "name": "RS Ibu dan Anak Gizar",
+    "address": "Jl. Villa Mutiara Cikarang Ruko Pasadena",
+    "phone": null,
+    "queue": 0,
+    "bed_availability": 0,
+    "info": "Diupdate 35 jam yang lalu"
+  }]
+}
