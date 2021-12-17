@@ -1,4 +1,5 @@
 import FavoriteButtonInitiator from '../utils/favorite-button-initiator';
+import BtnTelpInitiator from '../utils/btn-telp-initiator';
 
 class InfoHospital extends HTMLElement {
   connectedCallback() {
@@ -27,9 +28,10 @@ class InfoHospital extends HTMLElement {
       <div class="detail-util d-flex flex-column flex-md-row">
         <a href="${this._hospital.gmaps}" target="_blank" rel="noopener" class="btn btn-outline-info btn-map pt-2 active-shadow mb-3 mb-md-0 mr-0 mr-md-3">Lihat Peta <span
             class="iconify" data-icon="simple-icons:googlemaps"></span></a>
-        <button class="btn btn-info btn-telp active-shadow" ${(this._hospital.phone) ? `onclick="location.href = 'tel:+${this._hospital.phone}'` : ''}"><span
+        <button class="btn btn-info btn-telp active-shadow"><span
             class="telp-icon  iconify" data-icon="clarity:phone-handset-solid"></span>
-          <span class="no-telp">${(this._hospital.phone) ? this._hospital.phone : 'hotline tidak tersedia'}</span></button>
+          <span class="no-telp">${(this._hospital.phone) ? this._hospital.phone : 'hotline tidak tersedia'}</span>
+        </button>
       </div>
       `;
 
@@ -43,6 +45,13 @@ class InfoHospital extends HTMLElement {
         favoriteButton: this.querySelector('.btn-favorite'),
         hospital,
       });
+
+      BtnTelpInitiator.init({
+        btnTelp: this.querySelector('.btn-telp'),
+        hospitalPhone: this._hospital.phone,
+      });
+
+      console.log('hai hai');
     }
   }
 }

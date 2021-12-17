@@ -130,26 +130,26 @@ module.exports = {
         },
       ],
     }),
-    // new ImageminWebpackPlugin({
-    //   plugins: [
-    //     ImageminMozjpeg({
-    //       quality: 50,
-    //       progressive: true,
-    //     }),
-    //     ImageminPngquant({
-    //       quality: [0.3, 0.5],
-    //     }),
-    //   ],
-    // }),
-    // new ImageminWebpWebpackPlugin({
-    //   config: [{
-    //     test: /\.(jpe?g|png)/,
-    //     options: {
-    //       quality: 50,
-    //     },
-    //   }],
-    //   overrideExtension: true,
-    // }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+        ImageminPngquant({
+          quality: [0.3, 0.5],
+        }),
+      ],
+    }),
+    new ImageminWebpWebpackPlugin({
+      config: [{
+        test: /\.(jpe?g|png)/,
+        options: {
+          quality: 50,
+        },
+      }],
+      overrideExtension: true,
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
