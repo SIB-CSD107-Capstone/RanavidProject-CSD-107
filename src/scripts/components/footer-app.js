@@ -24,17 +24,18 @@ class FooterApp extends HTMLElement {
             <div class="col-6 col-md-6">
               <h4 tabindex="0">Resource</h4>
               <ul>
-                <li><a href="https://apicovid19indonesia-v2.vercel.app/api/indonesia/more">API Statistik Covid-19 di Indonesia</a></li>
-                <li><a href="https://rs-bed-covid-api.vercel.app/">RS Bed Covid Indo API</a></li>
-                <li><a href="https://github.com/SIB-CSD107-Capstone">Github Project Repository</a></li>
+                <li><a href="https://apicovid19indonesia-v2.vercel.app/api/indonesia/more" target="_blank" rel="noreferrer">API Statistik Covid-19 di Indonesia</a></li>
+                <li><a href="https://rs-bed-covid-api.vercel.app/" target="_blank" rel="noreferrer">RS Bed Covid Indo API</a></li>
+                <li><a href="https://61b090523c954f001722a461.mockapi.io/" target="_blank" rel="noreferrer">MockAPI</a></li>
+                <li><a href="https://github.com/SIB-CSD107-Capstone" target="_blank" rel="noreferrer">Github Project Repository</a></li>
               </ul>
             </div>
             <div class="col-6 col-md-6">
               <h4 tabindex="0">Referensi</h4>
               <ul>
-                <li><a href="https://github.com/farizdotid/DAFTAR-API-LOKAL-INDONESIA">Indonesia Lokal API</a></li>
-                <li><a href="https://github.com/Reynadi531/api-covid19-indonesia-v2">API Covid Indonesia V2</a></li>
-                <li><a href="https://covid19.go.id/peta-sebaran">Peta Sebaran Covid-19 di Indonesia</a></li>
+                <li><a href="https://github.com/farizdotid/DAFTAR-API-LOKAL-INDONESIA" target="_blank" rel="noreferrer">Indonesia Lokal API</a></li>
+                <li><a href="https://github.com/Reynadi531/api-covid19-indonesia-v2" target="_blank" rel="noreferrer">API Covid Indonesia V2</a></li>
+                <li><a href="https://covid19.go.id/peta-sebaran" target="_blank" rel="noreferrer">Peta Sebaran Covid-19 di Indonesia</a></li>
               </ul>
             </div>
           </div>
