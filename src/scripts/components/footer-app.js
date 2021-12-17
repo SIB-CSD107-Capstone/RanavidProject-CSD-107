@@ -18,25 +18,23 @@ class FooterApp extends HTMLElement {
         <source data-srcset="./img/ranavid-logo-trans.png">
         <img data-src="./img/ranavid-logo-trans.png" alt="ranavid-logo" class="w-4 lazyload">
       </picture>
-            <p>Ranavid merupakan aplikasi web untuk mencari layanan rawat inap covid-19.</p>
+            <p>Ranavid merupakan aplikasi web untuk mengecek ketersediaan tempat tidur untuk pasien rawat inap di rumah sakit tertentu berdasarkan kota/kabupaten per provinsi</p>
           </div>
           <div class="col-12 col-md-7 d-flex justify-content-between">
             <div class="col-6 col-md-6">
               <h4 tabindex="0">Resource</h4>
               <ul>
-                <li><a href="#">Indonesia Lokal API</a></li>
-                <li><a href="#">API Covid Indonesia V2</a></li>
-                <li><a href="#">RS Bed Covid Indo API</a></li>
-                <li><a href="#">Github Project Repository</a></li>
+                <li><a href="https://apicovid19indonesia-v2.vercel.app/api/indonesia/more">API Statistik Covid-19 di Indonesia</a></li>
+                <li><a href="https://rs-bed-covid-api.vercel.app/">RS Bed Covid Indo API</a></li>
+                <li><a href="https://github.com/SIB-CSD107-Capstone">Github Project Repository</a></li>
               </ul>
             </div>
             <div class="col-6 col-md-6">
               <h4 tabindex="0">Referensi</h4>
               <ul>
-                <li><a href="#">Indonesia Lokal API</a></li>
-                <li><a href="#">API Covid Indonesia V2</a></li>
-                <li><a href="#">RS Bed Covid Indo API</a></li>
-                <li><a href="#">Github Project Repository</a></li>
+                <li><a href="https://github.com/farizdotid/DAFTAR-API-LOKAL-INDONESIA">Indonesia Lokal API</a></li>
+                <li><a href="https://github.com/Reynadi531/api-covid19-indonesia-v2">API Covid Indonesia V2</a></li>
+                <li><a href="https://covid19.go.id/peta-sebaran">Peta Sebaran Covid-19 di Indonesia</a></li>
               </ul>
             </div>
           </div>
