@@ -18,6 +18,8 @@ const HospitalizationDetailButtonInitiator = {
     this._type = type;
     this._provId = provId;
     this._cityId = cityId;
+    // console.log(this._id);
+    // console.log(this._cityId);
 
     this._renderButton();
   },
@@ -26,16 +28,20 @@ const HospitalizationDetailButtonInitiator = {
     this._buttonContainer.innerHTML += createInfoAvailableBedButtonTemplate(this._bedAvailability);
     const btnDetailHospitalization = this._buttonContainer.lastElementChild;
     const hospitalId = this._id;
+
+    const partsUrl = UrlParser.parseActiveUrlWithoutCombiner();
+    partsUrl.id_or_sub = this._provId;
+    partsUrl.second_id = this._cityId;
+
     btnDetailHospitalization.addEventListener('click', (event) => {
       event.stopPropagation();
 
-      const partsUrl = UrlParser.parseActiveUrlWithoutCombiner();
-
       if (typeof (Storage) !== 'undefined') {
         // simpan partUrl search page di session storage
+        console.log(this._id);
+        console.log(this._cityId);
         console.log(partsUrl);
-        partsUrl.id_or_sub = this._provId;
-        partsUrl.second_id = this._cityId;
+
         console.log(partsUrl);
         sessionStorage.setItem('previousUrl', JSON.stringify(partsUrl));
       } else {

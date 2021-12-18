@@ -77,12 +77,15 @@ const HospitalizationDetail = {
     response = await IndoHospitalBedSource.indoHospitalMap(hospitalId);
     const hospitalGmaps = response.data.gmaps;
     hospital.gmaps = hospitalGmaps; // add gmaps property
-
+    console.log(provId);
+    console.log(cityId);
     response = await IndoHospitalBedSource.indoHospitalsByType(provId, cityId, typeInpatient);
     const hospitalsData = response.hospitals;
     console.log(hospitalsData);
 
     const complementHospital = FindHelper.findHospitalById(hospitalId, hospitalsData);
+    console.log(hospitalId);
+    console.log(hospitalsData);
     console.log(hospital);
     console.log(complementHospital);
 
