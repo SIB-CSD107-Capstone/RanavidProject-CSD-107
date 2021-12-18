@@ -200,7 +200,7 @@ const createFiturWebTemplate = () => `
           <span class="iconify" data-icon="fa-solid:chart-bar" style="color: white;" data-width="35"></span>
         </div>
         <div class="card-body body-fitur">
-          <h3 class="card-title heading-3" tabindex="0">Statistik Covid UpToDAte</h3>
+          <h3 class="card-title heading-3" tabindex="0">Statistik Covid UpToDate</h3>
           <p class="card-text" tabindex="0">Data statistik kasus Covid-19 di Indonesia yang diambil dari API terupdate.</p>
         </div>
       </div>
