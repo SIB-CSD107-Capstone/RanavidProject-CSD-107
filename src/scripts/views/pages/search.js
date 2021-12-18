@@ -52,7 +52,14 @@ const Search = {
 
     const hospitalsList = await IndoHospitalBedSource.indoHospitalsByType(provId, cityId, type);
     cardHasilElem.innerHTML = '';
-    cardHasilElem.appendChild(createSearchResultTemplate(hospitalsList.hospitals, type));
+    const hospitals = hospitalsList.hospitals.map((hospital) => {
+      hospital.provId = provId;
+      hospital.cityId = cityId;
+
+      return hospital;
+    });
+
+    cardHasilElem.appendChild(createSearchResultTemplate(hospitals, type));
   },
 };
 

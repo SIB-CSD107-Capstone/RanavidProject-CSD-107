@@ -9,11 +9,15 @@ const HospitalizationDetailButtonInitiator = {
     id,
     bedAvailability,
     type,
+    provId,
+    cityId,
   }) {
     this._buttonContainer = buttonContainer;
     this._id = id;
     this._bedAvailability = bedAvailability;
     this._type = type;
+    this._provId = provId;
+    this._cityId = cityId;
 
     this._renderButton();
   },
@@ -29,6 +33,10 @@ const HospitalizationDetailButtonInitiator = {
 
       if (typeof (Storage) !== 'undefined') {
         // simpan partUrl search page di session storage
+        console.log(partsUrl);
+        partsUrl.id_or_sub = this._provId;
+        partsUrl.second_id = this._cityId;
+        console.log(partsUrl);
         sessionStorage.setItem('previousUrl', JSON.stringify(partsUrl));
       } else {
         console.log('Oops your browser is not support session storage feature');
