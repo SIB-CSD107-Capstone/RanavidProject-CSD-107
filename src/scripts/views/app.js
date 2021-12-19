@@ -16,20 +16,29 @@ class App {
     LoadingHelper.setLoading(loadingContainer);
 
     const url = UrlParser.parseActiveUrlWithCombiner();
-    let page = routes[url];
+    const page = routes[url];
     try {
       this._content.innerHTML = await page.render();
       await page.afterRender();
     } catch (error) {
-      page = routes['/home'];
-      this._content.innerHTML = await page.render();
-      await page.afterRender();
+      document.querySelector('main').innerHTML = '';
+
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'Halaman tidak ditemukan!',
-        confirmButtonText: 'Kembali ke home',
+        confirmButtonText: '<a href="/" class="text-white " id="btn-back-home">Kembali ke home</a>',
       });
+
+      /* set style btn back to home (erorr) */
+      const btnBackHome = document.getElementById('btn-back-home');
+      btnBackHome.style.display = 'block';
+      btnBackHome.style.width = 'fit-content';
+      btnBackHome.style.height = 'fit-content';
+      btnBackHome.style.padding = '10px';
+
+      btnBackHome.parentElement.style.padding = '0';
+      btnBackHome.parentElement.style.whiteSpace = 'nowrap';
     }
     /* clear loading animation */
     LoadingHelper.clearLoading(loadingContainer);

@@ -22,6 +22,7 @@ const TypeInpatientButtonInitiator = {
     this._btnCovid.addEventListener('click', async () => {
       this._btnCovid.querySelector('#covid').checked = true;
       const hospitalsByType = await FavoriteHospitalIdb.getHospitalsByType(covidType);
+
       cardHasilElem.innerHTML = '';
       cardHasilElem.appendChild(createSearchResultTemplate(hospitalsByType, covidType));
     });
@@ -29,6 +30,7 @@ const TypeInpatientButtonInitiator = {
     this._btnNonCovid.addEventListener('click', async () => {
       this._btnNonCovid.querySelector('#non-covid').checked = true;
       const hospitalsByType = await FavoriteHospitalIdb.getHospitalsByType(nonCovidType);
+
       cardHasilElem.innerHTML = '';
       cardHasilElem.appendChild(createSearchResultTemplate(hospitalsByType, nonCovidType));
     });
