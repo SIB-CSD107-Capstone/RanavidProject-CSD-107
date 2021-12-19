@@ -27,8 +27,18 @@ class App {
         icon: 'error',
         title: 'Oops...',
         text: 'Halaman tidak ditemukan!',
-        confirmButtonText: '<a href="/" class="text-white">Kembali ke home</a>',
+        confirmButtonText: '<a href="/" class="text-white " id="btn-back-home">Kembali ke home</a>',
       });
+
+      /* set style btn back to home (erorr) */
+      const btnBackHome = document.getElementById('btn-back-home');
+      btnBackHome.style.display = 'block';
+      btnBackHome.style.width = 'fit-content';
+      btnBackHome.style.height = 'fit-content';
+      btnBackHome.style.padding = '10px';
+
+      btnBackHome.parentElement.style.padding = '0';
+      btnBackHome.parentElement.style.whiteSpace = 'nowrap';
     }
     /* clear loading animation */
     LoadingHelper.clearLoading(loadingContainer);
