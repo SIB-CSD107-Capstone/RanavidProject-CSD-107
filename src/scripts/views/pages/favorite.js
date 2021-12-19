@@ -37,7 +37,7 @@ const Favorite = {
     const defaultType = '1';
     const cardHasilElem = document.querySelector('.card-hasil');
     const hospitals = await FavoriteHospitalIdb.getHospitalsByType(defaultType);
-    // console.log(hospitals);
+
     cardHasilElem.appendChild(createSearchResultTemplate(hospitals, defaultType));
   },
 };

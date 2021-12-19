@@ -3,7 +3,6 @@ import '../../components/statistic-section-content';
 import '../../components/hospital-list';
 import '../../components/info-hospital';
 import '../../components/bed-detail-item';
-import '../../components/favorite-search-bar';
 import '../../components/btn-group-hospitalization';
 
 const createSearchBarTemplate = (flag) => {
@@ -34,7 +33,7 @@ const createStatisticContentTemplate = (data) => {
 
 const createSearchResultTemplate = (hospitals, inpatientType) => {
   const hospitalListElem = document.createElement('hospital-list');
-  console.log(hospitals);
+
   hospitalListElem.hospitals = hospitals;
   hospitalListElem.inpatientType = inpatientType;
   return hospitalListElem;
@@ -87,11 +86,6 @@ const createListBedDetailHospitalTemplate = (bedDetailContainer, bedsDetails) =>
     bedDetailElem.detail = bedDetail;
     bedDetailContainer.appendChild(bedDetailElem);
   });
-};
-
-const createFavoriteSearchBarTemplate = () => {
-  const favoriteSearchBarElem = document.createElement('favorite-search-bar');
-  return favoriteSearchBarElem;
 };
 
 const createBtnGroupHospitalizationTemplate = () => {
@@ -308,6 +302,5 @@ export {
   createBreadcrumbItem,
   createInfoHospitalTemplate,
   createListBedDetailHospitalTemplate,
-  createFavoriteSearchBarTemplate,
   createBtnGroupHospitalizationTemplate,
 };

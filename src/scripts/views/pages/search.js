@@ -5,7 +5,6 @@ import {
 import UrlParser from '../../routes/url-parser';
 import IndoHospitalBedSource from '../../data/indo-hospital-bed-source';
 import FindHelper from '../../utils/find-helper';
-// import LoadingHelper from '../../utils/loading-helper';
 
 const Search = {
   async render() {

@@ -16,7 +16,7 @@ class HospitalItem extends HTMLElement {
 
   render() {
     this.setAttribute('class', 'col mb-4');
-    // console.log(this._hospital);
+
     if (this._hospital) {
       this.innerHTML = `
       <div class="card h-100 card-kamar">

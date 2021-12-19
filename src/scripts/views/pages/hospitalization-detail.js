@@ -65,7 +65,6 @@ const HospitalizationDetail = {
     // cek apakah redirect url dari halaman favorite, karena data 'id' di favorite hospital di tambahkan akhiran covid jika type = 1
     if (hospitalId.substr(hospitalId.length - 5) === 'covid') {
       hospitalId = hospitalId.substr(0, hospitalId.length - 5);
-      console.log(hospitalId);
     }
 
     const typeInpatient = partsUrl.type;
@@ -77,17 +76,10 @@ const HospitalizationDetail = {
     response = await IndoHospitalBedSource.indoHospitalMap(hospitalId);
     const hospitalGmaps = response.data.gmaps;
     hospital.gmaps = hospitalGmaps; // add gmaps property
-    console.log(provId);
-    console.log(cityId);
+
     response = await IndoHospitalBedSource.indoHospitalsByType(provId, cityId, typeInpatient);
     const hospitalsData = response.hospitals;
-    console.log(hospitalsData);
-
     const complementHospital = FindHelper.findHospitalById(hospitalId, hospitalsData);
-    console.log(hospitalId);
-    console.log(hospitalsData);
-    console.log(hospital);
-    console.log(complementHospital);
 
     hospital = {
       ...hospital,
@@ -95,13 +87,12 @@ const HospitalizationDetail = {
       provId,
       cityId,
     };
-    console.log(hospital);
 
     // if user access custom type url in hospitalization detail page
     if (hospital.bed_availability === undefined && hospital.available_beds === undefined) {
       throw new Error('something wrong');
     }
-    console.log('hai');
+
     const infoHospitalWrapperElem = document.querySelector('.info-hospital-wrapper');
     infoHospitalWrapperElem.innerHTML = '';
     infoHospitalWrapperElem.appendChild(createInfoHospitalTemplate(hospital));
@@ -110,7 +101,6 @@ const HospitalizationDetail = {
     const availableBedDetailsElem = document.querySelector('.available-bed-details');
     availableBedDetailsElem.innerHTML = '<h5 class="mb-3">Jenis Ruang Rawat : </h5>';
     createListBedDetailHospitalTemplate(availableBedDetailsElem, hospital.bedDetail);
-    console.log('selesai');
   },
 };
 

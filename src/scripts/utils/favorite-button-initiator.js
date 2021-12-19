@@ -32,7 +32,7 @@ const FavoriteButtonInitiator = {
 
   async _isHospitalExist(id, type) {
     const hospital = await FavoriteHospitalIdb.getHospital(id);
-    // const sameType = (hospital.type) ? hospital.type === type : false;
+
     return (hospital) ? hospital.type === type : false;
   },
 

@@ -21,9 +21,6 @@ class App {
       this._content.innerHTML = await page.render();
       await page.afterRender();
     } catch (error) {
-      // page = routes['/home'];
-      // this._content.innerHTML = await page.render();
-      // await page.afterRender();
       document.querySelector('main').innerHTML = '';
 
       Swal.fire({
