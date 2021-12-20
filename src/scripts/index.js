@@ -36,10 +36,12 @@ function stopVideo(modal) {
 }
 
 window.addEventListener('click', (event) => {
-  const { target } = event;
+  const {
+    target,
+  } = event;
   if (target.classList.contains('modal')) {
-      target.style.display = 'none';
-      stopVideo(target);
+    target.style.display = 'none';
+    stopVideo(target);
   }
 });
 

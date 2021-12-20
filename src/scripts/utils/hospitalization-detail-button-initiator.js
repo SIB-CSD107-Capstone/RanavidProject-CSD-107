@@ -9,11 +9,15 @@ const HospitalizationDetailButtonInitiator = {
     id,
     bedAvailability,
     type,
+    provId,
+    cityId,
   }) {
     this._buttonContainer = buttonContainer;
     this._id = id;
     this._bedAvailability = bedAvailability;
     this._type = type;
+    this._provId = provId;
+    this._cityId = cityId;
 
     this._renderButton();
   },
@@ -22,10 +26,13 @@ const HospitalizationDetailButtonInitiator = {
     this._buttonContainer.innerHTML += createInfoAvailableBedButtonTemplate(this._bedAvailability);
     const btnDetailHospitalization = this._buttonContainer.lastElementChild;
     const hospitalId = this._id;
+
+    const partsUrl = UrlParser.parseActiveUrlWithoutCombiner();
+    partsUrl.id_or_sub = this._provId;
+    partsUrl.second_id = this._cityId;
+
     btnDetailHospitalization.addEventListener('click', (event) => {
       event.stopPropagation();
-
-      const partsUrl = UrlParser.parseActiveUrlWithoutCombiner();
 
       if (typeof (Storage) !== 'undefined') {
         // simpan partUrl search page di session storage

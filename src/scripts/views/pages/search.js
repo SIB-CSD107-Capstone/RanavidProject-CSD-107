@@ -5,7 +5,6 @@ import {
 import UrlParser from '../../routes/url-parser';
 import IndoHospitalBedSource from '../../data/indo-hospital-bed-source';
 import FindHelper from '../../utils/find-helper';
-// import LoadingHelper from '../../utils/loading-helper';
 
 const Search = {
   async render() {
@@ -52,7 +51,14 @@ const Search = {
 
     const hospitalsList = await IndoHospitalBedSource.indoHospitalsByType(provId, cityId, type);
     cardHasilElem.innerHTML = '';
-    cardHasilElem.appendChild(createSearchResultTemplate(hospitalsList.hospitals, type));
+    const hospitals = hospitalsList.hospitals.map((hospital) => {
+      hospital.provId = provId;
+      hospital.cityId = cityId;
+
+      return hospital;
+    });
+
+    cardHasilElem.appendChild(createSearchResultTemplate(hospitals, type));
   },
 };
 

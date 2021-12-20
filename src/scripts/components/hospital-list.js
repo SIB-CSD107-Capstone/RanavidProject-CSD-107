@@ -19,6 +19,7 @@ class HospitalList extends HTMLElement {
     this.setAttribute('class', 'row row-cols-1 row-cols-md-2 mb-5');
     this.setAttribute('id', 'hospital-list');
     this.innerHTML = '';
+
     if (this._hospitals) {
       if (this._hospitals.length < 1) {
         this.renderError('Data rumah sakit tidak ditemukan');

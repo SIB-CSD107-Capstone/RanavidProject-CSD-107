@@ -16,6 +16,7 @@ class HospitalItem extends HTMLElement {
 
   render() {
     this.setAttribute('class', 'col mb-4');
+
     if (this._hospital) {
       this.innerHTML = `
       <div class="card h-100 card-kamar">
@@ -33,6 +34,8 @@ class HospitalItem extends HTMLElement {
         id: this._hospital.id,
         bedAvailability: (this._hospital.bed_availability !== undefined) ? this._hospital.bed_availability : this._hospital.available_beds[0].available,
         type: this._type,
+        provId: this._hospital.provId,
+        cityId: this._hospital.cityId,
       });
     }
   }
