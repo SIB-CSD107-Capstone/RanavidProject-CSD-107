@@ -228,9 +228,9 @@ const createAboutCovid = () => `
 const createBlogPost = (blog) => `
 <div class="col mb-4">
           <div class="card h-100 border-0 custom-blog-post">
-            <img data-src="${blog.blogImages}" class="card-img-top lazyload" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="${blog.title}" tabindex="0">
+            <img data-src="${blog.blogImages}" class="card-img-top lazyload" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" alt="${blog.title}" tabindex="0" onclick="location.href='#/blog/${blog.id}';">
             <div class="card-body p-0">
-              <h3 class="card-title heading-3" tabindex="0">${blog.title}</h3>
+              <h3 class="card-title heading-3" tabindex="0" onclick="location.href='#/blog/${blog.id}';">${blog.title}</h3>
               <p class="card-text" tabindex="0">${blog.content}</p>
               <div class="btn btn-danger read-btn" tabindex="0" onclick="location.href='#/blog/${blog.id}';">Baca Selengkapnya <span class="iconify ml-2"
                   data-icon="fa-solid:angle-right"></span></div>
@@ -262,8 +262,6 @@ const createModalList = (vlog) => `
 <div class="modal fade" id="videoModals-${vlog.id}" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-        </div>
         <div class="modal-body modal-custom" id="ytModals">
           <iframe class="mv-edukasi" src="${vlog.content}"">
           </iframe>
