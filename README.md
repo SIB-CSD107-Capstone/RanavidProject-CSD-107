@@ -30,7 +30,8 @@ Pada tahun 2021 ini sudah 2 tahun lamanya pandemi COVID 19 melanda negeri Indone
 Berikut daftar API dan Library yang digunakan pada project:
 -  [API COVID-19 Indonesia v2](https://github.com/Reynadi531/api-covid19-indonesia-v2)
 -  [RS Bed Covid Indonesia API](https://github.com/satyawikananda/rs-bed-covid-indo-api)
--  [Blog API Built using MockAPI](https://61b090523c954f001722a461.mockapi.io/)
+-  [Blog API Built using MockAPI](https://61b090523c954f001722a461.mockapi.io/blogs)
+-  [Video Blog API Built using MockAPI](https://61b090523c954f001722a461.mockapi.io/vlog)
 -  [Clear Webpak Plugin](https://www.npmjs.com/package/clean-webpack-plugin)
 -  [Mini CSS Extract Plugin](https://www.npmjs.com/package/mini-css-extract-plugin)
 -  [NPM Run All](https://www.npmjs.com/package/npm-run-all)
