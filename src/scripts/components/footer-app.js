@@ -26,7 +26,8 @@ class FooterApp extends HTMLElement {
               <ul>
                 <li><a href="https://apicovid19indonesia-v2.vercel.app/api/indonesia/more" target="_blank" rel="noreferrer">API Statistik Covid-19 di Indonesia</a></li>
                 <li><a href="https://rs-bed-covid-api.vercel.app/" target="_blank" rel="noreferrer">RS Bed Covid Indo API</a></li>
-                <li><a href="https://61b090523c954f001722a461.mockapi.io/" target="_blank" rel="noreferrer">MockAPI</a></li>
+                <li><a href="https://61b090523c954f001722a461.mockapi.io/blogs" target="_blank" rel="noreferrer">Article Blog API</a></li>
+                <li><a href="https://61b090523c954f001722a461.mockapi.io/vlog" target="_blank" rel="noreferrer">Video Blog API</a></li>
                 <li><a href="https://github.com/SIB-CSD107-Capstone" target="_blank" rel="noreferrer">Github Project Repository</a></li>
               </ul>
             </div>

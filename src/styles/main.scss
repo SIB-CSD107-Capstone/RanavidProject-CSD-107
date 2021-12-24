@@ -129,11 +129,19 @@ body {
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     margin-bottom: 1em;
+    
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .heading-3 {
     @include mixins.heading3($lineHeight: 2rem);
     min-height: 44px;
+    
+    &:hover {
+      cursor: pointer;
+    }
 
     .d-red {
       color: colors.$secondary-color;
