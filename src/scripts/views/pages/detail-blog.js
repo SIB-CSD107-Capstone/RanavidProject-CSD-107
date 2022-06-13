@@ -43,6 +43,13 @@ const DetailBlog = {
     } = await MediaDBSource.detailBlog(blogId, type);
     const articleContent = document.querySelector('.article-content');
     articleContent.innerHTML = createDetailArticleContent(blog);
+
+    const contentBlog = blog.content;
+    contentBlog.forEach((content) => {
+        const p = document.createElement('p');
+        p.innerHTML = content;
+        articleContent.appendChild(p);
+    });
   },
 };
 
