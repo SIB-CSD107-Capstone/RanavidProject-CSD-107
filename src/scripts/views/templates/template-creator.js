@@ -277,9 +277,7 @@ const createDetailArticleContent = (blog) => `
 <p class="date-detail" tabindex="0">Diposting pada tanggal ${blog.createdAt}</p>
 <img data-src="${blog.blogImages}" alt="${blog.title}" class="img-fluid lazyload" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612538498456-e861df91d4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';" tabindex="0">
 <div class="blog-text">
-  <p tabindex="0">
-    ${blog.content}
-  </p>
+  
 `;
 
 export {
