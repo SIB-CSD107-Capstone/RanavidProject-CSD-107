@@ -27,7 +27,7 @@ class StatisticSectionContent extends HTMLElement {
           <div class="card p-md-4 border border-primary confirmed">
             <div class="card-body">
               <h4 class="card-title text-center mb-5" tabindex="0">Kasus Terkonfirmasi</h4>
-              <p class="card-text text-center h3" tabindex="0">${this._data.positif}</p>
+              <p class="card-text text-center h3" tabindex="0">${this._data.kasusterkonfirmasi}</p>
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@ class StatisticSectionContent extends HTMLElement {
           <div class="card p-md-4 border border-info treated h-100">
             <div class="card-body d-flex flex-column  justify-content-between">
               <h4 class="card-title text-center mb-5" tabindex="0">Sedang dirawat</h4>
-              <p class="card-text text-center h3" tabindex="0">${this._data.dirawat}</p>
+              <p class="card-text text-center h3" tabindex="0">${this._data.sedangdirawat}</p>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ class StatisticSectionContent extends HTMLElement {
           <div class="card p-md-4 border border-success healed">
             <div class="card-body">
               <h4 class="card-title text-center mb-5" tabindex="0">Berhasil Sembuh</h4>
-              <p class="card-text text-center h3" tabindex="0">${this._data.sembuh}</p>
+              <p class="card-text text-center h3" tabindex="0">${this._data.berhasilsembuh}</p>
             </div>
           </div>
         </div>

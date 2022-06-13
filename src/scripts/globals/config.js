@@ -1,5 +1,5 @@
 const CONFIG = {
-  STATISTIC_URL: 'https://apicovid19indonesia-v2.vercel.app/',
+  STATISTIC_URL: 'https://62a6dcabbedc4ca6d7bb825a.mockapi.io/api',
   RSBED_URL: 'https://rs-bed-covid-api.vercel.app/',
   MEDIA_URL: 'https://61b090523c954f001722a461.mockapi.io/',
   CACHE_NAME: 'Ranavid Apps',

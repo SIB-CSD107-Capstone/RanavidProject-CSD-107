@@ -28,8 +28,10 @@ const Home = {
 
     const statisticsBar = document.querySelector('#statistics');
     const dataStatisticsCovidIndo = await CovidCasesIndoSource.totalCases();
+    dataStatisticsCovidIndo.forEach((data) => {
+      statisticsBar.appendChild(createStatisticContentTemplate(data));
+    });
 
-    statisticsBar.appendChild(createStatisticContentTemplate(dataStatisticsCovidIndo));
     const ButtonsTypeOfHospitalization = document.querySelectorAll('button.form-check');
 
     // for if btn element type of hospitalization on click, so tag input type radion is checked

@@ -1,7 +1,7 @@
 import CONFIG from './config';
 
 const API_ENDPOINT = {
-  STATISTIC: `${CONFIG.STATISTIC_URL}api/indonesia`,
+  STATISTIC: `${CONFIG.STATISTIC_URL}/indonesia`,
   RSBEDPROV: `${CONFIG.RSBED_URL}api/get-provinces`,
   RSBEDCITY: (provId) => `${CONFIG.RSBED_URL}api/get-cities?provinceid=${provId}`,
   RSIDHOSP: (provId, cityId, type) => `${CONFIG.RSBED_URL}api/get-hospitals?provinceid=${provId}&cityid=${cityId}&type=${type}`,
